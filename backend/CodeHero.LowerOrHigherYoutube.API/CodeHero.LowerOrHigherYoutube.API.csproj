@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CodeHero.LowerOrHigherYoutube.Application\CodeHero.LowerOrHigherYoutube.Application.csproj" />
+    <ProjectReference Include="..\CodeHero.LowerOrHigherYoutube.Infrastructure\CodeHero.LowerOrHigherYoutube.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
