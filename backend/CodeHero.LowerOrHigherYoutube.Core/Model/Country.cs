@@ -1,9 +1,10 @@
-﻿namespace CodeHero.LowerOrHigherYoutube.Core.Model
+﻿using System;
+
+namespace CodeHero.LowerOrHigherYoutube.Core.Model
 {
-    public class Country
+    public class Country : BaseModel
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
         public string RegionCode { get; set; }
+        public DateTime LastFetched { get; set; }
     }
 }

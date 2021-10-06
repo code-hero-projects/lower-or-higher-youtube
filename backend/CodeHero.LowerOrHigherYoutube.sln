@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeHero.LowerOrHigherYoutube.API", "CodeHero.LowerOrHigherYoutube.API\CodeHero.LowerOrHigherYoutube.API.csproj", "{21C648C4-29BA-45CA-9482-90D677200C84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeHero.LowerOrHigherYoutube.API", "CodeHero.LowerOrHigherYoutube.API\CodeHero.LowerOrHigherYoutube.API.csproj", "{21C648C4-29BA-45CA-9482-90D677200C84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeHero.LowerOrHigherYoutube.Application", "CodeHero.LowerOrHigherYoutube.Application\CodeHero.LowerOrHigherYoutube.Application.csproj", "{0412416C-6A41-4C55-B75B-0783D6420756}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeHero.LowerOrHigherYoutube.Application", "CodeHero.LowerOrHigherYoutube.Application\CodeHero.LowerOrHigherYoutube.Application.csproj", "{0412416C-6A41-4C55-B75B-0783D6420756}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeHero.LowerOrHigherYoutube.Core", "CodeHero.LowerOrHigherYoutube.Core\CodeHero.LowerOrHigherYoutube.Core.csproj", "{3525D959-42C7-4AFE-9561-4FA613BA7614}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeHero.LowerOrHigherYoutube.Core", "CodeHero.LowerOrHigherYoutube.Core\CodeHero.LowerOrHigherYoutube.Core.csproj", "{3525D959-42C7-4AFE-9561-4FA613BA7614}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeHero.LowerOrHigherYoutube.Infrastructure", "CodeHero.LowerOrHigherYoutube.Infrastructure\CodeHero.LowerOrHigherYoutube.Infrastructure.csproj", "{F828E98E-E47B-40E2-B7F8-87AC9C28EA57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeHero.LowerOrHigherYoutube.Infrastructure", "CodeHero.LowerOrHigherYoutube.Infrastructure\CodeHero.LowerOrHigherYoutube.Infrastructure.csproj", "{F828E98E-E47B-40E2-B7F8-87AC9C28EA57}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
