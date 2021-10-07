@@ -13,5 +13,6 @@ namespace CodeHero.LowerOrHigherYoutube.Core.Repositories
         public Task<IEnumerable<T>> ListAsync();
         Task<IEnumerable<T>> FilterAsync(Expression<Func<T, bool>> predicate);
         public void DeleteAsync(T entity);
+        public Task SaveChangesAsync();
     }
 }

@@ -8,22 +8,9 @@ namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Mappings
     {
         public void Configure(EntityTypeBuilder<Video> builder)
         {
-            builder.Property(x => x.Id).IsRequired();
-            builder.Property(x => x.Id).HasColumnName("id");
-
-            builder.Property(x => x.SecondaryId).IsRequired();
-            builder.Property(x => x.SecondaryId).HasColumnName("secondary_id");
-
-            builder.Property(x => x.Name).IsRequired();
-            builder.Property(x => x.Name).HasColumnName("name");
-
-            builder.Property(x => x.Views).IsRequired();
-            builder.Property(x => x.Views).HasColumnName("views");
-
-            builder.Property(x => x.Thumbnail).IsRequired();
-            builder.Property(x => x.Thumbnail).HasColumnName("thumbnail");
-
-            builder.ToContainer("videos");
+            builder.HasKey(x => x.Id);
+            builder.HasPartitionKey(x => x.Id);
+            builder.ToContainer(InfrastuctureConstants.VideosContainer);
         }
     }
 }

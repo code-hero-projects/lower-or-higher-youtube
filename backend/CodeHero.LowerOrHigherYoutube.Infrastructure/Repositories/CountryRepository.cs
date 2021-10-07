@@ -3,12 +3,12 @@ using CodeHero.LowerOrHigherYoutube.Core.Repositories;
 
 namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Repositories
 {
-    public class CountryRepository : BaseRepository<Country, int>, ICountryRepository
+    public class CountryRepository : BaseRepository<Country, string>, ICountryRepository
     {
-        public CountryRepository(DatabaseContext cosmosDbContext) : base(cosmosDbContext.Countries)
+        public CountryRepository(DatabaseContext databaseContext) : base(databaseContext.Countries, databaseContext)
         {
         }
 
-        protected override int GetKey(Country entity) => entity.Id;
+        protected override string GetKey(Country entity) => entity.Id;
     }
 }

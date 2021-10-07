@@ -8,19 +8,9 @@ namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Mappings
     {
         public void Configure(EntityTypeBuilder<Country> builder)
         {
-            builder.Property(x => x.Id).IsRequired();
-            builder.Property(x => x.Id).HasColumnName("id");
-
-            builder.Property(x => x.Name).IsRequired();
-            builder.Property(x => x.Name).HasColumnName("name");
-
-            builder.Property(x => x.RegionCode).IsRequired();
-            builder.Property(x => x.RegionCode).HasColumnName("region_code");
-
-            builder.Property(x => x.LastFetched).IsRequired();
-            builder.Property(x => x.LastFetched).HasColumnName("last_fetched");
-
-            builder.ToContainer("countries");
+            builder.HasKey(x => x.Id);
+            builder.HasPartitionKey(x => x.Id);
+            builder.ToContainer(InfrastuctureConstants.CountriesContainer);
         }
     }
 }

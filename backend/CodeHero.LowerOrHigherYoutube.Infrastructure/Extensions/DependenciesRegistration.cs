@@ -1,9 +1,11 @@
 ﻿using CodeHero.LowerOrHigherYoutube.Core.Repositories;
 using CodeHero.LowerOrHigherYoutube.Infrastructure.Configuration;
 using CodeHero.LowerOrHigherYoutube.Infrastructure.Repositories;
+using Microsoft.Azure.Cosmos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Threading.Tasks;
 
 namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Extensions
 {
@@ -16,7 +18,7 @@ namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Extensions
             switch (databaseConnectionOptions.Type)
             {
                 case DatabaseType.CosmosDb:
-                    AddCosmosDb(services, databaseConfiguration);
+                    AddCosmosDb(services, databaseConfiguration).Wait();
                     break;
                 case DatabaseType.Undefined:
                 default:
@@ -24,16 +26,20 @@ namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Extensions
             }
 
             services.AddScoped<ICountryRepository, CountryRepository>();
-            services.AddScoped<IVideoRepository, VideoRepository>();
 
             return services;
         }
 
-        private static void AddCosmosDb(IServiceCollection services, IConfigurationSection databaseConfiguration)
+        private static async Task AddCosmosDb(IServiceCollection services, IConfigurationSection databaseConfiguration)
         {
             var cosmosDbOptions = databaseConfiguration.Get<CosmosDbConnectionOptions>();
 
             services.AddDbContext<DatabaseContext>(dbConfig => dbConfig.UseCosmos(cosmosDbOptions.Account, cosmosDbOptions.Key, cosmosDbOptions.DatabaseName));
+
+            var cosmosClient = new CosmosClient(cosmosDbOptions.Account, cosmosDbOptions.Key);
+            var database = await cosmosClient.CreateDatabaseIfNotExistsAsync(cosmosDbOptions.DatabaseName);
+            await database.Database.CreateContainerIfNotExistsAsync(InfrastuctureConstants.CountriesContainer, InfrastuctureConstants.PartitionKey);
+            await database.Database.CreateContainerIfNotExistsAsync(InfrastuctureConstants.VideosContainer, InfrastuctureConstants.PartitionKey);
         }
     }
 }
