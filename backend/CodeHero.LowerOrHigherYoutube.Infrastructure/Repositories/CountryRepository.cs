@@ -1,7 +1,7 @@
 ﻿using CodeHero.LowerOrHigherYoutube.Core.Model;
 using CodeHero.LowerOrHigherYoutube.Core.Repositories;
 
-namespace CodeHero.LowerOrHigherYoutube.Infrastructure.CosmosDB.Repositorties
+namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Repositories
 {
     public class CountryRepository : BaseRepository<Country, int>, ICountryRepository
     {

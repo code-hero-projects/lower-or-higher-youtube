@@ -8,7 +8,6 @@ namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Mappings
     {
         public void Configure(EntityTypeBuilder<Country> builder)
         {
-            builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).IsRequired();
             builder.Property(x => x.Id).HasColumnName("id");
 

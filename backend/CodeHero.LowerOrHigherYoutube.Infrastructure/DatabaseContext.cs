@@ -1,10 +1,10 @@
 ﻿using CodeHero.LowerOrHigherYoutube.Core.Model;
-using CodeHero.LowerOrHigherYoutube.Infrastructure.Mappings;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
-namespace CodeHero.LowerOrHigherYoutube.Infrastructure.CosmosDB
+namespace CodeHero.LowerOrHigherYoutube.Infrastructure
 {
-    public partial class DatabaseContext : DbContext
+    public class DatabaseContext : DbContext
     {
         public DbSet<Country> Countries { get; set; }
         public DbSet<Video> Videos { get; set; }
@@ -18,8 +18,7 @@ namespace CodeHero.LowerOrHigherYoutube.Infrastructure.CosmosDB
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.ApplyConfiguration(new CountryMapping());
-            modelBuilder.ApplyConfiguration(new VideoMapping());
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
     }
 }

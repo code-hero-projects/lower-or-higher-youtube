@@ -11,18 +11,21 @@ namespace CodeHero.LowerOrHigherYoutube.API
 {
     public class Startup
     {
+        private readonly IConfiguration _configuration;
+        private const string DatabaseOptionsSection = "Database";
+
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            _configuration = configuration;
         }
-
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var databaseOptions = _configuration.GetSection(ApiConstants.AppSettingsDatabaseSection);
+
             services
-                .AddInfrastructureDependencies()
+                .AddInfrastructureDependencies(databaseOptions)
                 .AddApplicationDependencies()
                 .AddApiDependencies();
         }

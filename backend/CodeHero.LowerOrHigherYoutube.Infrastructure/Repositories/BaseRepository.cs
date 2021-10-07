@@ -6,7 +6,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace CodeHero.LowerOrHigherYoutube.Infrastructure.CosmosDB.Repositorties
+namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Repositories
 {
     public abstract class BaseRepository<T, R> : IRepository<T, R> where T : class
     {
