@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Repositories
 {
-    public abstract class BaseRepository<T, R> : IRepository<T, R> where T : class
+    public abstract class BaseRepository<T> : IRepository<T> where T : class
     {
         private readonly DbSet<T> _dbSet;
         private readonly DbContext _dbContext;
@@ -36,9 +36,9 @@ namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Repositories
             return await _dbSet.AsNoTracking().Where(predicate).ToListAsync();
         }
 
-        public Task<T> GetAsync(R id)
+        public Task<T> GetAsync(Expression<Func<T, bool>> predicate)
         {
-            return _dbSet.Where(entity => GetKey(entity).Equals(id)).FirstAsync();
+            return _dbSet.Where(predicate).FirstAsync();
         }
 
         public async Task<IEnumerable<T>> ListAsync()
@@ -50,7 +50,5 @@ namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Repositories
         {
             await _dbContext.SaveChangesAsync();
         }
-
-        protected abstract R GetKey(T entity);
     }
 }

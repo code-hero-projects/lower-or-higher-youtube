@@ -2,7 +2,7 @@
 
 namespace CodeHero.LowerOrHigherYoutube.Core.Repositories
 {
-    public interface ICountryRepository : IRepository<Country, string>
+    public interface ICountryRepository : IRepository<Country>
     {
     }
 }

@@ -19,16 +19,36 @@ namespace CodeHero.LowerOrHigherYoutube.API.Controllers
         [HttpGet]
         public async Task<ActionResult> List()
         {
-            await _countryRepository.AddAsync(new Country()
-            {
-                Id = "1",
-                Name = "something",
-                RegionCode = "en-GB",
-                LastFetched = System.DateTime.Now
-            });
+            // Create
+            //await _countryRepository.AddAsync(new Country()
+            //{
+            //    Id = "3",
+            //    Name = "rytui",
+            //    RegionCode = "pt-br",
+            //    LastFetched = System.DateTime.Now
+            //});
+            //await _countryRepository.SaveChangesAsync();
 
-            await _countryRepository.SaveChangesAsync();
-            return Accepted();
+            // Read all
+            // var list = await _countryRepository.ListAsync();
+
+            // Read with filter
+            // var filteredList = await _countryRepository.FilterAsync(entity => entity.Id == "1");
+
+            // Delete
+            //_countryRepository.DeleteAsync(new Country()
+            //{
+            //    Id = "2",
+            //    Name = "bdsfb",
+            //    RegionCode = "pt-pt",
+            //    LastFetched = System.DateTime.Now
+            //});
+            //await _countryRepository.SaveChangesAsync();
+
+            // Read by Id
+            // var result = await _countryRepository.GetAsync(entity => entity.Id == "1");
+
+            return Ok();
         }
     }
 }

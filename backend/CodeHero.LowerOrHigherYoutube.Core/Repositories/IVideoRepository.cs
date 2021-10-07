@@ -2,7 +2,7 @@
 
 namespace CodeHero.LowerOrHigherYoutube.Core.Repositories
 {
-    public interface IVideoRepository : IRepository<Video, int>
+    public interface IVideoRepository : IRepository<Video>
     {
     }
 }
