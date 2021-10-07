@@ -26,6 +26,7 @@ namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Extensions
             }
 
             services.AddScoped<ICountryRepository, CountryRepository>();
+            services.AddScoped<IVideoRepository, VideoRepository>();
 
             return services;
         }

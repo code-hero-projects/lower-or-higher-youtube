@@ -2,25 +2,26 @@
 using CodeHero.LowerOrHigherYoutube.Core.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using CodeHero.LowerOrHigherYoutube.Core.Repositories;
+using CodeHero.LowerOrHigherYoutube.Application.Configuration;
 using System.Threading.Tasks;
 
 namespace CodeHero.LowerOrHigherYoutube.Application.Services
 {
     public class VideoService : IVideoService
     {
+        private readonly IVideoRepository _videoRepository;
         private readonly string _url;
-        private const string BaseUrl = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=US&key=";
 
-        public VideoService(string youTubeApiKey)
+        public VideoService(IVideoRepository videoRepository, YouTubeOptions youtubeOptions)
         {
-            _url = BaseUrl + youTubeApiKey;
+            _videoRepository = videoRepository;
+            _url = youtubeOptions.ApiUrl + youtubeOptions.ApiKey;
         }
 
-        public IEnumerable<Video> GetVideos(string regionCode)
+        public async Task<IEnumerable<Video>> ListAsync(string country)
         {
-            throw new NotImplementedException();
+            return await _videoRepository.FilterAsync(video => video.CountryId.Equals(country));
         }
     }
 }

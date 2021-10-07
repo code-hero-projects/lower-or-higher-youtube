@@ -1,10 +1,11 @@
 ﻿using CodeHero.LowerOrHigherYoutube.Core.Model;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace CodeHero.LowerOrHigherYoutube.Core.Services
 {
     public interface IVideoService
     {
-        IEnumerable<Video> GetVideos(string regionCode);
+        Task<IEnumerable<Video>> ListAsync(string country);
     }
 }

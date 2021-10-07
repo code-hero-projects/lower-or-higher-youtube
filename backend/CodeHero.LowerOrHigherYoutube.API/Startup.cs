@@ -12,7 +12,6 @@ namespace CodeHero.LowerOrHigherYoutube.API
     public class Startup
     {
         private readonly IConfiguration _configuration;
-        private const string DatabaseOptionsSection = "Database";
 
         public Startup(IConfiguration configuration)
         {
@@ -23,10 +22,11 @@ namespace CodeHero.LowerOrHigherYoutube.API
         public void ConfigureServices(IServiceCollection services)
         {
             var databaseOptions = _configuration.GetSection(ApiConstants.AppSettingsDatabaseSection);
+            var youTubeOptions = _configuration.GetSection(ApiConstants.AppSettingsYouTubeSection);
 
             services
                 .AddInfrastructureDependencies(databaseOptions)
-                .AddApplicationDependencies()
+                .AddApplicationDependencies(youTubeOptions)
                 .AddApiDependencies();
         }
 

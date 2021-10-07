@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CodeHero.LowerOrHigherYoutube.Core.Services;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace CodeHero.LowerOrHigherYoutube.API.Controllers
 {
@@ -6,10 +8,18 @@ namespace CodeHero.LowerOrHigherYoutube.API.Controllers
     [Route("api/v1/[controller]")]
     public class VideoController : ControllerBase
     {
-        [HttpGet]
-        public ActionResult List()
+        private readonly IVideoService _videoService;
+
+        public VideoController(IVideoService videoService)
         {
-            return Accepted();
+            _videoService = videoService;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> ListAsync([FromQuery] string country)
+        {
+            var videoList = await _videoService.ListAsync(country);
+            return Ok(videoList);
         }
     }
 }

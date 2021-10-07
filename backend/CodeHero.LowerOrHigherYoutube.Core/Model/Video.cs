@@ -5,6 +5,6 @@
         public string SecondaryId { get; set; }
         public string Views { get; set; }
         public string Thumbnail { get; set; }
-        public int CountryId { get; set; }
+        public string CountryId { get; set; }
     }
 }
