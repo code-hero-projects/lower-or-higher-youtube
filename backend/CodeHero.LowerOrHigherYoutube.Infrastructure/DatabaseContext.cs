@@ -7,6 +7,7 @@ namespace CodeHero.LowerOrHigherYoutube.Infrastructure
     public class DatabaseContext : DbContext
     {
         public DbSet<Country> Countries { get; set; }
+        public DbSet<Video> Videos { get; set; }
 
         public DatabaseContext(DbContextOptions options) : base(options)
         {
