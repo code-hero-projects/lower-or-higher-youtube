@@ -1,3 +1,4 @@
+using CodeHero.LowerOrHigherYoutube.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -13,7 +14,7 @@ namespace CodeHero.LowerOrHigherYoutube.API
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            CreateHostBuilder(args).Build().InitialiseDatabase().Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

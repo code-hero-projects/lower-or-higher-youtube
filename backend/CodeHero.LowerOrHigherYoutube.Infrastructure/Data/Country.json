@@ -1,0 +1,22 @@
+﻿[
+  {
+    "Id": "1",
+    "Name": "Portugal",
+    "RegionCode": "pt-PT"
+  },
+  {
+    "Id": "2",
+    "Name": "Brasil",
+    "RegionCode": "pt-BR"
+  },
+  {
+    "Id": "3",
+    "Name": "England",
+    "RegionCode": "en-GB"
+  },
+  {
+    "Id": "4",
+    "Name": "United States",
+    "RegionCode": "en-US"
+  }
+]

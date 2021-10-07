@@ -7,5 +7,9 @@
         public const string VideosContainer = "Videos";
 
         public const string PartitionKey = "/Id";
+
+        public const string CountrySeedDataFile = "../CodeHero.LowerOrHigherYoutube.Infrastructure/Data/Country.json";
+
+        public const string VideoSeedDataFile = "../CodeHero.LowerOrHigherYoutube.Infrastructure/Data/Video.json";
     }
 }
