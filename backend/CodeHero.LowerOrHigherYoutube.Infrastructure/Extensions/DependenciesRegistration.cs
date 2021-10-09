@@ -35,15 +35,12 @@ namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Extensions
         {
             var cosmosDbOptions = databaseConfiguration.Get<CosmosDbConnectionOptions>();
 
-            //services.AddDbContext<DatabaseContext>(dbConfig => dbConfig.UseCosmos(cosmosDbOptions.Account, cosmosDbOptions.Key, cosmosDbOptions.DatabaseName));
-
-            //var cosmosClient = new CosmosClient(cosmosDbOptions.Account, cosmosDbOptions.Key);
             services.AddDbContext<DatabaseContext>(dbConfig => dbConfig.UseCosmos(cosmosDbOptions.ConnectionString, cosmosDbOptions.DatabaseName));
 
             var cosmosClient = new CosmosClient(cosmosDbOptions.ConnectionString);
             var database = await cosmosClient.CreateDatabaseIfNotExistsAsync(cosmosDbOptions.DatabaseName);
-            await database.Database.CreateContainerIfNotExistsAsync(InfrastuctureConstants.CountriesContainer, InfrastuctureConstants.PartitionKey);
-            await database.Database.CreateContainerIfNotExistsAsync(InfrastuctureConstants.VideosContainer, InfrastuctureConstants.PartitionKey);
+            await database.Database.CreateContainerIfNotExistsAsync(InfrastuctureConstants.CountriesContainerName, InfrastuctureConstants.PartitionKey);
+            await database.Database.CreateContainerIfNotExistsAsync(InfrastuctureConstants.VideosContainerName, InfrastuctureConstants.PartitionKey);
         }
     }
 }

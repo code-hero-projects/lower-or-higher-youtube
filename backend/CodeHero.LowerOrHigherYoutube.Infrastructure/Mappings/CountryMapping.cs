@@ -10,7 +10,7 @@ namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Mappings
         {
             builder.HasKey(x => x.Id);
             builder.HasPartitionKey(x => x.Id);
-            builder.ToContainer(InfrastuctureConstants.CountriesContainer);
+            builder.ToContainer(InfrastuctureConstants.CountriesContainerName);
         }
     }
 }

@@ -2,21 +2,25 @@
   {
     "Id": "1",
     "Name": "Portugal",
-    "RegionCode": "pt-PT"
+    "RegionCode": "pt-PT",
+    "Updating":  false
   },
   {
     "Id": "2",
     "Name": "Brasil",
-    "RegionCode": "pt-BR"
+    "RegionCode": "pt-BR",
+    "Updating": false
   },
   {
     "Id": "3",
     "Name": "England",
-    "RegionCode": "en-GB"
+    "RegionCode": "en-GB",
+    "Updating": false
   },
   {
     "Id": "4",
     "Name": "United States",
-    "RegionCode": "en-US"
+    "RegionCode": "US",
+    "Updating": false
   }
 ]

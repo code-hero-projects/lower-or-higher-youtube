@@ -12,10 +12,12 @@ namespace CodeHero.LowerOrHigherYoutube.API.Controllers
     public class TestController : ControllerBase
     {
         private readonly ICountryRepository _countryRepository;
+        private readonly IVideoRepository _videoRepository;
 
-        public TestController(ICountryRepository countryRepository)
+        public TestController(ICountryRepository countryRepository, IVideoRepository videoRepository)
         {
             _countryRepository = countryRepository;
+            _videoRepository = videoRepository;
         }
 
         [HttpGet]
@@ -49,7 +51,6 @@ namespace CodeHero.LowerOrHigherYoutube.API.Controllers
 
             // Read by Id
             // var result = await _countryRepository.GetAsync(entity => entity.Id == "1");
-
             return Ok();
         }
     }

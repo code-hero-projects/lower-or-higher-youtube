@@ -2,7 +2,7 @@
   {
     "Id": "1",
     "Name": "Video 1",
-    "SecondaryId": "ahsidfvboasdkfmbsdfb",
+    "Channel": "Channel 1",
     "Views": 250,
     "Thumbnail": "ciausdbciasdc",
     "CountryId": "1"
@@ -10,7 +10,7 @@
   {
     "Id": "2",
     "Name": "Video 2",
-    "SecondaryId": "alwuegdchiajsd",
+    "Channel":  "Channel 2",
     "Views": 300,
     "Thumbnail": "paieyroqref",
     "CountryId": "1"
@@ -18,7 +18,7 @@
   {
     "Id": "3",
     "Name": "Video 3",
-    "SecondaryId": "akuvgwefciohansdv",
+    "Channel": "Channel 3",
     "Views": 350,
     "Thumbnail": "ywoietjgb",
     "CountryId": "2"
@@ -26,7 +26,7 @@
   {
     "Id": "4",
     "Name": "Video 4",
-    "SecondaryId": "tyxdgcabhk",
+    "Channel": "Channel 4",
     "Views": 400,
     "Thumbnail": "qwfgwieyrghwr",
     "CountryId": "2"
@@ -34,7 +34,7 @@
   {
     "Id": "5",
     "Name": "Video 5",
-    "SecondaryId": "ykdmfdvhsdfv",
+    "Channel": "Channel 5",
     "Views": 150,
     "Thumbnail": "ajwefguciajkvca",
     "CountryId": "3"
@@ -42,7 +42,7 @@
   {
     "Id": "6",
     "Name": "Video 6",
-    "SecondaryId": "asjgvfiahsjvd",
+    "Channel": "Channel 6",
     "Views": 500,
     "Thumbnail": "aihsdfvbakjdfsvas",
     "CountryId": "3"
@@ -50,7 +50,7 @@
   {
     "Id": "7",
     "Name": "Video 7",
-    "SecondaryId": "ausfyguioaenfgkqrg",
+    "Channel": "Channel 7",
     "Views": 600,
     "Thumbnail": "ajasidchvaisudhvd",
     "CountryId": "3"

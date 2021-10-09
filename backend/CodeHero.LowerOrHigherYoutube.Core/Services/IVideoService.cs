@@ -6,6 +6,6 @@ namespace CodeHero.LowerOrHigherYoutube.Core.Services
 {
     public interface IVideoService
     {
-        Task<IEnumerable<Video>> ListAsync(string country);
+        Task<IEnumerable<Video>> ListAsync(string countryId);
     }
 }

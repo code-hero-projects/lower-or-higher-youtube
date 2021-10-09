@@ -2,9 +2,9 @@
 {
     public static class InfrastuctureConstants
     {
-        public const string CountriesContainer = "Countries";
+        public const string CountriesContainerName = "Countries";
 
-        public const string VideosContainer = "Videos";
+        public const string VideosContainerName = "Videos";
 
         public const string PartitionKey = "/Id";
 
