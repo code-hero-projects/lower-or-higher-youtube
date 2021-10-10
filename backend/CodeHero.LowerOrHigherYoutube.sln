@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeHero.LowerOrHigherYoutu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeHero.LowerOrHigherYoutube.Core", "CodeHero.LowerOrHigherYoutube.Core\CodeHero.LowerOrHigherYoutube.Core.csproj", "{3525D959-42C7-4AFE-9561-4FA613BA7614}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeHero.LowerOrHigherYoutube.Infrastructure", "CodeHero.LowerOrHigherYoutube.Infrastructure\CodeHero.LowerOrHigherYoutube.Infrastructure.csproj", "{F828E98E-E47B-40E2-B7F8-87AC9C28EA57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeHero.LowerOrHigherYoutube.Database", "CodeHero.LowerOrHigherYoutube.Database\CodeHero.LowerOrHigherYoutube.Database.csproj", "{F828E98E-E47B-40E2-B7F8-87AC9C28EA57}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{7840F9CB-7158-4A75-91E8-0615D946C2BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +38,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F828E98E-E47B-40E2-B7F8-87AC9C28EA57} = {7840F9CB-7158-4A75-91E8-0615D946C2BC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3C217600-D224-4854-9DBB-4A424D2D5E6A}

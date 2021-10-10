@@ -1,12 +1,8 @@
 ﻿using CodeHero.LowerOrHigherYoutube.Core.Model;
 using CodeHero.LowerOrHigherYoutube.Core.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Infrastructure;
 
-namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Repositories
+namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Repositories
 {
     public class VideoRepository : BaseRepository<Video>, IVideoRepository
     {

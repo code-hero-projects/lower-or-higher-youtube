@@ -24,7 +24,7 @@ namespace CodeHero.LowerOrHigherYoutube.Application.Services
             _url = youtubeOptions.ApiUrl.Replace(ApplicationConstants.ApiKeyVariable, youtubeOptions.ApiKey);
         }
 
-        public async Task<IEnumerable<Video>> ListAsync(string countryId)
+        public async Task<IEnumerable<Video>> ListAsync(int countryId)
         {
             var country = await WaitForCountry(countryId);
             var videos = await _videoRepository.FilterAsync(video => video.CountryId == countryId);
@@ -45,7 +45,7 @@ namespace CodeHero.LowerOrHigherYoutube.Application.Services
 
         // TODO: maybe try to work out something better
         // TODO: use retry policy
-        private async Task<Country> WaitForCountry(string countryId)
+        private async Task<Country> WaitForCountry(int countryId)
         {
             var country = await _countryRepository.GetAsync(country => country.Id == countryId);
             while (country.Updating)
@@ -55,7 +55,7 @@ namespace CodeHero.LowerOrHigherYoutube.Application.Services
             return country;
         }
 
-        private async Task<IEnumerable<Video>> FetchNewVideos(string countryRegionCode, string countryId)
+        private async Task<IEnumerable<Video>> FetchNewVideos(string countryRegionCode, int countryId)
         {
             var url = _url.Replace(ApplicationConstants.RegionCodeVariable, countryRegionCode);
             var httpClient = new HttpClient();
@@ -64,11 +64,10 @@ namespace CodeHero.LowerOrHigherYoutube.Application.Services
             var youTubeApiResponse = JsonConvert.DeserializeObject<YouTubeResponse>(result);
             return youTubeApiResponse.Items.Select(item => new Video()
             {
-                Id = item.Id,
                 Name = item.Snippet.Title,
                 Channel = item.Snippet.ChannelTitle,
                 Thumbnail = item.Snippet.Thumbnails.Maxres.Url,
-                Views = item.Statistics.ViewCount,
+                Views = int.Parse(item.Statistics.ViewCount),
                 CountryId = countryId
             });
         }

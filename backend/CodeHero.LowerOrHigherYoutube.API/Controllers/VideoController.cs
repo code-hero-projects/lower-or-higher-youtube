@@ -16,7 +16,7 @@ namespace CodeHero.LowerOrHigherYoutube.API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> ListAsync([FromQuery] string country)
+        public async Task<ActionResult> ListAsync([FromQuery] int country)
         {
             var videoList = await _videoService.ListAsync(country);
             return Ok(videoList);

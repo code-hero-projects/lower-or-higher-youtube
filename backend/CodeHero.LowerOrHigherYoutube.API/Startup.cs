@@ -1,6 +1,6 @@
 using CodeHero.LowerOrHigherYoutube.API.Extensions;
 using CodeHero.LowerOrHigherYoutube.Application.Extensions;
-using CodeHero.LowerOrHigherYoutube.Infrastructure.Extensions;
+using CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;

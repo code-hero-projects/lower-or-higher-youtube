@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Hosting;
 using System;
 
-namespace CodeHero.LowerOrHigherYoutube.Infrastructure
+namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Infrastructure
 {
     public static class DatabaseInitializer
     {
@@ -14,7 +14,7 @@ namespace CodeHero.LowerOrHigherYoutube.Infrastructure
                 var dbContext = serviceScope.ServiceProvider.GetService<DatabaseContext>();
                 dbContext.SeedData();
             }
-            catch(Exception)
+            catch(Exception ex)
             {
 
             }

@@ -1,27 +1,29 @@
 ﻿using CodeHero.LowerOrHigherYoutube.Core.Model;
+using CodeHero.LowerOrHigherYoutube.Database.Mappings;
+using CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System;
 using System.IO;
 using System.Reflection;
 
-namespace CodeHero.LowerOrHigherYoutube.Infrastructure
+namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Infrastructure
 {
     public class DatabaseContext : DbContext
     {
         public DbSet<Country> Countries { get; set; }
         public DbSet<Video> Videos { get; set; }
+        private readonly DatabaseConnectionOptions _databaseConnectionOptions;
 
-        public DatabaseContext(DbContextOptions options) : base(options)
+        public DatabaseContext(DbContextOptions options, DatabaseConnectionOptions databaseConnectionOptions) : base(options)
         {
-
+            _databaseConnectionOptions = databaseConnectionOptions;
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            modelBuilder.ApplyMapping(_databaseConnectionOptions);
         }
 
         public void SeedData()
