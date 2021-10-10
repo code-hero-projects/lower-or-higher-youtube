@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20211010130922_InitialMigration")]
+    [Migration("20211010161708_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,16 +22,16 @@ namespace CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql.Migrations
 
             modelBuilder.Entity("CodeHero.LowerOrHigherYoutube.Core.Model.Country", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<short>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
+                        .HasColumnType("smallint")
                         .HasColumnName("id")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityAlwaysColumn);
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("character varying(25)")
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)")
                         .HasColumnName("name");
 
                     b.Property<string>("RegionCode")
@@ -51,32 +51,28 @@ namespace CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql.Migrations
 
             modelBuilder.Entity("CodeHero.LowerOrHigherYoutube.Core.Model.Video", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<short>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityAlwaysColumn);
+                        .HasColumnType("smallint")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("Channel")
                         .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("character varying(25)")
+                        .HasColumnType("text")
                         .HasColumnName("channel");
 
-                    b.Property<int>("CountryId")
-                        .HasColumnType("integer")
+                    b.Property<short>("CountryId")
+                        .HasColumnType("smallint")
                         .HasColumnName("country_id");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)")
+                        .HasColumnType("text")
                         .HasColumnName("name");
 
                     b.Property<string>("Thumbnail")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)")
+                        .HasColumnType("text")
                         .HasColumnName("thumbnail");
 
                     b.Property<int>("Views")

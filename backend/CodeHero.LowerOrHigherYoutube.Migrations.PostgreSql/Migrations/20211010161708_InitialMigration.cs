@@ -11,11 +11,11 @@ namespace CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql.Migrations
                 name: "country",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "integer", nullable: false)
+                    id = table.Column<short>(type: "smallint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityAlwaysColumn),
                     region_code = table.Column<string>(type: "character varying(5)", maxLength: 5, nullable: false),
                     updating = table.Column<bool>(type: "boolean", nullable: false),
-                    name = table.Column<string>(type: "character varying(25)", maxLength: 25, nullable: false)
+                    name = table.Column<string>(type: "character varying(20)", maxLength: 20, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -26,17 +26,17 @@ namespace CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql.Migrations
                 name: "video",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityAlwaysColumn),
-                    channel = table.Column<string>(type: "character varying(25)", maxLength: 25, nullable: false),
+                    Id = table.Column<short>(type: "smallint", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    channel = table.Column<string>(type: "text", nullable: false),
                     views = table.Column<int>(type: "integer", nullable: false),
-                    thumbnail = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
-                    country_id = table.Column<int>(type: "integer", nullable: false),
-                    name = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false)
+                    thumbnail = table.Column<string>(type: "text", nullable: false),
+                    country_id = table.Column<short>(type: "smallint", nullable: false),
+                    name = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_video", x => x.id);
+                    table.PrimaryKey("PK_video", x => x.Id);
                 });
         }
 
