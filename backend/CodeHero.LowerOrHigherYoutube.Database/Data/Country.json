@@ -1,24 +1,20 @@
 ﻿[
   {
-    "Id": "1",
     "Name": "Portugal",
     "RegionCode": "pt-PT",
     "Updating":  false
   },
   {
-    "Id": "2",
     "Name": "Brasil",
     "RegionCode": "pt-BR",
-    "Updating": false
+    "Updating": true
   },
   {
-    "Id": "3",
     "Name": "England",
     "RegionCode": "en-GB",
     "Updating": false
   },
   {
-    "Id": "4",
     "Name": "United States",
     "RegionCode": "US",
     "Updating": false

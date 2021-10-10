@@ -1,6 +1,5 @@
 [
   {
-    "Id": 1,
     "Name": "Video 1",
     "Channel": "Channel 1",
     "Views": 250,
@@ -8,7 +7,6 @@
     "CountryId": 1
   },
   {
-    "Id": 2,
     "Name": "Video 2",
     "Channel":  "Channel 2",
     "Views": 300,
@@ -16,7 +14,6 @@
     "CountryId": 1
   },
   {
-    "Id": 3,
     "Name": "Video 3",
     "Channel": "Channel 3",
     "Views": 350,
@@ -24,7 +21,6 @@
     "CountryId": 2
   },
   {
-    "Id": 4,
     "Name": "Video 4",
     "Channel": "Channel 4",
     "Views": 400,
@@ -32,7 +28,6 @@
     "CountryId": 2
   },
   {
-    "Id": 5,
     "Name": "Video 5",
     "Channel": "Channel 5",
     "Views": 150,
@@ -40,7 +35,6 @@
     "CountryId": 3
   },
   {
-    "Id": 6,
     "Name": "Video 6",
     "Channel": "Channel 6",
     "Views": 500,
@@ -48,7 +42,6 @@
     "CountryId": 3
   },
   {
-    "Id": 7,
     "Name": "Video 7",
     "Channel": "Channel 7",
     "Views": 600,

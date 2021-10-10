@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 
@@ -8,15 +9,12 @@ namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Infrastructure
     {
         public static IHost InitialiseDatabase(this IHost host)
         {
-            try
+            using var serviceScope = host.Services.GetRequiredService<IServiceScopeFactory>().CreateScope();
+            var dbContext = serviceScope.ServiceProvider.GetService<DatabaseContext>();
+            if (!dbContext.Database.CanConnect())
             {
-                using var serviceScope = host.Services.GetRequiredService<IServiceScopeFactory>().CreateScope();
-                var dbContext = serviceScope.ServiceProvider.GetService<DatabaseContext>();
+                dbContext.Database.Migrate();
                 dbContext.SeedData();
-            }
-            catch(Exception ex)
-            {
-
             }
             
             return host;

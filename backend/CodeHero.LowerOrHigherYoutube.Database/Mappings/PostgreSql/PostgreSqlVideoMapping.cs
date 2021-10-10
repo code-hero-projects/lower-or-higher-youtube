@@ -1,11 +1,6 @@
 ﻿using CodeHero.LowerOrHigherYoutube.Core.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CodeHero.LowerOrHigherYoutube.Database.Mappings.PostgreSql
 {
@@ -16,6 +11,7 @@ namespace CodeHero.LowerOrHigherYoutube.Database.Mappings.PostgreSql
             builder.ToTable("video");
 
             builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).UseIdentityAlwaysColumn();
             builder.Property(x => x.Id).IsRequired();
             builder.Property(x => x.Id).HasColumnName("id");
 

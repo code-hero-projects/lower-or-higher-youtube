@@ -12,6 +12,8 @@ namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Extensions
 {
     public static class DependenciesRegistration
     {
+        private const string PostgreSqlAssembly = "CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql";
+
         public static IServiceCollection AddInfrastructureDependencies(this IServiceCollection services, IConfigurationSection configurationSection)
         {
             var databaseOptions = configurationSection.Get<DatabaseConnectionOptions>();
@@ -21,6 +23,9 @@ namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Extensions
             {
                 case DatabaseType.CosmosDb:
                     AddCosmosDb(services, databaseOptions).Wait();
+                    break;
+                case DatabaseType.PostgreSql:
+                    services.AddDbContext<DatabaseContext>(dbConfig => dbConfig.UseNpgsql(databaseOptions.ConnectionString, x => x.MigrationsAssembly(PostgreSqlAssembly)));
                     break;
                 case DatabaseType.Undefined:
                 default:

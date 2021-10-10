@@ -12,6 +12,7 @@ namespace CodeHero.LowerOrHigherYoutube.Database.Mappings.PostgreSql
 
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).IsRequired();
+            builder.Property(x => x.Id).UseIdentityAlwaysColumn();
             builder.Property(x => x.Id).HasColumnName("id");
 
             builder.Property(x => x.Name).IsRequired();
@@ -20,11 +21,11 @@ namespace CodeHero.LowerOrHigherYoutube.Database.Mappings.PostgreSql
 
             builder.Property(x => x.RegionCode).IsRequired();
             builder.Property(x => x.RegionCode).HasColumnName("region_code");
-            builder.Property(x => x.RegionCode).HasMaxLength(4);
+            builder.Property(x => x.RegionCode).HasMaxLength(5);
 
             builder.Property(x => x.Updating).IsRequired();
             builder.Property(x => x.Updating).HasColumnName("updating");
-            builder.Property(x => x.Updating).HasColumnType("bit");
+            builder.Property(x => x.Updating).HasColumnType("boolean");
         }
     }
 }
