@@ -22,7 +22,7 @@ namespace CodeHero.LowerOrHigherYoutube.Database.Mappings.PostgreSql
 
             builder.Property(x => x.RegionCode).IsRequired();
             builder.Property(x => x.RegionCode).HasColumnName("region_code");
-            builder.Property(x => x.RegionCode).HasMaxLength(5);
+            builder.Property(x => x.RegionCode).HasMaxLength(3);
 
             builder.Property(x => x.Updating).IsRequired();
             builder.Property(x => x.Updating).HasColumnName("updating");

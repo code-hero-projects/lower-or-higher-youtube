@@ -1,17 +1,17 @@
 ﻿[
   {
     "Name": "Portugal",
-    "RegionCode": "pt-PT",
+    "RegionCode": "PT",
     "Updating":  false
   },
   {
     "Name": "Brasil",
-    "RegionCode": "pt-BR",
+    "RegionCode": "BR",
     "Updating": true
   },
   {
-    "Name": "England",
-    "RegionCode": "en-GB",
+    "Name": "United Kingdom",
+    "RegionCode": "GB",
     "Updating": false
   },
   {

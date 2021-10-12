@@ -7,7 +7,6 @@ namespace CodeHero.LowerOrHigherYoutube.VideoFetcher.Extensions
     {
         public static IServiceCollection AddVideoFetcherDependencies(this IServiceCollection services)
         {
-            services.AddSingleton<IVideoRenewal, VideoRenewal>();
             services.AddHostedService<VideoRenewalService>();
 
             return services;

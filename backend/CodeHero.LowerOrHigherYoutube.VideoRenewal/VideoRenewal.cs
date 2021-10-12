@@ -1,24 +1,23 @@
 ﻿using CodeHero.LowerOrHigherYoutube.Core.Model;
 using CodeHero.LowerOrHigherYoutube.Core.Repositories;
 using CodeHero.LowerOrHigherYoutube.Core.Services;
-using CodeHero.LowerOrHigherYoutube.VideoRenewal;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CodeHero.LowerOrHigherYoutube.VideoFetcher
+namespace CodeHero.LowerOrHigherYoutube.VideoRenewal
 {
-    public class VideoRenewal : IVideoRenewal
+    public class VideoRenewal
     {
         private readonly ICountryRepository _countryRepository;
         private readonly IVideoRepository _videoRepository;
-        private readonly IVideoSupplier _videoSuppluer;
+        private readonly IVideoSupplier _videoSupplier;
 
-        public VideoRenewal(ICountryRepository countryRepository, IVideoRepository videoRepository, IVideoSupplier videoSuppluer)
+        public VideoRenewal(ICountryRepository countryRepository, IVideoRepository videoRepository, IVideoSupplier videoSupplier)
         {
             _countryRepository = countryRepository;
             _videoRepository = videoRepository;
-            _videoSuppluer = videoSuppluer;
+            _videoSupplier = videoSupplier;
         }
 
         public async Task RenewVideos()
@@ -32,7 +31,7 @@ namespace CodeHero.LowerOrHigherYoutube.VideoFetcher
                 {
                     await UpdateCountry(country, true);
                     DeleteOldVideos(videos);
-                    var newVideos = await _videoSuppluer.Fetch(country);
+                    var newVideos = await _videoSupplier.Fetch(country);
                     await AddVideos(newVideos);
                     await UpdateCountry(country, false);
                 }

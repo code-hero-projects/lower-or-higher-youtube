@@ -1,45 +1,46 @@
-﻿using CodeHero.LowerOrHigherYoutube.VideoRenewal;
+﻿using CodeHero.LowerOrHigherYoutube.Core.Repositories;
+using CodeHero.LowerOrHigherYoutube.Core.Services;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CodeHero.LowerOrHigherYoutube.VideoFetcher
+namespace CodeHero.LowerOrHigherYoutube.VideoRenewal
 {
-    public class VideoRenewalService : IHostedService, IDisposable
+    public class VideoRenewalService : BackgroundService
     {
-        private readonly IVideoRenewal _videoRenewal;
+        private readonly IServiceProvider _serviceProvider;
         private readonly ILogger<VideoRenewalService> _logger;
-        private Timer _timer;
+        //private Timer _timer;
 
-        public VideoRenewalService(ILogger<VideoRenewalService> logger, IVideoRenewal videoRenewal)
-        {
+        public VideoRenewalService(ILogger<VideoRenewalService> logger, IServiceProvider serviceProvider)
+        {   
             _logger = logger;
-            _videoRenewal = videoRenewal;
+            _serviceProvider = serviceProvider;
         }
 
-        public void Dispose()
-        {
-            _timer?.Dispose();
-        }
-
-        public Task StartAsync(CancellationToken cancellationToken)
+        protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
             _logger.LogInformation("VideoFetcherService running.");
 
-            _timer = new Timer(_ => _videoRenewal.RenewVideos(), null, TimeSpan.Zero, TimeSpan.FromSeconds(5));
+            new Timer(async _ => await RenewVideos(), null, TimeSpan.Zero, TimeSpan.FromSeconds(10));
 
             return Task.CompletedTask;
         }
 
-        public Task StopAsync(CancellationToken cancellationToken)
+        private async Task RenewVideos()
         {
-            _logger.LogInformation("VideoFetcherService is stopping.");
+            using (var scope = _serviceProvider.CreateScope())
+            {
+                var countryRepository = scope.ServiceProvider.GetService<ICountryRepository>();
+                var videoRepository = scope.ServiceProvider.GetService<IVideoRepository>();
+                var videoSupplier = scope.ServiceProvider.GetService<IVideoSupplier>();
 
-            _timer?.Change(Timeout.Infinite, 0);
-
-            return Task.CompletedTask;
+                var videoRenewal = new VideoRenewal(countryRepository, videoRepository, videoSupplier);
+                await videoRenewal.RenewVideos();
+            }
         }
     }
 }

@@ -26,14 +26,34 @@ namespace CodeHero.LowerOrHigherYoutube.Application.Services
             var response = await httpClient.GetAsync(url);
             var result = await response.Content.ReadAsStringAsync();
             var youTubeApiResponse = JsonConvert.DeserializeObject<YouTubeResponse>(result);
-            return youTubeApiResponse.Items.Select(item => new Video()
+            return youTubeApiResponse.Items.Select(item =>
             {
-                Name = item.Snippet.Title,
-                Channel = item.Snippet.ChannelTitle,
-                Thumbnail = item.Snippet.Thumbnails.Maxres.Url,
-                Views = int.Parse(item.Statistics.ViewCount),
-                CountryId = country.Id
+                var views = int.Parse(item.Statistics.ViewCount);
+                var thumbnail = GetThumbnail(item.Snippet.Thumbnails);
+
+                return new Video()
+                {
+                    Name = item.Snippet.Title,
+                    Channel = item.Snippet.ChannelTitle,
+                    Thumbnail = thumbnail,
+                    Views = views,
+                    CountryId = country.Id
+                };
             });
+        }
+
+        private static string GetThumbnail(Thumbnails thumbnails)
+        {
+            var thumbnailList = new List<ThumbnailInfo>()
+            {
+                thumbnails.Maxres,
+                thumbnails.Standard,
+                thumbnails.High,
+                thumbnails.Medium,
+                thumbnails.Default
+            };
+
+            return thumbnailList.Find(thumbnail => thumbnail != null).Url;
         }
     }
 }
