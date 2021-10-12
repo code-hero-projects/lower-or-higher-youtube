@@ -1,6 +1,8 @@
 using CodeHero.LowerOrHigherYoutube.API.Extensions;
+using CodeHero.LowerOrHigherYoutube.API.Middlewares;
 using CodeHero.LowerOrHigherYoutube.Application.Extensions;
 using CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Extensions;
+using CodeHero.LowerOrHigherYoutube.VideoFetcher.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -18,7 +20,6 @@ namespace CodeHero.LowerOrHigherYoutube.API
             _configuration = configuration;
         }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             var databaseOptions = _configuration.GetSection(ApiConstants.AppSettingsDatabaseSection);
@@ -27,10 +28,12 @@ namespace CodeHero.LowerOrHigherYoutube.API
             services
                 .AddInfrastructureDependencies(databaseOptions)
                 .AddApplicationDependencies(youTubeOptions)
-                .AddApiDependencies();
+                .AddApiDependencies()
+                .AddVideoFetcherDependencies();
+
+            services.AddLogging();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -43,6 +46,8 @@ namespace CodeHero.LowerOrHigherYoutube.API
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseMiddleware<LogRequestMiddleware>();
 
             app.UseCors(ApiConstants.AllowAllCorsPolicy);
 

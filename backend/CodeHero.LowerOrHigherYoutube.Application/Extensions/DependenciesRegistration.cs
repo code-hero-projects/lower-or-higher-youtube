@@ -18,6 +18,7 @@ namespace CodeHero.LowerOrHigherYoutube.Application.Extensions
 
             services.AddScoped<ICountryService, CountryService>();
             services.AddScoped<IVideoService, VideoService>();
+            services.AddScoped<IVideoSupplier, YouTubeVideoSupplier>();
 
             return services;
         }

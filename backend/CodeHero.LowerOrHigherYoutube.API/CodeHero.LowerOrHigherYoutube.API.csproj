@@ -1,7 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>585ade93-d992-4833-ae71-ebf0b9c5f7b6</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
@@ -9,12 +12,14 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.14" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CodeHero.LowerOrHigherYoutube.Application\CodeHero.LowerOrHigherYoutube.Application.csproj" />
     <ProjectReference Include="..\CodeHero.LowerOrHigherYoutube.Database\CodeHero.LowerOrHigherYoutube.Database.csproj" />
     <ProjectReference Include="..\CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql\CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql.csproj" />
+    <ProjectReference Include="..\CodeHero.LowerOrHigherYoutube.VideoRenewal\CodeHero.LowerOrHigherYoutube.VideoRenewal.csproj" />
   </ItemGroup>
 
 </Project>

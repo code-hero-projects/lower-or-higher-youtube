@@ -26,7 +26,7 @@ namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Repositories
             await _dbSet.AddAsync(entity);
         }
 
-        public void DeleteAsync(T entity)
+        public void Delete(T entity)
         {
             _dbSet.Remove(entity);
         }
@@ -49,6 +49,11 @@ namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Repositories
         public async Task SaveChangesAsync()
         {
             await _dbContext.SaveChangesAsync();
+        }
+
+        public void Update(T entity)
+        {
+            _dbContext.Update(entity);
         }
     }
 }

@@ -2,12 +2,9 @@
 using CodeHero.LowerOrHigherYoutube.Core.Model;
 using System.Collections.Generic;
 using CodeHero.LowerOrHigherYoutube.Core.Repositories;
-using CodeHero.LowerOrHigherYoutube.Application.Configuration;
 using System.Threading.Tasks;
 using System.Linq;
-using System.Net.Http;
-using Newtonsoft.Json;
-using CodeHero.LowerOrHigherYoutube.Application.Services.YouTubeApiResponse;
+using System.Threading;
 
 namespace CodeHero.LowerOrHigherYoutube.Application.Services
 {
@@ -15,13 +12,14 @@ namespace CodeHero.LowerOrHigherYoutube.Application.Services
     {
         private readonly IVideoRepository _videoRepository;
         private readonly ICountryRepository _countryRepository;
-        private readonly string _url;
+        private readonly IVideoSupplier _videoSupplier;
+        private const int RetryTime = 1000;
 
-        public VideoService(IVideoRepository videoRepository, ICountryRepository countryRepository, YouTubeOptions youtubeOptions)
+        public VideoService(IVideoRepository videoRepository, ICountryRepository countryRepository, IVideoSupplier videoSupplier)
         {
             _videoRepository = videoRepository;
             _countryRepository = countryRepository;
-            _url = youtubeOptions.ApiUrl.Replace(ApplicationConstants.ApiKeyVariable, youtubeOptions.ApiKey);
+            _videoSupplier = videoSupplier;
         }
 
         public async Task<IEnumerable<Video>> ListAsync(int countryId)
@@ -31,7 +29,7 @@ namespace CodeHero.LowerOrHigherYoutube.Application.Services
 
             if (videos.Count() == 0)
             {
-                var newVideos = await FetchNewVideos(country.RegionCode, countryId);
+                var newVideos = await _videoSupplier.Fetch(country);
                 foreach (var video in newVideos)
                 {
                     await _videoRepository.AddAsync(video);
@@ -43,33 +41,15 @@ namespace CodeHero.LowerOrHigherYoutube.Application.Services
             return videos;
         }
 
-        // TODO: maybe try to work out something better
-        // TODO: use retry policy
         private async Task<Country> WaitForCountry(int countryId)
         {
             var country = await _countryRepository.GetAsync(country => country.Id == countryId);
             while (country.Updating)
             {
+                Thread.Sleep(RetryTime);
                 country = await _countryRepository.GetAsync(country => country.Id == countryId);
             }
             return country;
-        }
-
-        private async Task<IEnumerable<Video>> FetchNewVideos(string countryRegionCode, int countryId)
-        {
-            var url = _url.Replace(ApplicationConstants.RegionCodeVariable, countryRegionCode);
-            var httpClient = new HttpClient();
-            var response = await httpClient.GetAsync(url);
-            var result = await response.Content.ReadAsStringAsync();
-            var youTubeApiResponse = JsonConvert.DeserializeObject<YouTubeResponse>(result);
-            return youTubeApiResponse.Items.Select(item => new Video()
-            {
-                Name = item.Snippet.Title,
-                Channel = item.Snippet.ChannelTitle,
-                Thumbnail = item.Snippet.Thumbnails.Maxres.Url,
-                Views = int.Parse(item.Statistics.ViewCount),
-                CountryId = countryId
-            });
         }
     }
 }

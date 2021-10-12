@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeHero.LowerOrHigherYoutu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{7840F9CB-7158-4A75-91E8-0615D946C2BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql", "CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql\CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql.csproj", "{BA51D392-1585-4731-9A60-19BFC505598F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql", "CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql\CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql.csproj", "{BA51D392-1585-4731-9A60-19BFC505598F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeHero.LowerOrHigherYoutube.VideoRenewal", "CodeHero.LowerOrHigherYoutube.VideoRenewal\CodeHero.LowerOrHigherYoutube.VideoRenewal.csproj", "{7C6959AE-0B77-4EE1-A0A7-7C69AE750FC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{BA51D392-1585-4731-9A60-19BFC505598F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA51D392-1585-4731-9A60-19BFC505598F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA51D392-1585-4731-9A60-19BFC505598F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C6959AE-0B77-4EE1-A0A7-7C69AE750FC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C6959AE-0B77-4EE1-A0A7-7C69AE750FC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C6959AE-0B77-4EE1-A0A7-7C69AE750FC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C6959AE-0B77-4EE1-A0A7-7C69AE750FC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F828E98E-E47B-40E2-B7F8-87AC9C28EA57} = {7840F9CB-7158-4A75-91E8-0615D946C2BC}
 		{BA51D392-1585-4731-9A60-19BFC505598F} = {7840F9CB-7158-4A75-91E8-0615D946C2BC}
+		{7C6959AE-0B77-4EE1-A0A7-7C69AE750FC1} = {7840F9CB-7158-4A75-91E8-0615D946C2BC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3C217600-D224-4854-9DBB-4A424D2D5E6A}

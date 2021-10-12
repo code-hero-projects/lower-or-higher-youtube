@@ -13,17 +13,17 @@ namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Infrastructure
     {
         public DbSet<Country> Countries { get; set; }
         public DbSet<Video> Videos { get; set; }
-        private readonly DatabaseConnectionOptions _databaseConnectionOptions;
+        private readonly EntitiesConfiguration _entitiesConfiguration;
 
-        public DatabaseContext(DbContextOptions options, DatabaseConnectionOptions databaseConnectionOptions) : base(options)
+        public DatabaseContext(EntitiesConfiguration entitiesConfiguration, DbContextOptions options) : base(options)
         {
-            _databaseConnectionOptions = databaseConnectionOptions;
+            _entitiesConfiguration = entitiesConfiguration;
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.ApplyMapping(_databaseConnectionOptions);
+            _entitiesConfiguration.ApplyConfiguration(modelBuilder);
         }
 
         public void SeedData()
