@@ -7,5 +7,7 @@
         public const string AppSettingsDatabaseSection = "Database";
 
         public const string AppSettingsYouTubeSection = "YouTube";
+
+        public const string AppSettingsTimersSection = "Timers";
     }
 }

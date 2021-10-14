@@ -5,6 +5,7 @@ using CodeHero.LowerOrHigherYoutube.Core.Repositories;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Threading;
+using CodeHero.LowerOrHigherYoutube.Core.Configuration;
 
 namespace CodeHero.LowerOrHigherYoutube.Application.Services
 {
@@ -13,13 +14,14 @@ namespace CodeHero.LowerOrHigherYoutube.Application.Services
         private readonly IVideoRepository _videoRepository;
         private readonly ICountryRepository _countryRepository;
         private readonly IVideoSupplier _videoSupplier;
-        private const int RetryTime = 1000;
+        private readonly int _retryTime;
 
-        public VideoService(IVideoRepository videoRepository, ICountryRepository countryRepository, IVideoSupplier videoSupplier)
+        public VideoService(IVideoRepository videoRepository, ICountryRepository countryRepository, IVideoSupplier videoSupplier, TimerOptions timerOptions)
         {
             _videoRepository = videoRepository;
             _countryRepository = countryRepository;
             _videoSupplier = videoSupplier;
+            _retryTime = timerOptions.FetchCountryWhenUpdatingTimeoutInMilliSeconds;
         }
 
         public async Task<IEnumerable<Video>> ListAsync(int countryId)
@@ -46,7 +48,7 @@ namespace CodeHero.LowerOrHigherYoutube.Application.Services
             var country = await _countryRepository.GetAsync(country => country.Id == countryId);
             while (country.Updating)
             {
-                Thread.Sleep(RetryTime);
+                Thread.Sleep(_retryTime);
                 country = await _countryRepository.GetAsync(country => country.Id == countryId);
             }
             return country;

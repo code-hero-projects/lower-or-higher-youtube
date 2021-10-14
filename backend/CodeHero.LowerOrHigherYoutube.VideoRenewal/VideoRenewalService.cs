@@ -1,4 +1,5 @@
-﻿using CodeHero.LowerOrHigherYoutube.Core.Repositories;
+﻿using CodeHero.LowerOrHigherYoutube.Core.Configuration;
+using CodeHero.LowerOrHigherYoutube.Core.Repositories;
 using CodeHero.LowerOrHigherYoutube.Core.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -13,7 +14,6 @@ namespace CodeHero.LowerOrHigherYoutube.VideoRenewal
     {
         private readonly IServiceProvider _serviceProvider;
         private readonly ILogger<VideoRenewalService> _logger;
-        //private Timer _timer;
 
         public VideoRenewalService(ILogger<VideoRenewalService> logger, IServiceProvider serviceProvider)
         {   
@@ -24,8 +24,13 @@ namespace CodeHero.LowerOrHigherYoutube.VideoRenewal
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
             _logger.LogInformation("VideoFetcherService running.");
-
-            new Timer(async _ => await RenewVideos(), null, TimeSpan.Zero, TimeSpan.FromSeconds(10));
+            
+            using (var scope = _serviceProvider.CreateScope())
+            {
+                var timerOptions = scope.ServiceProvider.GetService<TimerOptions>();
+                new Timer(async _ => await RenewVideos(), null, TimeSpan.Zero, TimeSpan.FromHours(timerOptions.RenewVideosDelayInHours));
+            }
+            
 
             return Task.CompletedTask;
         }

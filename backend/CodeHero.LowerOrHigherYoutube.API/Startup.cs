@@ -24,10 +24,11 @@ namespace CodeHero.LowerOrHigherYoutube.API
         {
             var databaseOptions = _configuration.GetSection(ApiConstants.AppSettingsDatabaseSection);
             var youTubeOptions = _configuration.GetSection(ApiConstants.AppSettingsYouTubeSection);
+            var timerOptions = _configuration.GetSection(ApiConstants.AppSettingsTimersSection);
 
             services
                 .AddInfrastructureDependencies(databaseOptions)
-                .AddApplicationDependencies(youTubeOptions)
+                .AddApplicationDependencies(youTubeOptions, timerOptions)
                 .AddApiDependencies()
                 .AddVideoFetcherDependencies();
 
