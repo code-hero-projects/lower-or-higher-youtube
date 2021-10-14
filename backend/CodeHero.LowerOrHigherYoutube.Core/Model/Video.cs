@@ -2,6 +2,7 @@
 {
     public class Video : BaseModel
     {
+        public int Id { get; set; }
         public string Channel { get; set; }
         public int Views { get; set; }
         public string Thumbnail { get; set; }

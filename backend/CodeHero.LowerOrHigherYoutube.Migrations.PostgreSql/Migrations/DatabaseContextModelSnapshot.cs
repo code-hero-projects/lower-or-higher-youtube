@@ -28,14 +28,13 @@ namespace CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("character varying(20)")
+                        .HasColumnType("text")
                         .HasColumnName("name");
 
                     b.Property<string>("RegionCode")
                         .IsRequired()
-                        .HasMaxLength(5)
-                        .HasColumnType("character varying(5)")
+                        .HasMaxLength(3)
+                        .HasColumnType("character varying(3)")
                         .HasColumnName("region_code");
 
                     b.Property<bool>("Updating")
@@ -49,10 +48,10 @@ namespace CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql.Migrations
 
             modelBuilder.Entity("CodeHero.LowerOrHigherYoutube.Core.Model.Video", b =>
                 {
-                    b.Property<short>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("smallint")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityAlwaysColumn);
 
                     b.Property<string>("Channel")
                         .IsRequired()

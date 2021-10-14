@@ -10,6 +10,11 @@ namespace CodeHero.LowerOrHigherYoutube.Database.Mappings.PostgreSql
         {
             builder.ToTable("video");
 
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).IsRequired();
+            builder.Property(x => x.Name).HasColumnName("id");
+            builder.Property(x => x.Id).UseIdentityAlwaysColumn();
+
             builder.Property(x => x.Name).IsRequired();
             builder.Property(x => x.Name).HasColumnName("name");
 

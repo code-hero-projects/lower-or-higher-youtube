@@ -14,11 +14,9 @@ namespace CodeHero.LowerOrHigherYoutube.Database.Mappings.PostgreSql
             builder.Property(x => x.Id).IsRequired();
             builder.Property(x => x.Id).UseIdentityAlwaysColumn();
             builder.Property(x => x.Id).HasColumnName("id");
-            builder.Property(x => x.Id).HasColumnType("smallint");
 
             builder.Property(x => x.Name).IsRequired();
             builder.Property(x => x.Name).HasColumnName("name");
-            builder.Property(x => x.Name).HasMaxLength(20);
 
             builder.Property(x => x.RegionCode).IsRequired();
             builder.Property(x => x.RegionCode).HasColumnName("region_code");
