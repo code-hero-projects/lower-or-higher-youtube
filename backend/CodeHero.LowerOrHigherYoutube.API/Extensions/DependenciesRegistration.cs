@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 using System.Text.Json.Serialization;
 
 namespace CodeHero.LowerOrHigherYoutube.API.Extensions
@@ -20,6 +21,8 @@ namespace CodeHero.LowerOrHigherYoutube.API.Extensions
             }));
 
             services.AddRouting(options => options.LowercaseUrls = true);
+
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             return services;
         }

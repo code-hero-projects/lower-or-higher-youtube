@@ -1,6 +1,9 @@
-﻿using CodeHero.LowerOrHigherYoutube.Core.Services;
+﻿using AutoMapper;
+using CodeHero.LowerOrHigherYoutube.API.Responses;
+using CodeHero.LowerOrHigherYoutube.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace CodeHero.LowerOrHigherYoutube.API.Controllers
 {
@@ -9,17 +12,20 @@ namespace CodeHero.LowerOrHigherYoutube.API.Controllers
     public class CountryController : ControllerBase
     {
         private readonly ICountryService _countryService;
+        private readonly IMapper _mapper;
 
-        public CountryController(ICountryService countryService)
+        public CountryController(ICountryService countryService, IMapper mapper)
         {
             _countryService = countryService;
+            _mapper = mapper;
         }
 
         [HttpGet]
         public async Task<ActionResult> ListAsync()
         {
             var countries = await _countryService.ListAsync();
-            return Ok(countries);
+            var countriesResponse = countries.Select(country => _mapper.Map<CountryResponse>(country));
+            return Ok(countriesResponse);
         }
     }
 }
