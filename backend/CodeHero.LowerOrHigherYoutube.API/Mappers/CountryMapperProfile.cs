@@ -1,14 +1,11 @@
 ﻿using AutoMapper;
-using CodeHero.LowerOrHigherYoutube.API.Responses;
-using CodeHero.LowerOrHigherYoutube.Core.Model;
+using CodeHero.LowerOrHigherYouTube.API.Responses;
+using CodeHero.LowerOrHigherYouTube.Core.Model;
 
-namespace CodeHero.LowerOrHigherYoutube.API.Mappers
+namespace CodeHero.LowerOrHigherYouTube.API.Mappers
 {
     public class CountryMapperProfile : Profile
     {
-        public CountryMapperProfile()
-        {
-            CreateMap<Country, CountryResponse>();
-        }
+        public CountryMapperProfile() => CreateMap<Country, CountryResponse>();
     }
 }

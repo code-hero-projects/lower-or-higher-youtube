@@ -1,4 +1,4 @@
-﻿namespace CodeHero.LowerOrHigherYoutube.Core.Model
+﻿namespace CodeHero.LowerOrHigherYouTube.Core.Model
 {
     public class BaseModel
     {

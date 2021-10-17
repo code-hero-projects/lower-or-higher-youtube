@@ -1,4 +1,4 @@
-﻿namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Infrastructure
+﻿namespace CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Infrastructure
 {
     public static class InfrastuctureConstants
     {
@@ -8,8 +8,6 @@
 
         public const string PartitionKey = "/Name";
 
-        public const string CountrySeedDataFile = "../CodeHero.LowerOrHigherYoutube.Database/Data/Country.json";
-
-        public const string VideoSeedDataFile = "../CodeHero.LowerOrHigherYoutube.Database/Data/Video.json";
+        public const string CountrySeedDataFile = "../CodeHero.LowerOrHigherYouTube.Database/Data/Country.json";
     }
 }

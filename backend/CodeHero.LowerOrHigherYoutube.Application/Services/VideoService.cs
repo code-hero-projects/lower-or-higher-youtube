@@ -1,13 +1,12 @@
-﻿using CodeHero.LowerOrHigherYoutube.Core.Services;
-using CodeHero.LowerOrHigherYoutube.Core.Model;
+﻿using CodeHero.LowerOrHigherYouTube.Core.Services;
+using CodeHero.LowerOrHigherYouTube.Core.Model;
 using System.Collections.Generic;
-using CodeHero.LowerOrHigherYoutube.Core.Repositories;
+using CodeHero.LowerOrHigherYouTube.Core.Repositories;
 using System.Threading.Tasks;
-using System.Linq;
 using System.Threading;
-using CodeHero.LowerOrHigherYoutube.Core.Configuration;
+using CodeHero.LowerOrHigherYouTube.Core.Configuration;
 
-namespace CodeHero.LowerOrHigherYoutube.Application.Services
+namespace CodeHero.LowerOrHigherYouTube.Application.Services
 {
     public class VideoService : IVideoService
     {
@@ -28,18 +27,6 @@ namespace CodeHero.LowerOrHigherYoutube.Application.Services
         {
             var country = await WaitForCountry(countryId);
             var videos = await _videoRepository.FilterAsync(video => video.CountryId == countryId);
-
-            if (videos.Count() == 0)
-            {
-                var newVideos = await _videoSupplier.Fetch(country);
-                foreach (var video in newVideos)
-                {
-                    await _videoRepository.AddAsync(video);
-                }
-                await _videoRepository.SaveChangesAsync();
-                videos = newVideos;
-            }
-
             return videos;
         }
 

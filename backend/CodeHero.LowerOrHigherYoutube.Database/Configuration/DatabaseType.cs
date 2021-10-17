@@ -1,4 +1,4 @@
-﻿namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Configuration
+﻿namespace CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Configuration
 {
     public enum DatabaseType
     {

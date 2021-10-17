@@ -1,8 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
 using System.Reflection;
 using System.Text.Json.Serialization;
 
-namespace CodeHero.LowerOrHigherYoutube.API.Extensions
+namespace CodeHero.LowerOrHigherYouTube.API.Extensions
 {
     public static class DependenciesRegistration
     {
@@ -20,9 +21,14 @@ namespace CodeHero.LowerOrHigherYoutube.API.Extensions
                     .AllowAnyHeader();
             }));
 
-            services.AddRouting(options => options.LowercaseUrls = true);
+            services
+                .AddRouting(options => options.LowercaseUrls = true)
+                .AddAutoMapper(Assembly.GetExecutingAssembly());
 
-            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc(ApiConstants.SwaggerVersion, new OpenApiInfo { Title = ApiConstants.SwaggerTitle, Version = ApiConstants.SwaggerVersion });
+            });
 
             return services;
         }

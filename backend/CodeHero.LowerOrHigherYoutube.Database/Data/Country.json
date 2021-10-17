@@ -1,15 +1,5 @@
 ﻿[
   {
-    "Name": "Afghanistan",
-    "RegionCode": "AF",
-    "Updating": false
-  },
-  {
-    "Name": "Aland Islands",
-    "RegionCode": "AX",
-    "Updating": false
-  },
-  {
     "Name": "Albania",
     "RegionCode": "AL",
     "Updating": false
@@ -20,36 +10,6 @@
     "Updating": false
   },
   {
-    "Name": "American Samoa",
-    "RegionCode": "AS",
-    "Updating": false
-  },
-  {
-    "Name": "Andorra",
-    "RegionCode": "AD",
-    "Updating": false
-  },
-  {
-    "Name": "Angola",
-    "RegionCode": "AO",
-    "Updating": false
-  },
-  {
-    "Name": "Anguilla",
-    "RegionCode": "AI",
-    "Updating": false
-  },
-  {
-    "Name": "Antartica",
-    "RegionCode": "AQ",
-    "Updating": false
-  },
-  {
-    "Name": "Antigua and Barbuda",
-    "RegionCode": "AG",
-    "Updating": false
-  },
-  {
     "Name": "Argentina",
     "RegionCode": "AR",
     "Updating": false
@@ -57,11 +17,6 @@
   {
     "Name": "Armenia",
     "RegionCode": "AM",
-    "Updating": false
-  },
-  {
-    "Name": "Aruba",
-    "RegionCode": "AW",
     "Updating": false
   },
   {
@@ -80,11 +35,6 @@
     "Updating": false
   },
   {
-    "Name": "Bahamas",
-    "RegionCode": "BS",
-    "Updating": false
-  },
-  {
     "Name": "Bahrain",
     "RegionCode": "BH",
     "Updating": false
@@ -92,11 +42,6 @@
   {
     "Name": "Bangladesh",
     "RegionCode": "BD",
-    "Updating": false
-  },
-  {
-    "Name": "Barbados",
-    "RegionCode": "BB",
     "Updating": false
   },
   {
@@ -110,33 +55,8 @@
     "Updating": false
   },
   {
-    "Name": "Belize",
-    "RegionCode": "BZ",
-    "Updating": false
-  },
-  {
-    "Name": "Benin",
-    "RegionCode": "BJ",
-    "Updating": false
-  },
-  {
-    "Name": "Bermuda",
-    "RegionCode": "BM",
-    "Updating": false
-  },
-  {
-    "Name": "Bhutan",
-    "RegionCode": "BT",
-    "Updating": false
-  },
-  {
     "Name": "Bolivia",
     "RegionCode": "BO",
-    "Updating": false
-  },
-  {
-    "Name": "Bonaire, Sint Eustatius and Saba",
-    "RegionCode": "BQ",
     "Updating": false
   },
   {
@@ -145,28 +65,8 @@
     "Updating": false
   },
   {
-    "Name": "Botswana",
-    "RegionCode": "BW",
-    "Updating": false
-  },
-  {
-    "Name": "Bouvet Island",
-    "RegionCode": "BV",
-    "Updating": false
-  },
-  {
     "Name": "Brazil",
     "RegionCode": "BR",
-    "Updating": false
-  },
-  {
-    "Name": "British Indian Ocean Territory",
-    "RegionCode": "IO",
-    "Updating": false
-  },
-  {
-    "Name": "Brunei Darussalam",
-    "RegionCode": "BN",
     "Updating": false
   },
   {
@@ -175,28 +75,8 @@
     "Updating": false
   },
   {
-    "Name": "Burkina Faso",
-    "RegionCode": "BF",
-    "Updating": false
-  },
-  {
-    "Name": "Burundi",
-    "RegionCode": "BI",
-    "Updating": false
-  },
-  {
-    "Name": "Cabo Verde",
-    "RegionCode": "CV",
-    "Updating": false
-  },
-  {
     "Name": "Cambodia",
     "RegionCode": "KH",
-    "Updating": false
-  },
-  {
-    "Name": "Cameroon",
-    "RegionCode": "CM",
     "Updating": false
   },
   {
@@ -205,38 +85,8 @@
     "Updating": false
   },
   {
-    "Name": "Cayman Islands",
-    "RegionCode": "KY",
-    "Updating": false
-  },
-  {
-    "Name": "Central African Republic",
-    "RegionCode": "CF",
-    "Updating": false
-  },
-  {
-    "Name": "Chad",
-    "RegionCode": "TD",
-    "Updating": false
-  },
-  {
     "Name": "Chile",
     "RegionCode": "CL",
-    "Updating": false
-  },
-  {
-    "Name": "China",
-    "RegionCode": "CN",
-    "Updating": false
-  },
-  {
-    "Name": "Christmas Island",
-    "RegionCode": "CX",
-    "Updating": false
-  },
-  {
-    "Name": "Cocos (Keeling) Islands",
-    "RegionCode": "CC",
     "Updating": false
   },
   {
@@ -245,43 +95,13 @@
     "Updating": false
   },
   {
-    "Name": "Comoros",
-    "RegionCode": "KM",
-    "Updating": false
-  },
-  {
-    "Name": "Congo",
-    "RegionCode": "CG",
-    "Updating": false
-  },
-  {
-    "Name": "Cook Islands",
-    "RegionCode": "CK",
-    "Updating": false
-  },
-  {
     "Name": "Costa Rica",
     "RegionCode": "CR",
     "Updating": false
   },
   {
-    "Name": "Côte d'Ivoire",
-    "RegionCode": "CI",
-    "Updating": false
-  },
-  {
     "Name": "Croatia",
     "RegionCode": "HR",
-    "Updating": false
-  },
-  {
-    "Name": "Cuba",
-    "RegionCode": "CU",
-    "Updating": false
-  },
-  {
-    "Name": "Curaçao",
-    "RegionCode": "CW",
     "Updating": false
   },
   {
@@ -295,23 +115,8 @@
     "Updating": false
   },
   {
-    "Name": "Democratic Republic of the Congo",
-    "RegionCode": "CD",
-    "Updating": false
-  },
-  {
     "Name": "Denmark",
     "RegionCode": "DK",
-    "Updating": false
-  },
-  {
-    "Name": "Djibouti",
-    "RegionCode": "DJ",
-    "Updating": false
-  },
-  {
-    "Name": "Dominica",
-    "RegionCode": "DM",
     "Updating": false
   },
   {
@@ -335,43 +140,8 @@
     "Updating": false
   },
   {
-    "Name": "Equatorial Guinea",
-    "RegionCode": "GQ",
-    "Updating": false
-  },
-  {
-    "Name": "Eritrea",
-    "RegionCode": "ER",
-    "Updating": false
-  },
-  {
     "Name": "Estonia",
     "RegionCode": "EE",
-    "Updating": false
-  },
-  {
-    "Name": "Eswatini",
-    "RegionCode": "SZ",
-    "Updating": false
-  },
-  {
-    "Name": "Ethiopia",
-    "RegionCode": "ET",
-    "Updating": false
-  },
-  {
-    "Name": "Falkland Islands (Malvinas)",
-    "RegionCode": "FK",
-    "Updating": false
-  },
-  {
-    "Name": "Faroe Islands",
-    "RegionCode": "FO",
-    "Updating": false
-  },
-  {
-    "Name": "Fiji",
-    "RegionCode": "FJ",
     "Updating": false
   },
   {
@@ -382,31 +152,6 @@
   {
     "Name": "France",
     "RegionCode": "FR",
-    "Updating": false
-  },
-  {
-    "Name": "French Guiana",
-    "RegionCode": "GF",
-    "Updating": false
-  },
-  {
-    "Name": "French Polynesia",
-    "RegionCode": "PF",
-    "Updating": false
-  },
-  {
-    "Name": "French Southern Territories",
-    "RegionCode": "TF",
-    "Updating": false
-  },
-  {
-    "Name": "Gabon",
-    "RegionCode": "GA",
-    "Updating": false
-  },
-  {
-    "Name": "Gambia",
-    "RegionCode": "GM",
     "Updating": false
   },
   {
@@ -425,68 +170,13 @@
     "Updating": false
   },
   {
-    "Name": "Gibraltar",
-    "RegionCode": "GI",
-    "Updating": false
-  },
-  {
     "Name": "Greece",
     "RegionCode": "GR",
     "Updating": false
   },
   {
-    "Name": "Greenland",
-    "RegionCode": "GL",
-    "Updating": false
-  },
-  {
-    "Name": "Grenada",
-    "RegionCode": "GD",
-    "Updating": false
-  },
-  {
-    "Name": "Guadeloupe",
-    "RegionCode": "GP",
-    "Updating": false
-  },
-  {
-    "Name": "Guam",
-    "RegionCode": "GU",
-    "Updating": false
-  },
-  {
     "Name": "Guatemala",
     "RegionCode": "GT",
-    "Updating": false
-  },
-  {
-    "Name": "Guernsey",
-    "RegionCode": "GG",
-    "Updating": false
-  },
-  {
-    "Name": "Guinea",
-    "RegionCode": "GN",
-    "Updating": false
-  },
-  {
-    "Name": "Guinea-Bissau",
-    "RegionCode": "GW",
-    "Updating": false
-  },
-  {
-    "Name": "Guyana",
-    "RegionCode": "GY",
-    "Updating": false
-  },
-  {
-    "Name": "Haiti",
-    "RegionCode": "HT",
-    "Updating": false
-  },
-  {
-    "Name": "Heard Island and McDonald Islands",
-    "RegionCode": "HM",
     "Updating": false
   },
   {
@@ -520,11 +210,6 @@
     "Updating": false
   },
   {
-    "Name": "Iran",
-    "RegionCode": "IR",
-    "Updating": false
-  },
-  {
     "Name": "Iraq",
     "RegionCode": "IQ",
     "Updating": false
@@ -532,11 +217,6 @@
   {
     "Name": "Ireland",
     "RegionCode": "IE",
-    "Updating": false
-  },
-  {
-    "Name": "Isle of Man",
-    "RegionCode": "IM",
     "Updating": false
   },
   {
@@ -560,11 +240,6 @@
     "Updating": false
   },
   {
-    "Name": "Jersey",
-    "RegionCode": "JE",
-    "Updating": false
-  },
-  {
     "Name": "Jordan",
     "RegionCode": "JO",
     "Updating": false
@@ -580,18 +255,8 @@
     "Updating": false
   },
   {
-    "Name": "Kiribati",
-    "RegionCode": "KI",
-    "Updating": false
-  },
-  {
     "Name": "Kuwait",
     "RegionCode": "KW",
-    "Updating": false
-  },
-  {
-    "Name": "Kyrgyzstan",
-    "RegionCode": "KG",
     "Updating": false
   },
   {
@@ -607,16 +272,6 @@
   {
     "Name": "Lebanon",
     "RegionCode": "LB",
-    "Updating": false
-  },
-  {
-    "Name": "Lesotho",
-    "RegionCode": "LS",
-    "Updating": false
-  },
-  {
-    "Name": "Liberia",
-    "RegionCode": "LR",
     "Updating": false
   },
   {
@@ -650,11 +305,6 @@
     "Updating": false
   },
   {
-    "Name": "Mauritania",
-    "RegionCode": "MR",
-    "Updating": false
-  },
-  {
     "Name": "Mexico",
     "RegionCode": "MX",
     "Updating": false
@@ -662,11 +312,6 @@
   {
     "Name": "Moldova",
     "RegionCode": "MD",
-    "Updating": false
-  },
-  {
-    "Name": "Monaco",
-    "RegionCode": "MC",
     "Updating": false
   },
   {
@@ -680,28 +325,8 @@
     "Updating": false
   },
   {
-    "Name": "Montserrat",
-    "RegionCode": "MS",
-    "Updating": false
-  },
-  {
     "Name": "Morocco",
     "RegionCode": "MA",
-    "Updating": false
-  },
-  {
-    "Name": "Mozambique",
-    "RegionCode": "MZ",
-    "Updating": false
-  },
-  {
-    "Name": "Myanmar",
-    "RegionCode": "MM",
-    "Updating": false
-  },
-  {
-    "Name": "Namibia",
-    "RegionCode": "NA",
     "Updating": false
   },
   {
@@ -727,11 +352,6 @@
   {
     "Name": "Nigeria",
     "RegionCode": "NG",
-    "Updating": false
-  },
-  {
-    "Name": "Norfolk Island",
-    "RegionCode": "NF",
     "Updating": false
   },
   {
@@ -810,56 +430,6 @@
     "Updating": false
   },
   {
-    "Name": "Rwanda",
-    "RegionCode": "RW",
-    "Updating": false
-  },
-  {
-    "Name": "Saint Barthélemy",
-    "RegionCode": "BL",
-    "Updating": false
-  },
-  {
-    "Name": "Saint Helena",
-    "RegionCode": "SH",
-    "Updating": false
-  },
-  {
-    "Name": "Saint Kitts and Nevis",
-    "RegionCode": "KN",
-    "Updating": false
-  },
-  {
-    "Name": "Saint Lucia",
-    "RegionCode": "LC",
-    "Updating": false
-  },
-  {
-    "Name": "Saint Pierre and Miquelon",
-    "RegionCode": "PM",
-    "Updating": false
-  },
-  {
-    "Name": "Saint Vincent and the Grenadines",
-    "RegionCode": "VC",
-    "Updating": false
-  },
-  {
-    "Name": "Samoa",
-    "RegionCode": "WS",
-    "Updating": false
-  },
-  {
-    "Name": "San Marino",
-    "RegionCode": "SM",
-    "Updating": false
-  },
-  {
-    "Name": "Sao Tome and Principe",
-    "RegionCode": "ST",
-    "Updating": false
-  },
-  {
     "Name": "Saudi Arabia",
     "RegionCode": "SA",
     "Updating": false
@@ -872,16 +442,6 @@
   {
     "Name": "Serbia",
     "RegionCode": "RS",
-    "Updating": false
-  },
-  {
-    "Name": "Seychelles",
-    "RegionCode": "SC",
-    "Updating": false
-  },
-  {
-    "Name": "Sierra Leone",
-    "RegionCode": "SL",
     "Updating": false
   },
   {
@@ -900,33 +460,13 @@
     "Updating": false
   },
   {
-    "Name": "Solomon Islands",
-    "RegionCode": "SB",
-    "Updating": false
-  },
-  {
-    "Name": "Somalia",
-    "RegionCode": "SO",
-    "Updating": false
-  },
-  {
     "Name": "South Africa",
     "RegionCode": "ZA",
     "Updating": false
   },
   {
-    "Name": "South Georgia and the South Sandwich Islands",
-    "RegionCode": "GS",
-    "Updating": false
-  },
-  {
     "Name": "South Korea",
     "RegionCode": "KR",
-    "Updating": false
-  },
-  {
-    "Name": "South Sudan",
-    "RegionCode": "SS",
     "Updating": false
   },
   {
@@ -940,16 +480,6 @@
     "Updating": false
   },
   {
-    "Name": "Sudan",
-    "RegionCode": "SD",
-    "Updating": false
-  },
-  {
-    "Name": "Suriname",
-    "RegionCode": "SR",
-    "Updating": false
-  },
-  {
     "Name": "Sweden",
     "RegionCode": "SE",
     "Updating": false
@@ -960,18 +490,8 @@
     "Updating": false
   },
   {
-    "Name": "Syria",
-    "RegionCode": "SY",
-    "Updating": false
-  },
-  {
     "Name": "Taiwan",
     "RegionCode": "TW",
-    "Updating": false
-  },
-  {
-    "Name": "Tajikistan",
-    "RegionCode": "TJ",
     "Updating": false
   },
   {
@@ -985,31 +505,6 @@
     "Updating": false
   },
   {
-    "Name": "Timor-Leste",
-    "RegionCode": "TL",
-    "Updating": false
-  },
-  {
-    "Name": "Togo",
-    "RegionCode": "TG",
-    "Updating": false
-  },
-  {
-    "Name": "Tokelau",
-    "RegionCode": "TK",
-    "Updating": false
-  },
-  {
-    "Name": "Tonga",
-    "RegionCode": "TO",
-    "Updating": false
-  },
-  {
-    "Name": "Trinidad and Tobago",
-    "RegionCode": "TT",
-    "Updating": false
-  },
-  {
     "Name": "Tunisia",
     "RegionCode": "TN",
     "Updating": false
@@ -1017,16 +512,6 @@
   {
     "Name": "Turkey",
     "RegionCode": "TR",
-    "Updating": false
-  },
-  {
-    "Name": "Turkmenistan",
-    "RegionCode": "TM",
-    "Updating": false
-  },
-  {
-    "Name": "Tuvalu",
-    "RegionCode": "TV",
     "Updating": false
   },
   {
@@ -1060,21 +545,6 @@
     "Updating": false
   },
   {
-    "Name": "Uzbekistan",
-    "RegionCode": "UZ",
-    "Updating": false
-  },
-  {
-    "Name": "Vanuatu",
-    "RegionCode": "VU",
-    "Updating": false
-  },
-  {
-    "Name": "Vactican City",
-    "RegionCode": "VA",
-    "Updating": false
-  },
-  {
     "Name": "Venezuela",
     "RegionCode": "VE",
     "Updating": false
@@ -1085,33 +555,8 @@
     "Updating": false
   },
   {
-    "Name": "Virgin Islands (British)",
-    "RegionCode": "VG",
-    "Updating": false
-  },
-  {
-    "Name": "Virgin Islands (U.S.)",
-    "RegionCode": "VI",
-    "Updating": false
-  },
-  {
-    "Name": "Wallis and Futuna",
-    "RegionCode": "WF",
-    "Updating": false
-  },
-  {
-    "Name": "Western Sahara",
-    "RegionCode": "EH",
-    "Updating": false
-  },
-  {
     "Name": "Yemen",
     "RegionCode": "YE",
-    "Updating": false
-  },
-  {
-    "Name": "Zambia",
-    "RegionCode": "ZM",
     "Updating": false
   },
   {

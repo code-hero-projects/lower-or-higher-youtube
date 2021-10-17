@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeHero.LowerOrHigherYoutube.API", "CodeHero.LowerOrHigherYoutube.API\CodeHero.LowerOrHigherYoutube.API.csproj", "{21C648C4-29BA-45CA-9482-90D677200C84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeHero.LowerOrHigherYouTube.Application", "CodeHero.LowerOrHigherYouTube.Application\CodeHero.LowerOrHigherYouTube.Application.csproj", "{0412416C-6A41-4C55-B75B-0783D6420756}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeHero.LowerOrHigherYoutube.Application", "CodeHero.LowerOrHigherYoutube.Application\CodeHero.LowerOrHigherYoutube.Application.csproj", "{0412416C-6A41-4C55-B75B-0783D6420756}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeHero.LowerOrHigherYouTube.Core", "CodeHero.LowerOrHigherYouTube.Core\CodeHero.LowerOrHigherYouTube.Core.csproj", "{3525D959-42C7-4AFE-9561-4FA613BA7614}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeHero.LowerOrHigherYoutube.Core", "CodeHero.LowerOrHigherYoutube.Core\CodeHero.LowerOrHigherYoutube.Core.csproj", "{3525D959-42C7-4AFE-9561-4FA613BA7614}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeHero.LowerOrHigherYoutube.Database", "CodeHero.LowerOrHigherYoutube.Database\CodeHero.LowerOrHigherYoutube.Database.csproj", "{F828E98E-E47B-40E2-B7F8-87AC9C28EA57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeHero.LowerOrHigherYouTube.Database", "CodeHero.LowerOrHigherYouTube.Database\CodeHero.LowerOrHigherYouTube.Database.csproj", "{F828E98E-E47B-40E2-B7F8-87AC9C28EA57}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{7840F9CB-7158-4A75-91E8-0615D946C2BC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql", "CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql\CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql.csproj", "{BA51D392-1585-4731-9A60-19BFC505598F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeHero.LowerOrHigherYouTube.Migrations.PostgreSql", "CodeHero.LowerOrHigherYouTube.Migrations.PostgreSql\CodeHero.LowerOrHigherYouTube.Migrations.PostgreSql.csproj", "{BA51D392-1585-4731-9A60-19BFC505598F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeHero.LowerOrHigherYoutube.VideoRenewal", "CodeHero.LowerOrHigherYoutube.VideoRenewal\CodeHero.LowerOrHigherYoutube.VideoRenewal.csproj", "{7C6959AE-0B77-4EE1-A0A7-7C69AE750FC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeHero.LowerOrHigherYouTube.VideoFetcher", "CodeHero.LowerOrHigherYouTube.VideoFetcher\CodeHero.LowerOrHigherYouTube.VideoFetcher.csproj", "{7C6959AE-0B77-4EE1-A0A7-7C69AE750FC1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeHero.LowerOrHigherYouTube.API", "CodeHero.LowerOrHigherYouTube.API\CodeHero.LowerOrHigherYouTube.API.csproj", "{6AE84EE7-5C1E-4798-8876-51E2680E4BA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{21C648C4-29BA-45CA-9482-90D677200C84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{21C648C4-29BA-45CA-9482-90D677200C84}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{21C648C4-29BA-45CA-9482-90D677200C84}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{21C648C4-29BA-45CA-9482-90D677200C84}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0412416C-6A41-4C55-B75B-0783D6420756}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0412416C-6A41-4C55-B75B-0783D6420756}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0412416C-6A41-4C55-B75B-0783D6420756}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,6 +43,10 @@ Global
 		{7C6959AE-0B77-4EE1-A0A7-7C69AE750FC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C6959AE-0B77-4EE1-A0A7-7C69AE750FC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C6959AE-0B77-4EE1-A0A7-7C69AE750FC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AE84EE7-5C1E-4798-8876-51E2680E4BA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AE84EE7-5C1E-4798-8876-51E2680E4BA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AE84EE7-5C1E-4798-8876-51E2680E4BA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AE84EE7-5C1E-4798-8876-51E2680E4BA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

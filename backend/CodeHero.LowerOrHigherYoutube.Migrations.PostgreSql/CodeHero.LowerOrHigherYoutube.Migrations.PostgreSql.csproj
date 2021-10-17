@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CodeHero.LowerOrHigherYoutube.Database\CodeHero.LowerOrHigherYoutube.Database.csproj" />
+    <ProjectReference Include="..\CodeHero.LowerOrHigherYouTube.Database\CodeHero.LowerOrHigherYouTube.Database.csproj" />
   </ItemGroup>
 
 </Project>

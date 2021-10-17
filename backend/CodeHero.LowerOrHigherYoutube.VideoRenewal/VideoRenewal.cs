@@ -1,6 +1,7 @@
 ﻿using CodeHero.LowerOrHigherYoutube.Core.Model;
 using CodeHero.LowerOrHigherYoutube.Core.Repositories;
 using CodeHero.LowerOrHigherYoutube.Core.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -27,14 +28,11 @@ namespace CodeHero.LowerOrHigherYoutube.VideoRenewal
             foreach (var country in countries)
             {
                 var videos = await _videoRepository.FilterAsync(video => video.CountryId == country.Id);
-                if (videos.Any())
-                {
-                    await UpdateCountry(country, true);
-                    DeleteOldVideos(videos);
-                    var newVideos = await _videoSupplier.Fetch(country);
-                    await AddVideos(newVideos);
-                    await UpdateCountry(country, false);
-                }
+                await UpdateCountry(country, true);
+                DeleteOldVideos(videos);
+                var newVideos = await _videoSupplier.Fetch(country);
+                await AddVideos(newVideos);
+                await UpdateCountry(country, false);
             }
         }
 

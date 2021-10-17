@@ -1,4 +1,4 @@
-﻿namespace CodeHero.LowerOrHigherYoutube.Core.Configuration
+﻿namespace CodeHero.LowerOrHigherYouTube.Core.Configuration
 {
     public class TimerOptions
     {

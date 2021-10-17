@@ -2,10 +2,9 @@
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace CodeHero.LowerOrHigherYoutube.API.Middlewares
+namespace CodeHero.LowerOrHigherYouTube.API.Middlewares
 {
     public class LogRequestMiddleware
     {

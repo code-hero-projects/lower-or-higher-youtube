@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace CodeHero.LowerOrHigherYoutube.Core.Model
+﻿namespace CodeHero.LowerOrHigherYouTube.Core.Model
 {
     public class Country : BaseModel
     {

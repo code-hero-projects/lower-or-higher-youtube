@@ -1,11 +1,11 @@
-﻿using CodeHero.LowerOrHigherYoutube.Core.Services;
+﻿using CodeHero.LowerOrHigherYouTube.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using System.Linq;
 using AutoMapper;
-using CodeHero.LowerOrHigherYoutube.API.Responses;
+using CodeHero.LowerOrHigherYouTube.API.Responses;
 
-namespace CodeHero.LowerOrHigherYoutube.API.Controllers
+namespace CodeHero.LowerOrHigherYouTube.API.Controllers
 {
     [ApiController]
     [Route("api/v1/country/")]

@@ -1,7 +1,7 @@
-﻿using CodeHero.LowerOrHigherYoutube.Core.Model;
+﻿using CodeHero.LowerOrHigherYouTube.Core.Model;
 using Microsoft.EntityFrameworkCore;
 
-namespace CodeHero.LowerOrHigherYoutube.Database.Mappings
+namespace CodeHero.LowerOrHigherYouTube.Database.Mappings
 {
     public class EntitiesConfiguration
     {

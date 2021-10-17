@@ -1,27 +1,26 @@
-﻿using CodeHero.LowerOrHigherYoutube.Core.Model;
-using CodeHero.LowerOrHigherYoutube.Core.Repositories;
-using CodeHero.LowerOrHigherYoutube.Database.Mappings;
-using CodeHero.LowerOrHigherYoutube.Database.Mappings.PostgreSql;
-using CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Configuration;
-using CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Infrastructure;
-using CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Mappings;
-using CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Repositories;
+﻿using CodeHero.LowerOrHigherYouTube.Core.Model;
+using CodeHero.LowerOrHigherYouTube.Core.Repositories;
+using CodeHero.LowerOrHigherYouTube.Database.Mappings;
+using CodeHero.LowerOrHigherYouTube.Database.Mappings.PostgreSql;
+using CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Configuration;
+using CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Infrastructure;
+using CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Mappings;
+using CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Repositories;
 using Microsoft.Azure.Cosmos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Threading.Tasks;
 
-namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Extensions
+namespace CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Extensions
 {
     public static class DependenciesRegistration
     {
-        private const string PostgreSqlAssembly = "CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql";
+        private const string PostgreSqlAssembly = "CodeHero.LowerOrHigherYouTube.Migrations.PostgreSql";
 
         public static IServiceCollection AddInfrastructureDependencies(this IServiceCollection services, IConfigurationSection configurationSection)
         {
             var databaseOptions = configurationSection.Get<DatabaseConnectionOptions>();
-            services.AddSingleton(databaseOptions);
 
             switch (databaseOptions.Type)
             {
@@ -36,18 +35,21 @@ namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Extensions
                     throw new System.ArgumentException("Database configuration is missing.");
             }
 
-            services.AddScoped<ICountryRepository, CountryRepository>();
-            services.AddScoped<IVideoRepository, VideoRepository>();
-            services.AddSingleton<EntitiesConfiguration>();
+            services
+                .AddSingleton(databaseOptions)
+                .AddScoped<ICountryRepository, CountryRepository>()
+                .AddScoped<IVideoRepository, VideoRepository>()
+                .AddSingleton<EntitiesConfiguration>();
 
             return services;
         }
 
         private static async Task AddCosmosDb(IServiceCollection services, DatabaseConnectionOptions databaseOptions)
         {
-            services.AddSingleton<IEntityTypeConfiguration<Country>, CosmosDbCountryMapping>();
-            services.AddSingleton<IEntityTypeConfiguration<Video>, CosmosDbVideoMapping>();
-            services.AddDbContext<DatabaseContext>(dbConfig => dbConfig.UseCosmos(databaseOptions.ConnectionString, databaseOptions.DatabaseName));
+            services
+                .AddSingleton<IEntityTypeConfiguration<Country>, CosmosDbCountryMapping>()
+                .AddSingleton<IEntityTypeConfiguration<Video>, CosmosDbVideoMapping>()
+                .AddDbContext<DatabaseContext>(dbConfig => dbConfig.UseCosmos(databaseOptions.ConnectionString, databaseOptions.DatabaseName));
 
             var cosmosClient = new CosmosClient(databaseOptions.ConnectionString);
             var database = await cosmosClient.CreateDatabaseIfNotExistsAsync(databaseOptions.DatabaseName);
@@ -57,10 +59,10 @@ namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Extensions
 
         private static void AddPostgreSql(IServiceCollection services, DatabaseConnectionOptions databaseOptions)
         {
-            services.AddSingleton<IEntityTypeConfiguration<Country>, PostgreSqlCountryMapping>();
-            services.AddSingleton<IEntityTypeConfiguration<Video>, PostgreSqlVideoMapping>();
-
-            services.AddDbContext<DatabaseContext>(dbConfig => dbConfig.UseNpgsql(databaseOptions.ConnectionString, x => x.MigrationsAssembly(PostgreSqlAssembly)));
+            services
+                .AddSingleton<IEntityTypeConfiguration<Country>, PostgreSqlCountryMapping>()
+                .AddSingleton<IEntityTypeConfiguration<Video>, PostgreSqlVideoMapping>()
+                .AddDbContext<DatabaseContext>(dbConfig => dbConfig.UseNpgsql(databaseOptions.ConnectionString, x => x.MigrationsAssembly(PostgreSqlAssembly)));
         }
     }
 }

@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "LowerOrHigherYoutube": {
+    "LowerOrHigherYouTube": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

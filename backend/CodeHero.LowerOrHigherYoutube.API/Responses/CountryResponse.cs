@@ -1,4 +1,4 @@
-﻿namespace CodeHero.LowerOrHigherYoutube.API.Responses
+﻿namespace CodeHero.LowerOrHigherYouTube.API.Responses
 {
     public class CountryResponse
     {

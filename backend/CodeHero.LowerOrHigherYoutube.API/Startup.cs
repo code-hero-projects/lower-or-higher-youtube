@@ -1,15 +1,15 @@
-using CodeHero.LowerOrHigherYoutube.API.Extensions;
-using CodeHero.LowerOrHigherYoutube.API.Middlewares;
-using CodeHero.LowerOrHigherYoutube.Application.Extensions;
-using CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Extensions;
-using CodeHero.LowerOrHigherYoutube.VideoFetcher.Extensions;
+using CodeHero.LowerOrHigherYouTube.API.Extensions;
+using CodeHero.LowerOrHigherYouTube.API.Middlewares;
+using CodeHero.LowerOrHigherYouTube.Application.Extensions;
+using CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Extensions;
+using CodeHero.LowerOrHigherYouTube.VideoFetcher.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace CodeHero.LowerOrHigherYoutube.API
+namespace CodeHero.LowerOrHigherYouTube.API
 {
     public class Startup
     {
@@ -28,11 +28,10 @@ namespace CodeHero.LowerOrHigherYoutube.API
 
             services
                 .AddInfrastructureDependencies(databaseOptions)
-                .AddApplicationDependencies(youTubeOptions, timerOptions)
+                .AddApplicationDependencies(timerOptions)
                 .AddApiDependencies()
-                .AddVideoFetcherDependencies();
-
-            services.AddLogging();
+                .AddVideoFetcherDependencies(youTubeOptions)
+                .AddLogging();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -49,6 +48,10 @@ namespace CodeHero.LowerOrHigherYoutube.API
             }
 
             app.UseMiddleware<LogRequestMiddleware>();
+
+            app.UseSwagger()
+               .UseSwaggerUI(c => c.SwaggerEndpoint(ApiConstants.SwaggerEndpointUrl, ApiConstants.SwaggerName))
+               .UseRouting();
 
             app.UseCors(ApiConstants.AllowAllCorsPolicy);
 

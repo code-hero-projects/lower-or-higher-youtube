@@ -15,13 +15,14 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.14" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CodeHero.LowerOrHigherYoutube.Application\CodeHero.LowerOrHigherYoutube.Application.csproj" />
-    <ProjectReference Include="..\CodeHero.LowerOrHigherYoutube.Database\CodeHero.LowerOrHigherYoutube.Database.csproj" />
-    <ProjectReference Include="..\CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql\CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql.csproj" />
-    <ProjectReference Include="..\CodeHero.LowerOrHigherYoutube.VideoRenewal\CodeHero.LowerOrHigherYoutube.VideoRenewal.csproj" />
+    <ProjectReference Include="..\CodeHero.LowerOrHigherYouTube.Application\CodeHero.LowerOrHigherYouTube.Application.csproj" />
+    <ProjectReference Include="..\CodeHero.LowerOrHigherYouTube.Database\CodeHero.LowerOrHigherYouTube.Database.csproj" />
+    <ProjectReference Include="..\CodeHero.LowerOrHigherYouTube.Migrations.PostgreSql\CodeHero.LowerOrHigherYouTube.Migrations.PostgreSql.csproj" />
+    <ProjectReference Include="..\CodeHero.LowerOrHigherYouTube.VideoFetcher\CodeHero.LowerOrHigherYouTube.VideoFetcher.csproj" />
   </ItemGroup>
 
 </Project>

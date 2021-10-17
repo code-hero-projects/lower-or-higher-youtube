@@ -1,8 +1,8 @@
-﻿using CodeHero.LowerOrHigherYoutube.Core.Model;
+﻿using CodeHero.LowerOrHigherYouTube.Core.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace CodeHero.LowerOrHigherYoutube.Database.Mappings.PostgreSql
+namespace CodeHero.LowerOrHigherYouTube.Database.Mappings.PostgreSql
 {
     public class PostgreSqlVideoMapping : IEntityTypeConfiguration<Video>
     {
@@ -11,25 +11,37 @@ namespace CodeHero.LowerOrHigherYoutube.Database.Mappings.PostgreSql
             builder.ToTable("video");
 
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Id).IsRequired();
-            builder.Property(x => x.Name).HasColumnName("id");
-            builder.Property(x => x.Id).UseIdentityAlwaysColumn();
 
-            builder.Property(x => x.Name).IsRequired();
-            builder.Property(x => x.Name).HasColumnName("name");
+            builder
+                .Property(x => x.Id)
+                .IsRequired()
+                .HasColumnName("id")
+                .UseIdentityAlwaysColumn();
 
-            builder.Property(x => x.Channel).IsRequired();
-            builder.Property(x => x.Channel).HasColumnName("channel");
+            builder
+                .Property(x => x.Name)
+                .IsRequired()
+                .HasColumnName("name");
 
-            builder.Property(x => x.Views).IsRequired();
-            builder.Property(x => x.Views).HasColumnName("views");
+            builder
+                .Property(x => x.Channel)
+                .IsRequired()
+                .HasColumnName("channel");
 
-            builder.Property(x => x.Thumbnail).IsRequired();
-            builder.Property(x => x.Thumbnail).HasColumnName("thumbnail");
+            builder
+                .Property(x => x.Views)
+                .IsRequired()
+                .HasColumnName("views");
 
-            builder.Property(x => x.CountryId).IsRequired();
-            builder.Property(x => x.CountryId).HasColumnName("country_id");
-            builder.Property(x => x.CountryId).HasColumnType("smallint");
+            builder
+                .Property(x => x.Thumbnail)
+                .IsRequired()
+                .HasColumnName("thumbnail");
+
+            builder
+                .Property(x => x.CountryId)
+                .IsRequired()
+                .HasColumnName("country_id");
         }
     }
 }

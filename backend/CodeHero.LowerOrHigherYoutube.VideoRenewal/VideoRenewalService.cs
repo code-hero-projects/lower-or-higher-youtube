@@ -30,7 +30,6 @@ namespace CodeHero.LowerOrHigherYoutube.VideoRenewal
                 var timerOptions = scope.ServiceProvider.GetService<TimerOptions>();
                 new Timer(async _ => await RenewVideos(), null, TimeSpan.Zero, TimeSpan.FromHours(timerOptions.RenewVideosDelayInHours));
             }
-            
 
             return Task.CompletedTask;
         }

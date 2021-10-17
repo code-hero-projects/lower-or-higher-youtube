@@ -1,14 +1,11 @@
 ﻿using AutoMapper;
-using CodeHero.LowerOrHigherYoutube.API.Responses;
-using CodeHero.LowerOrHigherYoutube.Core.Model;
+using CodeHero.LowerOrHigherYouTube.API.Responses;
+using CodeHero.LowerOrHigherYouTube.Core.Model;
 
-namespace CodeHero.LowerOrHigherYoutube.API.Mappers
+namespace CodeHero.LowerOrHigherYouTube.API.Mappers
 {
     public class VideoMapperProfile : Profile
     {
-        public VideoMapperProfile()
-        {
-            CreateMap<Video, VideoResponse>();
-        }
+        public VideoMapperProfile() => CreateMap<Video, VideoResponse>();
     }
 }

@@ -1,8 +1,8 @@
-﻿using CodeHero.LowerOrHigherYoutube.Core.Model;
-using CodeHero.LowerOrHigherYoutube.Core.Repositories;
-using CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Infrastructure;
+﻿using CodeHero.LowerOrHigherYouTube.Core.Model;
+using CodeHero.LowerOrHigherYouTube.Core.Repositories;
+using CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Infrastructure;
 
-namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Repositories
+namespace CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Repositories
 {
     public class CountryRepository : BaseRepository<Country>, ICountryRepository
     {

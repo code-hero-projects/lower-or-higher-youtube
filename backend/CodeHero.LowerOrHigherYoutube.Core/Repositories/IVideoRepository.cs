@@ -1,6 +1,6 @@
-﻿using CodeHero.LowerOrHigherYoutube.Core.Model;
+﻿using CodeHero.LowerOrHigherYouTube.Core.Model;
 
-namespace CodeHero.LowerOrHigherYoutube.Core.Repositories
+namespace CodeHero.LowerOrHigherYouTube.Core.Repositories
 {
     public interface IVideoRepository : IRepository<Video>
     {

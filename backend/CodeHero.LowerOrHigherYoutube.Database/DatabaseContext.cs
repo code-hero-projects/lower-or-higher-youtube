@@ -1,13 +1,10 @@
-﻿using CodeHero.LowerOrHigherYoutube.Core.Model;
-using CodeHero.LowerOrHigherYoutube.Database.Mappings;
-using CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Configuration;
+﻿using CodeHero.LowerOrHigherYouTube.Core.Model;
+using CodeHero.LowerOrHigherYouTube.Database.Mappings;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
-using System;
 using System.IO;
-using System.Reflection;
 
-namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Infrastructure
+namespace CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Infrastructure
 {
     public class DatabaseContext : DbContext
     {
@@ -15,10 +12,7 @@ namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Infrastructure
         public DbSet<Video> Videos { get; set; }
         private readonly EntitiesConfiguration _entitiesConfiguration;
 
-        public DatabaseContext(EntitiesConfiguration entitiesConfiguration, DbContextOptions options) : base(options)
-        {
-            _entitiesConfiguration = entitiesConfiguration;
-        }
+        public DatabaseContext(EntitiesConfiguration entitiesConfiguration, DbContextOptions options) : base(options) =>  _entitiesConfiguration = entitiesConfiguration;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -26,11 +20,7 @@ namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Infrastructure
             _entitiesConfiguration.ApplyConfiguration(modelBuilder);
         }
 
-        public void SeedData()
-        {
-            SeedDataFromFile(Countries, InfrastuctureConstants.CountrySeedDataFile);
-            SeedDataFromFile(Videos, InfrastuctureConstants.VideoSeedDataFile);
-        }
+        public void SeedData() => SeedDataFromFile(Countries, InfrastuctureConstants.CountrySeedDataFile);
 
         private void SeedDataFromFile<T>(DbSet<T> dbSet, string file) where T : class
         {

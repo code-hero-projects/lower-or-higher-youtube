@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using CodeHero.LowerOrHigherYoutube.API.Responses;
-using CodeHero.LowerOrHigherYoutube.Core.Services;
+using CodeHero.LowerOrHigherYouTube.API.Responses;
+using CodeHero.LowerOrHigherYouTube.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using System.Linq;
 
-namespace CodeHero.LowerOrHigherYoutube.API.Controllers
+namespace CodeHero.LowerOrHigherYouTube.API.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller]")]

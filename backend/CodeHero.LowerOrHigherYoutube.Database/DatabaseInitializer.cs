@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Infrastructure
+namespace CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Infrastructure
 {
     public static class DatabaseInitializer
     {

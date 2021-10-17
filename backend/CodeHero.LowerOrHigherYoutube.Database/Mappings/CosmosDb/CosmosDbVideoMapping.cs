@@ -1,9 +1,9 @@
-﻿using CodeHero.LowerOrHigherYoutube.Core.Model;
-using CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Infrastructure;
+﻿using CodeHero.LowerOrHigherYouTube.Core.Model;
+using CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Mappings
+namespace CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Mappings
 {
     public class CosmosDbVideoMapping : IEntityTypeConfiguration<Video>
     {

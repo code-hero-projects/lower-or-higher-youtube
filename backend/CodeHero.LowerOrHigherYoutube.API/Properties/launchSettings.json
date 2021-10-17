@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "CodeHero.LowerOrHigherYoutube.API": {
+    "CodeHero.LowerOrHigherYouTube.API": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

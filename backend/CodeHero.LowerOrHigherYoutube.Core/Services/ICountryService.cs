@@ -1,8 +1,8 @@
-﻿using CodeHero.LowerOrHigherYoutube.Core.Model;
+﻿using CodeHero.LowerOrHigherYouTube.Core.Model;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace CodeHero.LowerOrHigherYoutube.Core.Services
+namespace CodeHero.LowerOrHigherYouTube.Core.Services
 {
     public interface ICountryService
     {
