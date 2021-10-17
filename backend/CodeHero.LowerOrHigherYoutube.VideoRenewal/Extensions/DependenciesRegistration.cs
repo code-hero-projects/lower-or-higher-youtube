@@ -1,7 +1,7 @@
-﻿using CodeHero.LowerOrHigherYoutube.VideoRenewal;
+﻿using CodeHero.LowerOrHigherYouTube.VideoRenewal;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CodeHero.LowerOrHigherYoutube.VideoFetcher.Extensions
+namespace CodeHero.LowerOrHigherYouTube.VideoFetcher.Extensions
 {
     public static class DependenciesRegistration
     {

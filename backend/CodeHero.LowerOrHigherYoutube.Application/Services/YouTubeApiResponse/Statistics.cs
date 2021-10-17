@@ -1,4 +1,4 @@
-﻿namespace CodeHero.LowerOrHigherYoutube.Application.Services.YouTubeApiResponse
+﻿namespace CodeHero.LowerOrHigherYouTube.Application.Services.YouTubeApiResponse
 {
     public class Statistics
     {

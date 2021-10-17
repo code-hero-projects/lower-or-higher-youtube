@@ -1,10 +1,10 @@
-﻿using CodeHero.LowerOrHigherYoutube.Core.Model;
-using CodeHero.LowerOrHigherYoutube.Database.Mappings.PostgreSql;
-using CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Configuration;
-using CodeHero.LowerOrHigherYoutube.Infrastructure.Database.Mappings;
+﻿using CodeHero.LowerOrHigherYouTube.Core.Model;
+using CodeHero.LowerOrHigherYouTube.Database.Mappings.PostgreSql;
+using CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Configuration;
+using CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Mappings;
 using Microsoft.EntityFrameworkCore;
 
-namespace CodeHero.LowerOrHigherYoutube.Database.Mappings
+namespace CodeHero.LowerOrHigherYouTube.Database.Mappings
 {
     public static class ModelBuilderExtension
     {

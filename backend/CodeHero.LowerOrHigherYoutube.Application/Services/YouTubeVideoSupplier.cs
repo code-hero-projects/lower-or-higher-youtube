@@ -1,7 +1,7 @@
-﻿using CodeHero.LowerOrHigherYoutube.Application.Configuration;
-using CodeHero.LowerOrHigherYoutube.Application.Services.YouTubeApiResponse;
-using CodeHero.LowerOrHigherYoutube.Core.Model;
-using CodeHero.LowerOrHigherYoutube.Core.Services;
+﻿using CodeHero.LowerOrHigherYouTube.Application.Configuration;
+using CodeHero.LowerOrHigherYouTube.Application.Services.YouTubeApiResponse;
+using CodeHero.LowerOrHigherYouTube.Core.Model;
+using CodeHero.LowerOrHigherYouTube.Core.Services;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace CodeHero.LowerOrHigherYoutube.Application.Services
+namespace CodeHero.LowerOrHigherYouTube.Application.Services
 {
     public class YouTubeVideoSupplier : IVideoSupplier
     {
@@ -40,7 +40,7 @@ namespace CodeHero.LowerOrHigherYoutube.Application.Services
             }
         }
 
-        private async Task<IEnumerable<Video>> MapVideos(HttpResponseMessage response, int countryId) 
+        private async Task<IEnumerable<Video>> MapVideos(HttpResponseMessage response, short countryId) 
         {
             var result = await response.Content.ReadAsStringAsync();
             var youTubeApiResponse = JsonConvert.DeserializeObject<YouTubeResponse>(result);

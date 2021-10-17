@@ -1,4 +1,4 @@
-﻿namespace CodeHero.LowerOrHigherYoutube.Application.Configuration
+﻿namespace CodeHero.LowerOrHigherYouTube.Application.Configuration
 {
     public class YouTubeOptions
     {

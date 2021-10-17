@@ -9,12 +9,12 @@ WORKDIR /src
 COPY . .
 
 WORKDIR /src
-RUN dotnet restore CodeHero.LowerOrHigherYoutube.sln
+RUN dotnet restore CodeHero.LowerOrHigherYouTube.sln
 
-RUN dotnet build CodeHero.LowerOrHigherYoutube.sln -c Release -o /app/build
+RUN dotnet build CodeHero.LowerOrHigherYouTube.sln -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish CodeHero.LowerOrHigherYoutube.sln -c Release -o /app/publish
+RUN dotnet publish CodeHero.LowerOrHigherYouTube.sln -c Release -o /app/publish
 
 FROM base AS final
 ENV ASPNETCORE_URLS=http://+:80
@@ -22,4 +22,4 @@ ENV ASPNETCORE_URLS=http://+:80
 WORKDIR /app
 COPY --from=publish /app/publish .
 
-ENTRYPOINT ["dotnet", "CodeHero.LowerOrHigherYoutube.API.dll"]
+ENTRYPOINT ["dotnet", "CodeHero.LowerOrHigherYouTube.API.dll"]

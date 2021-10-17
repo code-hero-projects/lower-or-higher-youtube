@@ -6,20 +6,20 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["CodeHero.LowerOrHigherYoutube.API/CodeHero.LowerOrHigherYoutube.API.csproj", "CodeHero.LowerOrHigherYoutube.API/"]
-COPY ["CodeHero.LowerOrHigherYoutube.Database/CodeHero.LowerOrHigherYoutube.Database.csproj", "CodeHero.LowerOrHigherYoutube.Database/"]
-COPY ["CodeHero.LowerOrHigherYoutube.Core/CodeHero.LowerOrHigherYoutube.Core.csproj", "CodeHero.LowerOrHigherYoutube.Core/"]
-COPY ["CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql/CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql.csproj", "CodeHero.LowerOrHigherYoutube.Migrations.PostgreSql/"]
-COPY ["CodeHero.LowerOrHigherYoutube.Application/CodeHero.LowerOrHigherYoutube.Application.csproj", "CodeHero.LowerOrHigherYoutube.Application/"]
-RUN dotnet restore "CodeHero.LowerOrHigherYoutube.API/CodeHero.LowerOrHigherYoutube.API.csproj"
+COPY ["CodeHero.LowerOrHigherYouTube.API/CodeHero.LowerOrHigherYouTube.API.csproj", "CodeHero.LowerOrHigherYouTube.API/"]
+COPY ["CodeHero.LowerOrHigherYouTube.Database/CodeHero.LowerOrHigherYouTube.Database.csproj", "CodeHero.LowerOrHigherYouTube.Database/"]
+COPY ["CodeHero.LowerOrHigherYouTube.Core/CodeHero.LowerOrHigherYouTube.Core.csproj", "CodeHero.LowerOrHigherYouTube.Core/"]
+COPY ["CodeHero.LowerOrHigherYouTube.Migrations.PostgreSql/CodeHero.LowerOrHigherYouTube.Migrations.PostgreSql.csproj", "CodeHero.LowerOrHigherYouTube.Migrations.PostgreSql/"]
+COPY ["CodeHero.LowerOrHigherYouTube.Application/CodeHero.LowerOrHigherYouTube.Application.csproj", "CodeHero.LowerOrHigherYouTube.Application/"]
+RUN dotnet restore "CodeHero.LowerOrHigherYouTube.API/CodeHero.LowerOrHigherYouTube.API.csproj"
 COPY . .
-WORKDIR "/src/CodeHero.LowerOrHigherYoutube.API"
-RUN dotnet build "CodeHero.LowerOrHigherYoutube.API.csproj" -c Release -o /app/build
+WORKDIR "/src/CodeHero.LowerOrHigherYouTube.API"
+RUN dotnet build "CodeHero.LowerOrHigherYouTube.API.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "CodeHero.LowerOrHigherYoutube.API.csproj" -c Release -o /app/publish
+RUN dotnet publish "CodeHero.LowerOrHigherYouTube.API.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "CodeHero.LowerOrHigherYoutube.API.dll"]
+ENTRYPOINT ["dotnet", "CodeHero.LowerOrHigherYouTube.API.dll"]

@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CodeHero.LowerOrHigherYoutube.Core\CodeHero.LowerOrHigherYoutube.Core.csproj" />
+    <ProjectReference Include="..\CodeHero.LowerOrHigherYouTube.Core\CodeHero.LowerOrHigherYouTube.Core.csproj" />
   </ItemGroup>
 
 </Project>

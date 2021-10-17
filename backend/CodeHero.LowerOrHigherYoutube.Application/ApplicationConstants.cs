@@ -1,4 +1,4 @@
-﻿namespace CodeHero.LowerOrHigherYoutube.Application
+﻿namespace CodeHero.LowerOrHigherYouTube.Application
 {
     public static class ApplicationConstants
     {

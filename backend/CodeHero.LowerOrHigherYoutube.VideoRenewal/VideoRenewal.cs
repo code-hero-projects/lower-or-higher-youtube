@@ -1,12 +1,12 @@
-﻿using CodeHero.LowerOrHigherYoutube.Core.Model;
-using CodeHero.LowerOrHigherYoutube.Core.Repositories;
-using CodeHero.LowerOrHigherYoutube.Core.Services;
+﻿using CodeHero.LowerOrHigherYouTube.Core.Model;
+using CodeHero.LowerOrHigherYouTube.Core.Repositories;
+using CodeHero.LowerOrHigherYouTube.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CodeHero.LowerOrHigherYoutube.VideoRenewal
+namespace CodeHero.LowerOrHigherYouTube.VideoRenewal
 {
     public class VideoRenewal
     {

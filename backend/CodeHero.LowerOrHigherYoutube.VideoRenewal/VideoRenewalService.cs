@@ -1,6 +1,6 @@
-﻿using CodeHero.LowerOrHigherYoutube.Core.Configuration;
-using CodeHero.LowerOrHigherYoutube.Core.Repositories;
-using CodeHero.LowerOrHigherYoutube.Core.Services;
+﻿using CodeHero.LowerOrHigherYouTube.Core.Configuration;
+using CodeHero.LowerOrHigherYouTube.Core.Repositories;
+using CodeHero.LowerOrHigherYouTube.Core.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -8,7 +8,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CodeHero.LowerOrHigherYoutube.VideoRenewal
+namespace CodeHero.LowerOrHigherYouTube.VideoRenewal
 {
     public class VideoRenewalService : BackgroundService
     {
