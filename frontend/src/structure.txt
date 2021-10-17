@@ -1,0 +1,5 @@
+components -> React components
+containers -> components bound with redux
+models -> domain entities
+pages -> composing of what's being presented
+redux -> all redux related stuff
