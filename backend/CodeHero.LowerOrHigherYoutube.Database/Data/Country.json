@@ -640,33 +640,8 @@
     "Updating": false
   },
   {
-    "Name": "Macao",
-    "RegionCode": "MO",
-    "Updating": false
-  },
-  {
-    "Name": "Madagascar",
-    "RegionCode": "MG",
-    "Updating": false
-  },
-  {
-    "Name": "Malawi",
-    "RegionCode": "MW",
-    "Updating": false
-  },
-  {
     "Name": "Malaysia",
     "RegionCode": "MY",
-    "Updating": false
-  },
-  {
-    "Name": "Maldives",
-    "RegionCode": "MV",
-    "Updating": false
-  },
-  {
-    "Name": "Mali",
-    "RegionCode": "ML",
     "Updating": false
   },
   {
@@ -675,38 +650,13 @@
     "Updating": false
   },
   {
-    "Name": "Marshall Islands",
-    "RegionCode": "MH",
-    "Updating": false
-  },
-  {
-    "Name": "Martinique",
-    "RegionCode": "MQ",
-    "Updating": false
-  },
-  {
     "Name": "Mauritania",
     "RegionCode": "MR",
     "Updating": false
   },
   {
-    "Name": "Mauritius",
-    "RegionCode": "MU",
-    "Updating": false
-  },
-  {
-    "Name": "Mayotte",
-    "RegionCode": "YT",
-    "Updating": false
-  },
-  {
     "Name": "Mexico",
     "RegionCode": "MX",
-    "Updating": false
-  },
-  {
-    "Name": "Micronesia",
-    "RegionCode": "FM",
     "Updating": false
   },
   {
@@ -755,11 +705,6 @@
     "Updating": false
   },
   {
-    "Name": "Nauru",
-    "RegionCode": "NR",
-    "Updating": false
-  },
-  {
     "Name": "Nepal",
     "RegionCode": "NP",
     "Updating": false
@@ -767,11 +712,6 @@
   {
     "Name": "Netherlands",
     "RegionCode": "NL",
-    "Updating": false
-  },
-  {
-    "Name": "New Caledonia",
-    "RegionCode": "NC",
     "Updating": false
   },
   {
@@ -785,18 +725,8 @@
     "Updating": false
   },
   {
-    "Name": "Niger",
-    "RegionCode": "NE",
-    "Updating": false
-  },
-  {
     "Name": "Nigeria",
     "RegionCode": "NG",
-    "Updating": false
-  },
-  {
-    "Name": "Niue",
-    "RegionCode": "NU",
     "Updating": false
   },
   {
@@ -805,18 +735,8 @@
     "Updating": false
   },
   {
-    "Name": "North Korea",
-    "RegionCode": "KP",
-    "Updating": false
-  },
-  {
     "Name": "North Macedonia",
     "RegionCode": "MK",
-    "Updating": false
-  },
-  {
-    "Name": "Northern Mariana Islands",
-    "RegionCode": "MP",
     "Updating": false
   },
   {
@@ -832,16 +752,6 @@
   {
     "Name": "Pakistan",
     "RegionCode": "PK",
-    "Updating": false
-  },
-  {
-    "Name": "Palau",
-    "RegionCode": "PW",
-    "Updating": false
-  },
-  {
-    "Name": "Palestine",
-    "RegionCode": "PS",
     "Updating": false
   },
   {
@@ -870,11 +780,6 @@
     "Updating": false
   },
   {
-    "Name": "Pitcairn",
-    "RegionCode": "PN",
-    "Updating": false
-  },
-  {
     "Name": "Poland",
     "RegionCode": "PL",
     "Updating": false
@@ -892,11 +797,6 @@
   {
     "Name": "Qatar",
     "RegionCode": "QA",
-    "Updating": false
-  },
-  {
-    "Name": "Réunion",
-    "RegionCode": "RE",
     "Updating": false
   },
   {
