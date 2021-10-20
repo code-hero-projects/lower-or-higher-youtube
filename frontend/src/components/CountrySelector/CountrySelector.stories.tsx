@@ -1,12 +1,22 @@
-import { Country } from 'models';
+import { AsyncOperationState, Country } from 'models';
+import { useState } from 'react';
 import { CountrySelector } from './CountrySelector';
 
-const countries: Array<Country> = [
-  { id: 1, name: 'Portugal', regionCode: 'PT' },
-  { id: 2, name: 'Brazil', regionCode: 'BR' }
-]
+const countries: Country[] = [
+  { id: 1, name: 'United States', regionCode: 'US' },
+  { id: 2, name: 'France', regionCode: 'FR' },
+  { id: 3, name: 'United Kingdom', regionCode: 'GR' }
+];
 
-export const Length = () => <CountrySelector countries={countries} />;
+function CountrySelectorWithState() {
+  const [selectedCountry, setSelectedCountry] = useState<number>(1);
+
+  return <CountrySelector countries={countries} selectedCountry={selectedCountry} onCountrySelect={id => setSelectedCountry(id)} operationState={AsyncOperationState.Success} />;
+}
+
+export const DisplayCountries = () => <CountrySelector countries={countries} selectedCountry={1} onCountrySelect={id => console.log(id)} operationState={AsyncOperationState.Success} />;
+
+export const SelectCountries = () => <CountrySelectorWithState />;
 
 export default {
   title: 'Components/CountrySelector',
