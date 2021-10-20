@@ -4,6 +4,8 @@ using CodeHero.LowerOrHigherYouTube.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using System.Linq;
+using System.Collections.Generic;
+using CodeHero.LowerOrHigherYouTube.Core.Model;
 
 namespace CodeHero.LowerOrHigherYouTube.API.Controllers
 {
@@ -21,11 +23,11 @@ namespace CodeHero.LowerOrHigherYouTube.API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> ListAsync()
+        public async Task<IEnumerable<CountryResponse>> ListAsync()
         {
             var countries = await _countryService.ListAsync();
             var countriesResponse = countries.Select(country => _mapper.Map<CountryResponse>(country));
-            return Ok(countriesResponse);
+            return countriesResponse;
         }
     }
 }

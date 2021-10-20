@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using AutoMapper;
 using CodeHero.LowerOrHigherYouTube.API.Responses;
+using System.Collections.Generic;
 
 namespace CodeHero.LowerOrHigherYouTube.API.Controllers
 {
@@ -22,11 +23,11 @@ namespace CodeHero.LowerOrHigherYouTube.API.Controllers
 
         [HttpGet]
         [Route("{countryId}/video")]
-        public async Task<ActionResult> ListAsync(int countryId)
+        public async Task<IEnumerable<VideoResponse>> ListAsync(int countryId)
         {
             var videos = await _videoService.ListAsync(countryId);
             var videosResponse = videos.Select(video => _mapper.Map<VideoResponse>(video));
-            return Ok(videosResponse);
+            return videosResponse;
         }
     }
 }
