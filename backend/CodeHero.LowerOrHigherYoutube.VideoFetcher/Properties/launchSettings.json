@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CodeHero.LowerOrHigherYouTube.VideoFetcher": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
