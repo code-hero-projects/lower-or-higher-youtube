@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CodeHero.LowerOrHigherYouTube.VideoRenewal.Services
 {
-    public class VideoFetcherService
+    public class VideoFetcherService : IVideoFetcher
     {
         private readonly ICountryRepository _countryRepository;
         private readonly IVideoRepository _videoRepository;
