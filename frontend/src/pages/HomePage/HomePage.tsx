@@ -1,4 +1,4 @@
-import { CountrySelectorContainer } from "containers/CountrySelector";
+import { CountrySelectorContainer } from "../../containers";
 
 export function HomePage() {
   return <CountrySelectorContainer />;

@@ -1,7 +1,7 @@
-import { getCountries, RootState, selectCountry } from "app-redux";
-import { CountrySelector } from "components/CountrySelector";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { CountrySelector } from "../../components";
+import { getCountries, RootState, selectCountry } from "../../redux";
 
 export function CountrySelectorContainer() {
   const { countries, selectedCountry, operationState } = useSelector((state: RootState) => state.country);

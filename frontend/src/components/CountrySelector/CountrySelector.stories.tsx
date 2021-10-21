@@ -1,5 +1,5 @@
-import { AsyncOperationState, Country } from 'models';
 import { useState } from 'react';
+import { AsyncOperationState, Country } from '../../models';
 import { CountrySelector } from './CountrySelector';
 
 const countries: Country[] = [

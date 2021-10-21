@@ -1,4 +1,4 @@
-import { Country } from "models";
+import { Country } from "../../models";
 import { CodeHeroApiClient, CountryResponse } from "./CodeHeroApiClient";
 
 export class CodeHeroApi {

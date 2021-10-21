@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { AsyncOperationState, Country } from 'models';
+import { AsyncOperationState, Country } from '../../models';
 import { getCountries } from './epics';
 
 export interface CountryState {
