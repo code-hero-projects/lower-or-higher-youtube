@@ -14,7 +14,7 @@ const initialState: CountryState = {
   operationState: AsyncOperationState.None
 }
 
-export const countrySlice = createSlice({
+const countrySlice = createSlice({
   name: 'country',
   initialState,
   reducers: {
