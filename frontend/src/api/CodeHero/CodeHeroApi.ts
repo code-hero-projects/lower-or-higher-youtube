@@ -1,23 +1,17 @@
+import axios from "axios";
 import { Country } from "../../models";
-import { CodeHeroApiClient, CountryResponse } from "./CodeHeroApiClient";
+import { countryUrl } from "./urls";
 
 export class CodeHeroApi {
-  private codeHeroApiClient: CodeHeroApiClient;
+  private baseUrl: string;
 
-  constructor() {
-    this.codeHeroApiClient = new CodeHeroApiClient(process.env.REACT_APP_CODE_HERO_API_URL);
+  constructor(baseUrl: string) {
+    this.baseUrl = baseUrl;
   }
 
   public getCountries(): Promise<Country[]> {
-    console.log('called');  
-    return this.codeHeroApiClient
-      .country()
-      .then(countries => countries.map((countryResponse: CountryResponse) => {
-        return {
-          id: countryResponse.id!,
-          name: countryResponse.name!,
-          regionCode: countryResponse.regionCode!
-        }
-      }));
+    const url = this.baseUrl + countryUrl;
+    const countries = axios.get<Country[]>(url).then(response => response.data);
+    return countries;
   }
 }
