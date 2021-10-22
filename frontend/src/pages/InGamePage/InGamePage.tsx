@@ -1,3 +1,5 @@
+import { InGameContainer } from "../../containers";
+
 export function InGamePage() {
-  return <h1>In Game</h1>;
+  return <InGameContainer />;
 }

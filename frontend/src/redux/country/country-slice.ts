@@ -29,7 +29,7 @@ const countrySlice = createSlice({
       })
       .addCase(getCountries.fulfilled, (state, action) => {
         const countries = action.payload;
-        state.countries = countries;
+        state.countries = countries.sort((current, next) => current.name.localeCompare(next.name));
         state.selectedCountry = countries[0].id;
         state.operationState = AsyncOperationState.Success;
       })

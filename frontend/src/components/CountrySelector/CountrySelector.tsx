@@ -8,7 +8,7 @@ interface CountrySelectorProps {
   operationState: AsyncOperationState;
 }
 
-export function CountrySelector({ countries, selectedCountry, onCountrySelect }: CountrySelectorProps) {
+export function CountrySelector({ countries, selectedCountry, onCountrySelect, operationState }: CountrySelectorProps) {
   const handleChange = (event: SelectChangeEvent) => {
     onCountrySelect(+event.target.value);
   };
@@ -19,7 +19,7 @@ export function CountrySelector({ countries, selectedCountry, onCountrySelect }:
         value={selectedCountry!.toString()}
         onChange={handleChange}
       >
-        {countries.sort((current, next) => current.name.localeCompare(next.name)).map((country: Country) => <MenuItem value={country.id.toString()} key={country.id}>{country.name}</MenuItem>)}
+        {countries.map((country: Country) => <MenuItem value={country.id.toString()} key={country.id}>{country.name}</MenuItem>)}
       </Select>
     </FormControl>
   );

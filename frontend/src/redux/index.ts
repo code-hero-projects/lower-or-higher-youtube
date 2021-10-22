@@ -1,7 +1,9 @@
 export { getCountries, selectCountry } from './country';
-export { resetGame, startGame, endGame } from './game';
-export { showInstructions, closeInstructions } from './instructions';
-
-export { selectCountryState, selectGameState, selectInstructionsState } from './selectors';
-
+export { endGame, resetGame, startGame } from './game';
+export { closeInstructions, showInstructions } from './instructions';
+export { selectCountryState, selectGameState, selectInstructionsState, selectVideoState } from './selectors';
 export { store } from './store';
+export { getVideos } from './video';
+
+
+
