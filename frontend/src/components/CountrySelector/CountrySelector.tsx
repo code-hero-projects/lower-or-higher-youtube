@@ -1,11 +1,5 @@
-import { createStyles, FormControl, MenuItem, Select, withStyles, WithStyles } from "@material-ui/core";
+import { FormControl, MenuItem, Select, SelectChangeEvent } from "@mui/material";
 import { AsyncOperationState, Country } from "../../models";
-
-const styles = () => createStyles({
-  root: {
-    width: '100%'
-  }
-});
 
 interface CountrySelectorProps {
   countries: Country[];
@@ -14,25 +8,19 @@ interface CountrySelectorProps {
   operationState: AsyncOperationState;
 }
 
-type CountrySelectorPropsStyles = CountrySelectorProps & WithStyles<typeof styles>;
-
-function CountrySelectorComponent({ countries, selectedCountry, onCountrySelect, classes }: CountrySelectorPropsStyles) {
-  const { root } = classes;
-  
-  const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-    onCountrySelect(event.target.value as number);
+export function CountrySelector({ countries, selectedCountry, onCountrySelect }: CountrySelectorProps) {
+  const handleChange = (event: SelectChangeEvent) => {
+    onCountrySelect(+event.target.value);
   };
   
   return (
-    <FormControl variant="outlined" className={root}>
+    <FormControl variant="outlined" sx={{width: '50%'}}>
       <Select
-        value={selectedCountry}
+        value={selectedCountry!.toString()}
         onChange={handleChange}
       >
-        {countries.map((country: Country) => <MenuItem value={country.id} key={country.id}>{country.name}</MenuItem>)}
+        {countries.sort((current, next) => current.name.localeCompare(next.name)).map((country: Country) => <MenuItem value={country.id.toString()} key={country.id}>{country.name}</MenuItem>)}
       </Select>
     </FormControl>
   );
 }
-
-export const CountrySelector = withStyles(styles)(CountrySelectorComponent);
