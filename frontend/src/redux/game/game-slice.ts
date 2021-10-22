@@ -7,7 +7,7 @@ export interface GameState {
 
 const initialState: GameState = {
   gameState: CurrentGameState.NotStarted
-}
+};
 
 const gameSlice = createSlice({
   name: 'game',
