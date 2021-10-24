@@ -1,9 +1,10 @@
 import { Button } from "@material-ui/core";
+import { ReactNode } from "react";
 
 interface HigherLowerOptionProps {
   text: string;
-  color: string;
-  icon: any;
+  color: 'success' | 'error';
+  icon: ReactNode;
   onOption: () => void;
 }
 
