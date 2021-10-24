@@ -1,19 +1,20 @@
+import { Typography } from "@material-ui/core";
 import { CountrySelectorContainer, GameStartContainer, InstructionsContainer } from "../../containers";
-import { Box, Typography } from '@mui/material';
+import { BaseWrapper, ContainerWrapper, GameStartContainerWrapper } from "./HomePageStyles";
 
 export function HomePage() {
   return (
-    <Box sx= {{ marginTop: '15%' }}>
+    <BaseWrapper>
       <Typography variant="h3" align="center">Select a country to start the game</Typography>
-      <Box sx={{ marginTop: '3%', display: 'flex', justifyContent: 'center' }}>
+      <ContainerWrapper>
         <CountrySelectorContainer />
-      </Box>
-      <Box sx={{ marginTop: '3%', display: 'flex', justifyContent: 'center' }}>
-        <Box sx={{ marginRight: '3%' }}>
+      </ContainerWrapper>
+      <ContainerWrapper>
+        <GameStartContainerWrapper>
           <GameStartContainer />
-        </Box>
+        </GameStartContainerWrapper>
         <InstructionsContainer />
-      </Box>
-    </Box>
+      </ContainerWrapper>
+    </BaseWrapper>
   );
 }

@@ -1,5 +1,6 @@
-import { FormControl, MenuItem, Select, SelectChangeEvent } from "@mui/material";
+import { MenuItem, Select, SelectChangeEvent } from "@material-ui/core";
 import { AsyncOperationState, Country } from "../../models";
+import { FormControlStyled } from "./CountrySelectorStyles";
 
 interface CountrySelectorProps {
   countries: Country[];
@@ -14,13 +15,13 @@ export function CountrySelector({ countries, selectedCountry, onCountrySelect, o
   };
   
   return (
-    <FormControl variant="outlined" sx={{width: '50%'}}>
+    <FormControlStyled variant="outlined">
       <Select
         value={selectedCountry!.toString()}
         onChange={handleChange}
       >
         {countries.map((country: Country) => <MenuItem value={country.id.toString()} key={country.id}>{country.name}</MenuItem>)}
       </Select>
-    </FormControl>
+    </FormControlStyled>
   );
 }

@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button } from "@material-ui/core";
 
 interface ShowInstructionsProps {
   onShowInstructions: () => void;

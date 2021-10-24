@@ -1,21 +1,22 @@
-import { Box, Typography } from "@mui/material";
+import { Typography } from "@material-ui/core";
 import { Video } from "../../models";
+import { BackgroundImageWrapper, BaseWrapper, VideoDetailsWrapper } from "./VideoPanelStyles";
 
-interface VideoPanelProps {
+export interface VideoPanelProps {
   video: Video;
   showViews?: boolean;
 }
 
 export function VideoPanel({ video, showViews }: VideoPanelProps) {
   return (
-    <Box sx={{ height: '100%', width: '100%' }}>
-      <Box sx={{ backgroundImage: `url(${video.thumbnail})`, position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
+    <BaseWrapper>
+      <BackgroundImageWrapper video={video}>
+        <VideoDetailsWrapper>
           <Typography color="common.white">{video.name}</Typography>
           <Typography color="common.white">By {video.channel}</Typography>
-          {showViews && <Typography color="common.white" sx={{display: 'block'}}>{video.views}</Typography>}
-        </Box>
-      </Box>
-    </Box>
+          {showViews && <Typography color="common.white">{video.views}</Typography>}
+        </VideoDetailsWrapper>
+      </BackgroundImageWrapper>
+    </BaseWrapper>
   );
 }
