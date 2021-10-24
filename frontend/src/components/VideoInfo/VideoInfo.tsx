@@ -1,20 +1,19 @@
 import { Typography } from "@material-ui/core";
 import { Video } from "../../models";
-import { BackgroundImageWrapper, BaseWrapper, VideoDetailsWrapper } from "./VideoPanelStyles";
+import { BackgroundImageWrapper, BaseWrapper, VideoDetailsWrapper } from "./VideoInfoStyles";
 
-export interface VideoPanelProps {
+interface VideoInfoProps {
   video: Video;
-  showViews?: boolean;
 }
 
-export function VideoPanel({ video, showViews }: VideoPanelProps) {
+export function VideoInfo({ video }: VideoInfoProps) {
   return (
     <BaseWrapper>
-      <BackgroundImageWrapper video={video}>
+      <BackgroundImageWrapper thumbnail={video.thumbnail}>
         <VideoDetailsWrapper>
           <Typography color="common.white">{video.name}</Typography>
           <Typography color="common.white">By {video.channel}</Typography>
-          {showViews && <Typography color="common.white">{video.views}</Typography>}
+          <Typography color="common.white">{video.views}</Typography>
         </VideoDetailsWrapper>
       </BackgroundImageWrapper>
     </BaseWrapper>

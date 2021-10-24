@@ -1,5 +1,5 @@
 import { Video } from "../../models";
-import { VideoPanel } from "./VideoPanel";
+import { VideoInfo } from "./VideoInfo";
 
 const video: Video = {
   id: 5,
@@ -9,11 +9,9 @@ const video: Video = {
   thumbnail: 'https://i.ytimg.com/vi/U3ASj1L6_sY/maxresdefault.jpg'
 };
 
-export const WithViews = () => <VideoPanel video={video} showViews/>;
-
-export const WithoutViews = () => <VideoPanel video={video}/>;
+export const WithViews = () => <VideoInfo video={video} />;
 
 export default {
-  title: 'Components/VideoPanel',
-  components: VideoPanel
+  title: 'Components/VideoInfo',
+  components: VideoInfo
 };

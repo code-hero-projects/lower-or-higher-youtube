@@ -1,0 +1,2 @@
+export { VideoInfo } from './VideoInfo';
+

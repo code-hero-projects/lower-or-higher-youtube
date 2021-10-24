@@ -1,2 +1,0 @@
-export { VideoPanel } from './VideoPanel';
-
