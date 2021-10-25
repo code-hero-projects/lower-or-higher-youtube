@@ -19,14 +19,16 @@ export function VideoGuess({ video, onHigherOption, onLowerOption, initialTime, 
       <BackgroundImageWrapper thumbnail={video.thumbnail}>
         <Timer initialTime={initialTime} onUpdateTime={onUpdateTimer} />
         <VideoDetailsWrapper>
-          <Typography color="common.white">{video.name}</Typography>
-          <Typography color="common.white">By {video.channel}</Typography>
+          <Typography variant="h3" color="common.white">{video.name}</Typography>
+          <Typography variant="h4" color="common.white">By {video.channel}</Typography>
+          <Typography color="common.white">Has</Typography>
           <HigherLowerOptionsWrapper>
             <HigherOptionWrapper>
               <HigherLowerOption text="higher" color="success" icon={<ExpandLess />} onOption={onHigherOption} />
             </HigherOptionWrapper>
             <HigherLowerOption text="lower" color="error" icon={<ExpandMore />}  onOption={onLowerOption}/>
           </HigherLowerOptionsWrapper>
+          <Typography color="common.white">Views than </Typography>
         </VideoDetailsWrapper>
       </BackgroundImageWrapper>
     </BaseWrapper>
