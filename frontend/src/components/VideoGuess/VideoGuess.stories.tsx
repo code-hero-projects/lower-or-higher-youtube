@@ -10,9 +10,9 @@ const video: Video = {
   thumbnail: 'https://i.ytimg.com/vi/U3ASj1L6_sY/maxresdefault.jpg'
 };
 
-export const Display = () => <Box sx={{height: '100vh'}}><VideoGuess video={video} onHigherOption={() => {}} onLowerOption={() => {}} /></Box>;
+export const Display = () => <Box sx={{height: '100vh'}}><VideoGuess video={video} onHigherOption={() => {}} onLowerOption={() => {}} initialTime={5} onUpdateTimer={() => {}} /></Box>;
 
-export const OnOptionsClick = () => <Box sx={{height: '100vh'}}><VideoGuess video={video} onHigherOption={() => alert('higher')} onLowerOption={() => alert('lower')} /></Box>;
+export const OnOptionsClick = () => <Box sx={{height: '100vh'}}><VideoGuess video={video} onHigherOption={() => alert('higher')} onLowerOption={() => alert('lower')} initialTime={5} onUpdateTimer={(currentTime) => console.log(currentTime)} /></Box>;
 
 export default {
   title: 'Components/VideoGuess',

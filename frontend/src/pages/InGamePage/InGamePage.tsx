@@ -24,10 +24,10 @@ export function InGamePage() {
   return (
     <Box sx={{display: 'flex', width: '100%', height: '100vh'}}>
       <Box sx={{flex: 1}}>
-        <VideoInfo video={currentVideo} />
+        <VideoInfo video={currentVideo} currentScore={5000} />
       </Box>
       <Box sx={{flex: 1}}>
-        <VideoGuess video={nextVideo} onHigherOption={onOptionClick} onLowerOption={onOptionClick} />
+        <VideoGuess video={nextVideo} onHigherOption={onOptionClick} onLowerOption={onOptionClick} initialTime={5} onUpdateTimer={currentTime => console.log(currentTime)} />
       </Box>
     </Box>
   );
