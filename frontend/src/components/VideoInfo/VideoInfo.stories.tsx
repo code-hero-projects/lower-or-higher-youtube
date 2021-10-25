@@ -1,3 +1,4 @@
+import { Box } from "@material-ui/core";
 import { Video } from "../../models";
 import { VideoInfo } from "./VideoInfo";
 
@@ -9,7 +10,7 @@ const video: Video = {
   thumbnail: 'https://i.ytimg.com/vi/U3ASj1L6_sY/maxresdefault.jpg'
 };
 
-export const WithViews = () => <VideoInfo video={video} />;
+export const WithViews = () => <Box sx={{height: '100vh'}}><VideoInfo video={video} currentScore={573} /></Box>;
 
 export default {
   title: 'Components/VideoInfo',
