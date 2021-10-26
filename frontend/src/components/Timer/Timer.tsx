@@ -10,7 +10,7 @@ export function Timer({ initialTime, onUpdateTime }: TimerProps) {
   const [currentTime, setCurrentTime] = useState<number>(initialTime);
 
   useEffect(() => {
-    if (currentTime != 0) {
+    if (currentTime !== 0) {
       const newTime = currentTime - 1;
       const interval = setInterval(() => {
         onUpdateTime(newTime);

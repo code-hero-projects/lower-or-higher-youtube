@@ -12,7 +12,7 @@ export function VideoGuessContainer() {
     return <h1>Loading Videos</h1>;
   }
 
-  const onHigherOption = () => lowerOrHigherOption(() => videoToGuess.views > videoGuessed.views);
+  const onHigherOption = () => lowerOrHigherOption(() => videoToGuess.views >= videoGuessed.views);
 
   const onLowerOption = () => lowerOrHigherOption(() => videoToGuess.views < videoGuessed.views);
 
@@ -28,8 +28,8 @@ export function VideoGuessContainer() {
 
   return (
     <VideoGuess
-      videoGuessed={videoGuessed!}
-      videoToGuess={videoToGuess!}
+      videoGuessed={videoGuessed}
+      videoToGuess={videoToGuess}
       initialTime={initialTime}
       onHigherOption={onHigherOption}
       onLowerOption={onLowerOption}

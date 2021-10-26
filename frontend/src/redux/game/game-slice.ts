@@ -24,7 +24,7 @@ const gameSlice = createSlice({
       state.gameState = CurrentGameState.Playing;
     },
     endGame: (state) => {
-      state.gameState = CurrentGameState.Playing;
+      state.gameState = CurrentGameState.Ended;
     },
     addScore: (state, action) => {
       state.score += action.payload;
