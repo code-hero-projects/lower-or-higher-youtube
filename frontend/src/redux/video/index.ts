@@ -1,3 +1,4 @@
 export { getVideos } from './epics';
-export { videoReducer } from './video-slice';
+export { nextVideo, videoReducer } from './video-slice';
 export type { VideoState } from './video-slice';
+

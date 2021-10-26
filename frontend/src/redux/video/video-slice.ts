@@ -4,16 +4,24 @@ import { getVideos } from "./epics";
 
 export interface VideoState {
   videos: Video[];
-  videoGuessed: Video | undefined;
-  videoToGuess: Video | undefined;
+  videoGuessed: Video;
+  videoToGuess: Video;
   currentIndex: number;
   operationState: AsyncOperationState;
 }
 
+const defaultVideo: Video = {
+  id: 0,
+  channel: '',
+  name: '',
+  thumbnail: '',
+  views: 0
+};
+
 const initialState: VideoState = {
   videos: [],
-  videoGuessed: undefined,
-  videoToGuess: undefined,
+  videoGuessed: defaultVideo,
+  videoToGuess: defaultVideo,
   currentIndex: 0,
   operationState: AsyncOperationState.None
 };
@@ -47,5 +55,7 @@ const videoSlice = createSlice({
       })
   }
 });
+
+export const { nextVideo } = videoSlice.actions;
 
 export const videoReducer = videoSlice.reducer;
