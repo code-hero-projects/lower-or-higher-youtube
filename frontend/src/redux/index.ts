@@ -1,5 +1,5 @@
 export { getCountries, selectCountry } from './country';
-export { endGame, resetGame, startGame } from './game';
+export { addScore, endGame, resetGame, resetScore, resetTime, startGame } from './game';
 export { closeInstructions, showInstructions } from './instructions';
 export { selectCountryState, selectGameState, selectInstructionsState, selectVideoState } from './selectors';
 export { store } from './store';

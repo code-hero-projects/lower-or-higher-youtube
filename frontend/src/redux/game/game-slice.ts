@@ -2,11 +2,15 @@ import { createSlice } from "@reduxjs/toolkit";
 import { CurrentGameState } from "../../models";
 
 export interface GameState {
-  gameState: CurrentGameState
+  gameState: CurrentGameState;
+  score: number;
+  initialTime: number;
 }
 
 const initialState: GameState = {
-  gameState: CurrentGameState.NotStarted
+  gameState: CurrentGameState.NotStarted,
+  score: 0,
+  initialTime: 15
 };
 
 const gameSlice = createSlice({
@@ -21,10 +25,19 @@ const gameSlice = createSlice({
     },
     endGame: (state) => {
       state.gameState = CurrentGameState.Playing;
+    },
+    addScore: (state, action) => {
+      state.score += action.payload;
+    },
+    resetScore: (state) => {
+      state.score = initialState.score;
+    },
+    resetTime: (state) => {
+      state.initialTime = initialState.initialTime;
     }
   }
 });
 
-export const { resetGame, startGame, endGame } = gameSlice.actions;
+export const { resetGame, startGame, endGame, addScore, resetScore, resetTime } = gameSlice.actions;
 
 export const gameReducer = gameSlice.reducer;

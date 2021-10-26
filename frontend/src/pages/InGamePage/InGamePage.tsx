@@ -27,7 +27,7 @@ export function InGamePage() {
         <VideoInfo video={currentVideo} currentScore={1584} />
       </Box>
       <Box sx={{flex: 1}}>
-        <VideoGuess video={nextVideo} onHigherOption={onOptionClick} onLowerOption={onOptionClick} initialTime={45} onUpdateTimer={currentTime => console.log(currentTime)} />
+        <VideoGuess videoToGuess={nextVideo} videoGuessed={currentVideo} onHigherOption={onOptionClick} onLowerOption={onOptionClick} initialTime={45} onUpdateTimer={currentTime => console.log(currentTime)} />
       </Box>
     </Box>
   );

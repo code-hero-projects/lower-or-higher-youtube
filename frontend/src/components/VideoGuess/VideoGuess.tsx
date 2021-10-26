@@ -6,21 +6,22 @@ import { Timer } from "../Timer";
 import { BackgroundImageWrapper, BaseWrapper, HigherLowerOptionsWrapper, HigherOptionWrapper, VideoDetailsWrapper } from "./VideoGuessStyles";
 
 export interface VideoGuessProps {
-  video: Video;
+  videoToGuess: Video;
+  videoGuessed: Video;
   initialTime: number;
   onHigherOption: () => void;
   onLowerOption: () => void;
   onUpdateTimer: (currentTime: number) => void;
 }
 
-export function VideoGuess({ video, onHigherOption, onLowerOption, initialTime, onUpdateTimer }: VideoGuessProps) {
+export function VideoGuess({ videoToGuess, videoGuessed, onHigherOption, onLowerOption, initialTime, onUpdateTimer }: VideoGuessProps) {
   return (
     <BaseWrapper>
-      <BackgroundImageWrapper thumbnail={video.thumbnail}>
+      <BackgroundImageWrapper thumbnail={videoToGuess.thumbnail}>
         <Timer initialTime={initialTime} onUpdateTime={onUpdateTimer} />
         <VideoDetailsWrapper>
-          <Typography variant="h3" color="common.white">{video.name}</Typography>
-          <Typography variant="h4" color="common.white">By {video.channel}</Typography>
+          <Typography variant="h3" color="common.white">{videoToGuess.name}</Typography>
+          <Typography variant="h4" color="common.white">By {videoToGuess.channel}</Typography>
           <Typography color="common.white">Has</Typography>
           <HigherLowerOptionsWrapper>
             <HigherOptionWrapper>
@@ -28,7 +29,7 @@ export function VideoGuess({ video, onHigherOption, onLowerOption, initialTime, 
             </HigherOptionWrapper>
             <HigherLowerOption text="lower" color="error" icon={<ExpandMore />}  onOption={onLowerOption}/>
           </HigherLowerOptionsWrapper>
-          <Typography color="common.white">Views than </Typography>
+          <Typography color="common.white">Views than {videoGuessed.name}</Typography>
         </VideoDetailsWrapper>
       </BackgroundImageWrapper>
     </BaseWrapper>
