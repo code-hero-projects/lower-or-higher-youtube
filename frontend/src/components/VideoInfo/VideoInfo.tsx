@@ -1,7 +1,6 @@
-import { Typography } from "@material-ui/core";
 import { Video } from "../../models";
+import { BackgroundImageWrapper, BaseWrapper, TypographyWrapper, VideoDetailsWrapper } from "../Styled";
 import { Score } from "./Score";
-import { BackgroundImageWrapper, BaseWrapper, VideoDetailsWrapper } from "./VideoInfoStyles";
 
 interface VideoInfoProps {
   video: Video;
@@ -11,14 +10,13 @@ interface VideoInfoProps {
 export function VideoInfo({ video, currentScore }: VideoInfoProps) {
   return (
     <BaseWrapper>
-      <BackgroundImageWrapper thumbnail={video.thumbnail}>
-        <Score currentScore={currentScore} />
-        <VideoDetailsWrapper>
-          <Typography variant="h3" color="common.white">{video.name}</Typography>
-          <Typography variant="h4" color="common.white">By {video.channel}</Typography>
-          <Typography variant="h3" color="common.white">Has {video.views} views</Typography>
-        </VideoDetailsWrapper>
-      </BackgroundImageWrapper>
+      <BackgroundImageWrapper thumbnail={video.thumbnail} />
+      <Score currentScore={currentScore} />
+      <VideoDetailsWrapper>
+        <TypographyWrapper variant="h3" color="common.white">{video.name}</TypographyWrapper>
+        <TypographyWrapper variant="h4" color="common.white">By {video.channel}</TypographyWrapper>
+        <TypographyWrapper variant="h3" color="common.white">Has {video.views.toLocaleString()} views</TypographyWrapper>
+      </VideoDetailsWrapper>
     </BaseWrapper>
   );
 }

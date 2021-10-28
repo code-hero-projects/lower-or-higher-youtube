@@ -1,5 +1,5 @@
-import { Typography } from "@material-ui/core";
 import { useEffect } from "react";
+import { TypographyWrapper } from "../../Styled";
 
 interface TimerProps {
   time: number;
@@ -18,5 +18,5 @@ export function Timer({ time, onUpdateTime }: TimerProps) {
     }
   }, [time]);
 
-  return <Typography variant="h4" color="common.white">Time left: {time}</Typography>
+  return <TypographyWrapper variant="h4" color="common.white">Time left: {time}</TypographyWrapper>
 }

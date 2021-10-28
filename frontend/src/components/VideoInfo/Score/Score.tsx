@@ -1,4 +1,4 @@
-import { Typography } from "@material-ui/core";
+import { TypographyWrapper } from "../../Styled";
 
 interface ScoreProps {
   currentScore: number;
@@ -6,6 +6,6 @@ interface ScoreProps {
 
 export function Score({ currentScore }: ScoreProps) {
   return (
-    <Typography variant="h4" color="common.white">Current score: {currentScore}</Typography>
+    <TypographyWrapper variant="h4" color="common.white">Current score: {currentScore}</TypographyWrapper>
   );
 }
