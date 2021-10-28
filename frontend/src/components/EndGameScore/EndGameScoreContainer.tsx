@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import { EndGameScore } from "../../components";
 import { selectGameState } from "../../redux";
+import { EndGameScore } from "./EndGameScore";
 
 export function EndGameScoreContainer() {
   const { score } = useSelector(selectGameState);

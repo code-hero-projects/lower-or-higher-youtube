@@ -1,1 +1,1 @@
-export { EndGameCountrySelector } from './EndGameCountrySelector';
+export { EndGameCountrySelectorContainer } from './EndGameCountrySelectorContainer';

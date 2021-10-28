@@ -1,2 +1,1 @@
-export { VideoInfo } from './VideoInfo';
-
+export { VideoInfoContainer } from './VideoInfoContainer';

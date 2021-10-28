@@ -1,8 +1,7 @@
-export { CountrySelector } from './CountrySelector';
-export { GameStart } from './GameStart';
-export { ShowInstructions } from './Instructions';
-export { VideoGuess } from './VideoGuess';
-export { VideoInfo } from './VideoInfo';
-export { EndGameScore } from './EndGameScore';
-export { RestartGame } from './RestartGame';
-export { EndGameCountrySelector } from './EndGameCountrySelector';
+export { CountrySelectorContainer } from './CountrySelector';
+export { EndGameCountrySelectorContainer } from './EndGameCountrySelector';
+export { EndGameScoreContainer } from './EndGameScore';
+export { GameStartContainer } from './GameStart';
+export { RestartGameContainer } from './RestartGame';
+export { VideoGuessContainer } from './VideoGuess';
+export { VideoInfoContainer } from './VideoInfo';

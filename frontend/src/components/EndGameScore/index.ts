@@ -1,1 +1,1 @@
-export { EndGameScore } from './EndGameScore';
+export { EndGameScoreContainer } from './EndGameScoreContainer';

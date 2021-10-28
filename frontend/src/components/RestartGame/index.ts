@@ -1,1 +1,1 @@
-export { RestartGame } from './RestartGame';
+export { RestartGameContainer } from './RestartGameContainer';

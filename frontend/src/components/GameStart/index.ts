@@ -1,1 +1,1 @@
-export { GameStart } from './GameStart';
+export { GameStartContainer } from './GameStartContainer';

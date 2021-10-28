@@ -1,1 +1,0 @@
-export { InstructionsContainer } from './InstructionsContainer';

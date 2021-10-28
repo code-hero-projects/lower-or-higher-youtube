@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
-import { EndGameCountrySelector } from "../../components";
 import { resetGame } from "../../redux";
+import { EndGameCountrySelector } from "./EndGameCountrySelector";
 
 export function EndGameCountrySelectorContainer() {
   const dispatch = useDispatch();

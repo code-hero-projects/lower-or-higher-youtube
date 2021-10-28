@@ -1,4 +1,4 @@
-import { VideoGuessContainer, VideoInfoContainer } from "../../containers";
+import { VideoGuessContainer, VideoInfoContainer } from "../../components";
 import { BaseWrapper } from "./InGamePageStyled";
 
 export function InGamePage() {

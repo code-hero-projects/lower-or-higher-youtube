@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import { VideoInfo } from "../../components";
 import { selectGameState, selectVideoState } from "../../redux";
+import { VideoInfo } from "./VideoInfo";
 
 export function VideoInfoContainer() {
   const { videoGuessed } = useSelector(selectVideoState);

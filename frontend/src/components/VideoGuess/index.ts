@@ -1,1 +1,2 @@
-export { VideoGuess } from './VideoGuess';
+export { VideoGuessContainer } from './VideoGuessContainer';
+

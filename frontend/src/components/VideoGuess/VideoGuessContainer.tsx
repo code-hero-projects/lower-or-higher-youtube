@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-import { VideoGuess } from "../../components";
 import { AsyncOperationState } from "../../models";
 import { addScore, endGame, nextVideo, resetTime, selectGameState, selectVideoState, updateTime } from "../../redux";
+import { VideoGuess } from "./VideoGuess";
 
 interface VideoGuessContainerProps {
   questionScore: number;

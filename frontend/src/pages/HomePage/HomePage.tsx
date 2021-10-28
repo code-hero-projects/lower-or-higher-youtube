@@ -1,5 +1,5 @@
 import { Typography } from "@material-ui/core";
-import { CountrySelectorContainer, GameStartContainer, InstructionsContainer } from "../../containers";
+import { CountrySelectorContainer, GameStartContainer } from "../../components";
 import { BaseWrapper, ContainerWrapper } from "./HomePageStyles";
 
 export function HomePage() {
