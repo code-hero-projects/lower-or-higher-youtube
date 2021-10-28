@@ -5,5 +5,5 @@ interface ShowInstructionsProps {
 }
 
 export function ShowInstructions({onShowInstructions}: ShowInstructionsProps) {
-  return <Button variant="contained" size="large" onClick={onShowInstructions}>Show instructions</Button>;
+  return <Button sx={{width: '30%'}} variant="contained" size="large" onClick={onShowInstructions}>Show instructions</Button>;
 }

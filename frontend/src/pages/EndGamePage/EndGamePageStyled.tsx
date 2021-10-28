@@ -8,7 +8,7 @@ export const BaseWrapper = styled(Box)`
   justify-content: center;
 `;
 
-export const ContainerWrapper = styled(Box)`
+export const OptionsWrapper = styled(Box)`
   margin-top: 5rem;
   display: flex;
   justify-content: center;

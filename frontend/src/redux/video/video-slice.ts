@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { AsyncOperationState, Video } from "../../models";
-import { getVideos } from "./epics";
+import { getVideos, randomizeVideos } from "./epics";
 
 export interface VideoState {
   videos: Video[];
@@ -35,6 +35,13 @@ const videoSlice = createSlice({
       state.videoGuessed = state.videoToGuess;
       state.videoToGuess = state.videos[nextIndex];
       state.currentIndex = nextIndex;
+    },
+    shuffleVideos: (state) => {
+      const newVideos = randomizeVideos(state.videos);
+      state.videos = newVideos;
+      state.currentIndex = 1;
+      state.videoGuessed = newVideos[0];
+      state.videoToGuess = newVideos[1];
     }
   },
   extraReducers: (builder) => {
@@ -56,6 +63,6 @@ const videoSlice = createSlice({
   }
 });
 
-export const { nextVideo } = videoSlice.actions;
+export const { nextVideo, shuffleVideos } = videoSlice.actions;
 
 export const videoReducer = videoSlice.reducer;

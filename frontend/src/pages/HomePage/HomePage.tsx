@@ -1,6 +1,6 @@
 import { Typography } from "@material-ui/core";
 import { CountrySelectorContainer, GameStartContainer, InstructionsContainer } from "../../containers";
-import { BaseWrapper, ContainerWrapper, GameStartContainerWrapper } from "./HomePageStyles";
+import { BaseWrapper, ContainerWrapper } from "./HomePageStyles";
 
 export function HomePage() {
   return (
@@ -10,10 +10,7 @@ export function HomePage() {
         <CountrySelectorContainer />
       </ContainerWrapper>
       <ContainerWrapper>
-        <GameStartContainerWrapper>
-          <GameStartContainer />
-        </GameStartContainerWrapper>
-        <InstructionsContainer />
+        <GameStartContainer />
       </ContainerWrapper>
     </BaseWrapper>
   );

@@ -1,3 +1,16 @@
+import { EndGameCountrySelectorContainer, EndGameScoreContainer, RestartGameContainer } from "../../containers";
+import { BaseWrapper, OptionsWrapper } from "./EndGamePageStyled";
+
 export function EndGamePage() {
-  return <h1>End Game</h1>;
+  return (
+    <BaseWrapper>
+      <EndGameScoreContainer />
+      <OptionsWrapper>
+        <RestartGameContainer />
+      </OptionsWrapper>
+      <OptionsWrapper>
+        <EndGameCountrySelectorContainer />
+      </OptionsWrapper>
+    </BaseWrapper>
+  );
 }

@@ -1,6 +1,6 @@
 import { Typography } from "@material-ui/core";
 import { Video } from "../../models";
-import { Score } from "../Score";
+import { Score } from "./Score";
 import { BackgroundImageWrapper, BaseWrapper, VideoDetailsWrapper } from "./VideoInfoStyles";
 
 interface VideoInfoProps {
