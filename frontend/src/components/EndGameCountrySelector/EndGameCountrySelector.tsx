@@ -6,5 +6,5 @@ interface EndGameCountrySelectorProps {
 }
 
 export function EndGameCountrySelector({ onChooseAnotherCountry }: EndGameCountrySelectorProps) {
-  return <Button variant="contained" size="large" onClick={onChooseAnotherCountry} endIcon={<PlayArrow />}>Choose another country</Button>;
+  return <Button variant="contained" size="large" onClick={onChooseAnotherCountry} endIcon={<PlayArrow />} color="success">Choose another country</Button>;
 }

@@ -13,9 +13,9 @@ export function VideoInfo({ video, currentScore }: VideoInfoProps) {
       <BackgroundImageWrapper thumbnail={video.thumbnail} />
       <Score currentScore={currentScore} />
       <VideoDetailsWrapper>
-        <TypographyWrapper variant="h3" color="common.white">{video.name}</TypographyWrapper>
-        <TypographyWrapper variant="h4" color="common.white">By {video.channel}</TypographyWrapper>
-        <TypographyWrapper variant="h3" color="common.white">Has {video.views.toLocaleString()} views</TypographyWrapper>
+        <TypographyWrapper variant="h3">{video.name}</TypographyWrapper>
+        <TypographyWrapper variant="h4">By {video.channel}</TypographyWrapper>
+        <TypographyWrapper variant="h3">Has {video.views.toLocaleString()} views</TypographyWrapper>
       </VideoDetailsWrapper>
     </BaseWrapper>
   );

@@ -1,11 +1,17 @@
-import { Typography } from "@material-ui/core";
 import { CountrySelectorContainer, GameStartContainer } from "../../components";
-import { BaseWrapper, ContainerWrapper } from "./HomePageStyles";
+import { TypographyWrapper } from "../../components/Styled";
+import { BaseWrapper, ContainerWrapper, HomePageBackgroundImageWrapper, SpacedTypographyWrapper } from "./HomePageStyles";
 
 export function HomePage() {
   return (
     <BaseWrapper>
-      <Typography variant="h3" align="center">Select a country to start the game</Typography>
+      <HomePageBackgroundImageWrapper thumbnail="/images/landscape-background.jpg" />
+      <SpacedTypographyWrapper variant="h3" align="center">What are the most viewed videos in each country?</SpacedTypographyWrapper>
+      <SpacedTypographyWrapper>
+        <TypographyWrapper variant="h5" align="center">A game of higher and lower using YouTube videos.</TypographyWrapper>
+        <TypographyWrapper variant="h5" align="center">The data gets refreshed everyday!</TypographyWrapper>
+      </SpacedTypographyWrapper>
+      <SpacedTypographyWrapper variant="h3" align="center">Select a country to start the game</SpacedTypographyWrapper>
       <ContainerWrapper>
         <CountrySelectorContainer />
       </ContainerWrapper>

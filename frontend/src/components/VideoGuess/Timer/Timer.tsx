@@ -18,5 +18,5 @@ export function Timer({ time, onUpdateTime }: TimerProps) {
     }
   }, [time]);
 
-  return <TypographyWrapper variant="h4" color="common.white">Time left: {time}</TypographyWrapper>
+  return <TypographyWrapper variant="h4">Time left: {time}</TypographyWrapper>
 }

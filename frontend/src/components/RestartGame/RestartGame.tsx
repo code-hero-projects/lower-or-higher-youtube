@@ -6,5 +6,5 @@ interface RestartGameProps {
 }
 
 export function RestartGame({ onRestartGame }: RestartGameProps) {
-  return <Button variant="contained" size="large" onClick={onRestartGame} endIcon={<Refresh />}>Restart game with same country</Button>;
+  return <Button variant="contained" size="large" onClick={onRestartGame} endIcon={<Refresh />} color="success">Restart game with same country</Button>;
 }

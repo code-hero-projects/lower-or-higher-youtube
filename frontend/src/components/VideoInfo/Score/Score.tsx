@@ -6,6 +6,6 @@ interface ScoreProps {
 
 export function Score({ currentScore }: ScoreProps) {
   return (
-    <TypographyWrapper variant="h4" color="common.white">Current score: {currentScore}</TypographyWrapper>
+    <TypographyWrapper variant="h4">Current score: {currentScore}</TypographyWrapper>
   );
 }

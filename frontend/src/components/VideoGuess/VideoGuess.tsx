@@ -9,27 +9,33 @@ export interface VideoGuessProps {
   videoToGuess: Video;
   videoGuessed: Video;
   time: number;
+  showViews: boolean;
   onHigherOption: () => void;
   onLowerOption: () => void;
   onUpdateTimer: (currentTime: number) => void;
 }
 
-export function VideoGuess({ videoToGuess, videoGuessed, onHigherOption, onLowerOption, time, onUpdateTimer }: VideoGuessProps) {
+export function VideoGuess({ videoToGuess, videoGuessed, time, showViews, onHigherOption, onLowerOption, onUpdateTimer }: VideoGuessProps) {
   return (
     <BaseWrapper>
       <BackgroundImageWrapper thumbnail={videoToGuess.thumbnail} />
       <Timer time={time} onUpdateTime={onUpdateTimer} />
       <VideoDetailsWrapper>
-        <TypographyWrapper variant="h3" color="common.white">{videoToGuess.name}</TypographyWrapper>
-        <TypographyWrapper variant="h4" color="common.white">By {videoToGuess.channel}</TypographyWrapper>
-        <TypographyWrapper color="common.white">Has</TypographyWrapper>
+        <TypographyWrapper variant="h3">{videoToGuess.name}</TypographyWrapper>
+        <TypographyWrapper variant="h4">By {videoToGuess.channel}</TypographyWrapper>
+        <TypographyWrapper>Has</TypographyWrapper>
         <HigherLowerOptionsWrapper>
-          <HigherOptionWrapper>
-            <HigherLowerOption text="higher" color="success" icon={<ExpandLess />} onOption={onHigherOption} />
-          </HigherOptionWrapper>
-          <HigherLowerOption text="lower" color="error" icon={<ExpandMore />}  onOption={onLowerOption}/>
+          {!showViews &&
+            <>
+              <HigherOptionWrapper>
+                <HigherLowerOption text="higher" color="success" icon={<ExpandLess />} onOption={onHigherOption} />
+              </HigherOptionWrapper>
+              <HigherLowerOption text="lower" color="error" icon={<ExpandMore />}  onOption={onLowerOption}/>
+            </>
+          }
+          {showViews && <TypographyWrapper variant="h3">Has {videoToGuess.views.toLocaleString()} views</TypographyWrapper>}
         </HigherLowerOptionsWrapper>
-        <TypographyWrapper color="common.white">Views than {videoGuessed.name}</TypographyWrapper>
+        <TypographyWrapper>Views than {videoGuessed.name}</TypographyWrapper>
       </VideoDetailsWrapper>
     </BaseWrapper>
   );
