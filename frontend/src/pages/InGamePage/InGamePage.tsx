@@ -1,5 +1,6 @@
 import { VideoGuessContainer, VideoInfoContainer } from "../../components";
-import { BaseWrapper } from "./InGamePageStyled";
+import { AnswerSignContainer } from "../../components/AnswerSign";
+import { AnswerSignWrapper, BaseWrapper } from "./InGamePageStyled";
 
 export function InGamePage() {
   const questionScore: number = +process.env.REACT_APP_QUESTION_SCORE!;
@@ -8,6 +9,9 @@ export function InGamePage() {
   return (
     <BaseWrapper>
       <VideoInfoContainer />
+      <AnswerSignWrapper>
+        <AnswerSignContainer />
+      </AnswerSignWrapper>
       <VideoGuessContainer questionScore={questionScore} timeBonusScore={timeBonusScore} />
     </BaseWrapper>
   );

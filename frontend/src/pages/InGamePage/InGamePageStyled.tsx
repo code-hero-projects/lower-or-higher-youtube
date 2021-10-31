@@ -7,3 +7,10 @@ export const BaseWrapper = styled(Box)`
   overflow: hidden;
   flex-direction: column;
 `;
+
+export const AnswerSignWrapper = styled(Box)`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+`;

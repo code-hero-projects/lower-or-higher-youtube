@@ -1,1 +1,1 @@
-export { AnswerSign } from './AnswerSign';
+export { AnswerSignContainer } from './AnswerSignContainer';
