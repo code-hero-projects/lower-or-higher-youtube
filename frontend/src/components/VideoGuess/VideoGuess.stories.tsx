@@ -18,11 +18,11 @@ const videoGuessed: Video = {
   thumbnail: 'https://i.ytimg.com/vi/U3ASj1L6_sY/maxresdefault.jpg'
 };
 
-export const DisplayWithoutViews = () => <Box sx={{height: '100vh'}}><VideoGuess videoToGuess={videoToGuess} videoGuessed={videoGuessed} showViews={false} onHigherOption={() => {}} onLowerOption={() => {}} time={5} onUpdateTimer={() => {}} /></Box>;
+export const DisplayWithoutViews = () => <Box sx={{height: '100vh'}}><VideoGuess videoToGuess={videoToGuess} videoGuessed={videoGuessed} showViews={false} onHigherOption={() => {}} onLowerOption={() => {}} time={5} stopTime={true} onUpdateTimer={() => {}} /></Box>;
 
-export const DisplayWithViews = () => <Box sx={{height: '100vh'}}><VideoGuess videoToGuess={videoToGuess} videoGuessed={videoGuessed} showViews={true} onHigherOption={() => {}} onLowerOption={() => {}} time={5} onUpdateTimer={() => {}} /></Box>;
+export const DisplayWithViews = () => <Box sx={{height: '100vh'}}><VideoGuess videoToGuess={videoToGuess} videoGuessed={videoGuessed} showViews={true} onHigherOption={() => {}} onLowerOption={() => {}} time={5} stopTime={true} onUpdateTimer={() => {}} /></Box>;
 
-export const OnOptionsClick = () => <Box sx={{height: '100vh'}}><VideoGuess videoToGuess={videoToGuess} videoGuessed={videoGuessed}  showViews={false} onHigherOption={() => alert('higher')} onLowerOption={() => alert('lower')} time={5} onUpdateTimer={(currentTime) => console.log(currentTime)} /></Box>;
+export const OnOptionsClick = () => <Box sx={{height: '100vh'}}><VideoGuess videoToGuess={videoToGuess} videoGuessed={videoGuessed}  showViews={false} onHigherOption={() => alert('higher')} onLowerOption={() => alert('lower')} time={5} stopTime={true} onUpdateTimer={(currentTime) => console.log(currentTime)} /></Box>;
 
 export default {
   title: 'Components/VideoGuess',

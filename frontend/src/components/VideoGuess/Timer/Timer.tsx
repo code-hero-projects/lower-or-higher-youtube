@@ -3,12 +3,13 @@ import { TypographyWrapper } from "../../Styled";
 
 interface TimerProps {
   time: number;
+  stopTime: boolean;
   onUpdateTime: (time: number) => void;
 }
 
-export function Timer({ time, onUpdateTime }: TimerProps) {
+export function Timer({ time, stopTime, onUpdateTime }: TimerProps) {
   useEffect(() => {
-    if (time !== 0) {
+    if (!stopTime && time !== 0) {
       const newTime = time - 1;
       const interval = setInterval(() => {
         onUpdateTime(newTime);

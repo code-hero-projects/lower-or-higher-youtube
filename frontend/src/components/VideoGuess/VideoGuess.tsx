@@ -9,17 +9,18 @@ export interface VideoGuessProps {
   videoToGuess: Video;
   videoGuessed: Video;
   time: number;
+  stopTime: boolean;
   showViews: boolean;
   onHigherOption: () => void;
   onLowerOption: () => void;
   onUpdateTimer: (currentTime: number) => void;
 }
 
-export function VideoGuess({ videoToGuess, videoGuessed, time, showViews, onHigherOption, onLowerOption, onUpdateTimer }: VideoGuessProps) {
+export function VideoGuess({ videoToGuess, videoGuessed, time, stopTime, showViews, onHigherOption, onLowerOption, onUpdateTimer }: VideoGuessProps) {
   return (
     <BaseWrapper>
       <BackgroundImageWrapper thumbnail={videoToGuess.thumbnail} />
-      <Timer time={time} onUpdateTime={onUpdateTimer} />
+      <Timer time={time} stopTime={stopTime} onUpdateTime={onUpdateTimer} />
       <VideoDetailsWrapper>
         <TypographyWrapper variant="h3">{videoToGuess.name}</TypographyWrapper>
         <TypographyWrapper variant="h4">By {videoToGuess.channel}</TypographyWrapper>
