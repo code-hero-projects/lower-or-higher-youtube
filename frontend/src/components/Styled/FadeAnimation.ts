@@ -1,12 +1,7 @@
 import { css, keyframes } from "@material-ui/system";
 
-interface FadeAnimationProps {
+export interface FadeAnimationProps {
   active: boolean;
-}
-
-interface FadeProps {
-  scaleFrom: number;
-  scaleTo: number;
 }
 
 const fade = (scaleFrom: number, scaleTo: number) => keyframes`
@@ -23,8 +18,8 @@ const fade = (scaleFrom: number, scaleTo: number) => keyframes`
 
 const fadeAnimation = (active: boolean, animation: any) => css`
   ${active && {
-    animation: `${animation} 750ms linear`,
-    transition: 'visibility 750ms linear'
+    animation: `${animation} 1s linear`,
+    transition: 'visibility 1s linear'
   }}
 `;
 

@@ -3,7 +3,7 @@ import { Video } from "../../models";
 import { BackgroundImageWrapper, BaseWrapper, TypographyWrapper, VideoDetailsWrapper } from "../Styled";
 import { HigherLowerOption } from "./HigherLowerOption";
 import { Timer } from "./Timer";
-import { HigherLowerOptionsWrapper, HigherOptionWrapper } from "./VideoGuessStyles";
+import { HigherLowerOptionsWrapper, HigherOptionWrapper, ShowViewsWrapper } from "./VideoGuessStyles";
 
 export interface VideoGuessProps {
   videoToGuess: Video;
@@ -27,13 +27,17 @@ export function VideoGuess({ videoToGuess, videoGuessed, time, showViews, onHigh
         <HigherLowerOptionsWrapper>
           {!showViews &&
             <>
-              <HigherOptionWrapper>
+              <HigherOptionWrapper showViews={showViews}>
                 <HigherLowerOption text="higher" color="success" icon={<ExpandLess />} onOption={onHigherOption} />
               </HigherOptionWrapper>
               <HigherLowerOption text="lower" color="error" icon={<ExpandMore />}  onOption={onLowerOption}/>
             </>
           }
-          {showViews && <TypographyWrapper variant="h3">Has {videoToGuess.views.toLocaleString()} views</TypographyWrapper>}
+          {showViews && 
+            <ShowViewsWrapper showViews={showViews}>
+              <TypographyWrapper variant="h3">Has {videoToGuess.views.toLocaleString()} views</TypographyWrapper>
+            </ShowViewsWrapper>
+          }
         </HigherLowerOptionsWrapper>
         <TypographyWrapper>Views than {videoGuessed.name}</TypographyWrapper>
       </VideoDetailsWrapper>

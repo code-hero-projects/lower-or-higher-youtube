@@ -41,7 +41,7 @@ export function VideoGuessContainer({ questionScore, timeBonusScore }: VideoGues
       }
       dispatch(nextQuestion());
       setShowViews(false);
-    }, 1500);
+    }, 2500);
   }
 
   return (
