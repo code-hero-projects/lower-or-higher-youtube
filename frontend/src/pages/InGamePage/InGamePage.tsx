@@ -21,7 +21,7 @@ export function InGamePage() {
   }
 
   return (
-    <Carousel vertical={false} carouselIndex={carouselIndex}>
+    <Carousel vertical={true} carouselIndex={carouselIndex}>
       {videos.map((video, index) =>
         <BaseWrapper>
           <VideoInfoContainer video={video} />

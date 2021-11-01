@@ -15,11 +15,11 @@ function CarouselWithState ({ vertical }: CarouselWithStateProps) {
 
   return (
     <Carousel vertical={vertical} carouselIndex={carouselIndex}>
-      <h1>First Page</h1>
-      <h1>Second Page</h1>
-      <h1>Third Page</h1>
-      <h1>Fourth Page</h1>
-      <h1>Fifth Page</h1>
+      <h1 style={{ height: '100%' }}>First Page</h1>
+      <h1 style={{ height: '100%' }}>Second Page</h1>
+      <h1 style={{ height: '100%' }}>Third Page</h1>
+      <h1 style={{ height: '100%' }}>Fourth Page</h1>
+      <h1 style={{ height: '100%' }}>Fifth Page</h1>
     </Carousel>
   );
 }
