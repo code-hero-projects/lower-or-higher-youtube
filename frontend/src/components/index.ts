@@ -6,3 +6,4 @@ export { RestartGameContainer } from './RestartGame';
 export { BackgroundImageWrapper } from './Styled';
 export { VideoGuessContainer } from './VideoGuess';
 export { VideoInfoContainer } from './VideoInfo';
+export { Carousel } from './Carousel';
