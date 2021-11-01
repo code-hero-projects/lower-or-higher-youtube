@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 import { CurrentGameState } from "./models";
 import { EndGamePage, HomePage, InGamePage } from "./pages";
 import { selectGameState } from "./redux";
-import { useState } from 'react';
 import { Carousel } from './components';
 
 function App() {
@@ -13,10 +12,10 @@ function App() {
   };
 
   const { gameState } = useSelector(selectGameState);
-  const indexToSlide = gamePagesIndexes[gameState];
+  const carouselIndex = gamePagesIndexes[gameState];
 
   return (
-    <Carousel indexToSlide={indexToSlide} vertical={false}>
+    <Carousel carouselIndex={carouselIndex} vertical={false}>
       <HomePage />
       <InGamePage />
       <EndGamePage />

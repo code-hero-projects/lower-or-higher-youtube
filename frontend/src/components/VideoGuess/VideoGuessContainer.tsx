@@ -1,23 +1,19 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Answer, AsyncOperationState } from "../../models";
-import { addScore, endGame, nextQuestion, nextVideo, selectQuestionState, selectVideoState, setAnswer, stopTime, updateTime } from "../../redux";
+import { Answer, Video } from "../../models";
+import { addScore, endGame, nextQuestion, selectQuestionState, setAnswer, stopTime, updateTime } from "../../redux";
 import { VideoGuess } from "./VideoGuess";
 
 interface VideoGuessContainerProps {
-  questionScore: number;
-  timeBonusScore: number;
+  onAnswer: (correct: boolean) => void;
+  videoGuessed: Video;
+  videoToGuess: Video;
 }
 
-export function VideoGuessContainer({ questionScore, timeBonusScore }: VideoGuessContainerProps) {
-  const { videoGuessed, videoToGuess, operationState } = useSelector(selectVideoState);
+export function VideoGuessContainer({ onAnswer, videoGuessed, videoToGuess }: VideoGuessContainerProps) {
   const { time, timeStopped } = useSelector(selectQuestionState);
   const [ showViews, setShowViews ] = useState<boolean>(false);
   const dispatch = useDispatch();
-
-  if (operationState !== AsyncOperationState.Success) {
-    return <h1>Loading Videos</h1>;
-  }
 
   const onHigherOption = () => lowerOrHigherOption(() => videoToGuess.views >= videoGuessed.views);
 
@@ -33,15 +29,16 @@ export function VideoGuessContainer({ questionScore, timeBonusScore }: VideoGues
     dispatch(stopTime());
     
     setTimeout(() => {
-      if (predicate()){
-        const scoreToAdd = questionScore + (time * timeBonusScore);
-        dispatch(addScore(scoreToAdd));
-        dispatch(nextVideo());
+      const correctAnswer = predicate();
+
+      if (correctAnswer){
+        dispatch(addScore(time));
       } else {
         dispatch(endGame());
       }
       dispatch(nextQuestion());
       setShowViews(false);
+      onAnswer(correctAnswer);
     }, 2500);
   }
 

@@ -1,10 +1,14 @@
 import { useSelector } from "react-redux";
-import { selectGameState, selectVideoState } from "../../redux";
+import { Video } from '../../models';
+import { selectGameState } from "../../redux";
 import { VideoInfo } from "./VideoInfo";
 
-export function VideoInfoContainer() {
-  const { videoGuessed } = useSelector(selectVideoState);
+export interface VideoContainerProps {
+  video: Video;
+}
+
+export function VideoInfoContainer({ video }: VideoContainerProps) {
   const { score } = useSelector(selectGameState);
 
-  return <VideoInfo video={videoGuessed} currentScore={score} />;
+  return <VideoInfo video={video} currentScore={score} />;
 }

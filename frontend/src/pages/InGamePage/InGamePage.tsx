@@ -1,18 +1,36 @@
-import { VideoGuessContainer, VideoInfoContainer } from "../../components";
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { Carousel, VideoGuessContainer, VideoInfoContainer } from "../../components";
 import { AnswerSignContainer } from "../../components/AnswerSign";
+import { AsyncOperationState } from '../../models';
+import { selectVideoState } from '../../redux';
 import { AnswerSignWrapper, BaseWrapper } from "./InGamePageStyled";
 
 export function InGamePage() {
-  const questionScore: number = +process.env.REACT_APP_QUESTION_SCORE!;
-  const timeBonusScore: number = +process.env.REACT_APP_TIME_SECOND_BONUS_SCORE!;
+  const { videos, operationState } = useSelector(selectVideoState);
+  const [carouselIndex, setCarouselIndex] = useState<number>(0);
+  
+  const onAnswer = (correct: boolean) => {
+    if (correct) {
+      setCarouselIndex(carouselIndex + 1);
+    }
+  };
+
+  if (operationState !== AsyncOperationState.Success) {
+    return <h1>Loading Videos</h1>;
+  }
 
   return (
-    <BaseWrapper>
-      <VideoInfoContainer />
-      <AnswerSignWrapper>
-        <AnswerSignContainer />
-      </AnswerSignWrapper>
-      <VideoGuessContainer questionScore={questionScore} timeBonusScore={timeBonusScore} />
-    </BaseWrapper>
+    <Carousel vertical={false} carouselIndex={carouselIndex}>
+      {videos.map((video, index) =>
+        <BaseWrapper>
+          <VideoInfoContainer video={video} />
+          <AnswerSignWrapper>
+            <AnswerSignContainer />
+          </AnswerSignWrapper>
+          {index < videos.length - 1 && <VideoGuessContainer onAnswer={onAnswer} videoGuessed={video} videoToGuess={videos[index + 1]}/>}
+        </BaseWrapper>
+      )}
+    </Carousel>
   );
 }

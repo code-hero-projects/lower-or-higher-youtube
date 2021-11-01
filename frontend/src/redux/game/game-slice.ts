@@ -26,7 +26,8 @@ const gameSlice = createSlice({
       state.gameState = CurrentGameState.Ended;
     },
     addScore: (state, action) => {
-      state.score += action.payload;
+      const scoreToAdd = +process.env.REACT_APP_QUESTION_SCORE! + (action.payload * +process.env.REACT_APP_TIME_SECOND_BONUS_SCORE!);
+      state.score += scoreToAdd;
     },
     resetScore: (state) => {
       state.score = initialState.score;

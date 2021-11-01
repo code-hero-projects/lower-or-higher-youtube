@@ -2,23 +2,23 @@ import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css';
 
-export interface CarouselProps {
+interface CarouselProps {
   vertical: boolean;
-  indexToSlide: number;
+  carouselIndex: number;
 }
 
 export const Carousel : React.FunctionComponent<CarouselProps> = props => {
-  const { vertical, indexToSlide, children} = props;
+  const { carouselIndex, vertical, children} = props;
   const [swipper, setSwipper] = useState<any>();
 
   useEffect(() => {
     if (swipper) {
-      swipper.slideTo(indexToSlide);
+      swipper.slideToLoop(carouselIndex);
     }
-  }, [indexToSlide]);
+  }, [carouselIndex]);
 
   return (
-    <Swiper allowTouchMove={false} direction={vertical ? 'vertical' : 'horizontal'} onSwiper={(swipper) => setSwipper(swipper)}>
+    <Swiper allowTouchMove={false} loop={true} direction={vertical ? 'vertical' : 'horizontal'} onSwiper={(swipper) => setSwipper(swipper)} slidesPerView={1}>
       {React.Children.map(children, child => <SwiperSlide>{child}</SwiperSlide>)}
     </Swiper>
   );
