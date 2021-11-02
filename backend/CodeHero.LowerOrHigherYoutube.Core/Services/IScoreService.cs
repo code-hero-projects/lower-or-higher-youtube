@@ -6,7 +6,7 @@ namespace CodeHero.LowerOrHigherYouTube.Core.Services
 {
     public interface IScoreService
     {
-        Task<IEnumerable<Score>> ListTopScores(int limit);
-        Task AddScore(Score score);
+        Task<IEnumerable<Score>> ListTopScoresAsync(int limit);
+        Task AddScoreAsync(Score score);
     }
 }

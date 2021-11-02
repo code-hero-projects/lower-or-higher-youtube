@@ -15,7 +15,7 @@ namespace CodeHero.LowerOrHigherYouTube.Database.Repositories
 
         public ScoreRepository(DatabaseContext databaseContext) : base(databaseContext.Scores, databaseContext) => _databaseContext = databaseContext;
 
-        public async Task<IEnumerable<Score>> GetFirstScores(int limit) => 
+        public async Task<IEnumerable<Score>> GetFirstScoresAsync(int limit) => 
             await _databaseContext.Scores
                 .AsNoTracking()
                 .OrderBy(score => score.Points)

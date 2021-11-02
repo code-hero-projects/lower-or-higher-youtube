@@ -15,7 +15,8 @@ namespace CodeHero.LowerOrHigherYouTube.Application.Extensions
             services
                 .AddSingleton(timerOptions)
                 .AddScoped<ICountryService, CountryService>()
-                .AddScoped<IVideoService, VideoService>();
+                .AddScoped<IVideoService, VideoService>()
+                .AddScoped<IScoreService, ScoreService>();
 
             return services;
         }

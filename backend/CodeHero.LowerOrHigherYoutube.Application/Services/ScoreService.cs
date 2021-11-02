@@ -12,8 +12,12 @@ namespace CodeHero.LowerOrHigherYouTube.Application.Services
 
         public ScoreService(IScoreRepository scoreRepository) => _scoreRepository = scoreRepository;
 
-        public Task AddScore(Score score) => _scoreRepository.AddAsync(score);
+        public async Task AddScoreAsync(Score score) 
+        {
+            await _scoreRepository.AddAsync(score);
+            await _scoreRepository.SaveChangesAsync();
+        }
 
-        public Task<IEnumerable<Score>> ListTopScores(int limit) => _scoreRepository.GetFirstScores(limit);
+        public async Task<IEnumerable<Score>> ListTopScoresAsync(int limit) => await _scoreRepository.GetFirstScoresAsync(limit);
     }
 }
