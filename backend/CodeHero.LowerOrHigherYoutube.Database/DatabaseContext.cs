@@ -10,6 +10,7 @@ namespace CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Infrastructure
     {
         public DbSet<Country> Countries { get; set; }
         public DbSet<Video> Videos { get; set; }
+        public DbSet<Score> Scores { get; set; }
         private readonly EntitiesConfiguration _entitiesConfiguration;
 
         public DatabaseContext(EntitiesConfiguration entitiesConfiguration, DbContextOptions options) : base(options) =>  _entitiesConfiguration = entitiesConfiguration;

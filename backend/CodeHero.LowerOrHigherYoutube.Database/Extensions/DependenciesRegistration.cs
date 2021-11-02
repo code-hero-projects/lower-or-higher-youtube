@@ -2,6 +2,7 @@
 using CodeHero.LowerOrHigherYouTube.Core.Repositories;
 using CodeHero.LowerOrHigherYouTube.Database.Mappings;
 using CodeHero.LowerOrHigherYouTube.Database.Mappings.PostgreSql;
+using CodeHero.LowerOrHigherYouTube.Database.Repositories;
 using CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Configuration;
 using CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Infrastructure;
 using CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Mappings;
@@ -39,6 +40,7 @@ namespace CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Extensions
                 .AddSingleton(databaseOptions)
                 .AddScoped<ICountryRepository, CountryRepository>()
                 .AddScoped<IVideoRepository, VideoRepository>()
+                .AddScoped<IScoreRepository, ScoreRepository>()
                 .AddSingleton<EntitiesConfiguration>();
 
             return services;
