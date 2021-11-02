@@ -62,6 +62,7 @@ namespace CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Extensions
             services
                 .AddSingleton<IEntityTypeConfiguration<Country>, PostgreSqlCountryMapping>()
                 .AddSingleton<IEntityTypeConfiguration<Video>, PostgreSqlVideoMapping>()
+                .AddSingleton<IEntityTypeConfiguration<Score>, PostgreSqlScoreMapping>()
                 .AddDbContext<DatabaseContext>(dbConfig => dbConfig.UseNpgsql(databaseOptions.ConnectionString, x => x.MigrationsAssembly(PostgreSqlAssembly)));
         }
     }

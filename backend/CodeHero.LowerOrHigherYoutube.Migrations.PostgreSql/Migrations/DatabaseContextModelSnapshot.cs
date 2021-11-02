@@ -46,6 +46,33 @@ namespace CodeHero.LowerOrHigherYouTube.Migrations.PostgreSql.Migrations
                     b.ToTable("country");
                 });
 
+            modelBuilder.Entity("CodeHero.LowerOrHigherYouTube.Core.Model.Score", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityAlwaysColumn);
+
+                    b.Property<short>("CountryId")
+                        .HasColumnType("smallint")
+                        .HasColumnName("country_id");
+
+                    b.Property<string>("PlayerName")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("character varying(11)")
+                        .HasColumnName("player_name");
+
+                    b.Property<int>("Points")
+                        .HasColumnType("integer")
+                        .HasColumnName("points");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("score");
+                });
+
             modelBuilder.Entity("CodeHero.LowerOrHigherYouTube.Core.Model.Video", b =>
                 {
                     b.Property<int>("Id")

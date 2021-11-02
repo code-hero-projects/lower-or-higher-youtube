@@ -23,6 +23,21 @@ namespace CodeHero.LowerOrHigherYouTube.Migrations.PostgreSql.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "score",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityAlwaysColumn),
+                    points = table.Column<int>(type: "integer", nullable: false),
+                    player_name = table.Column<string>(type: "character varying(11)", maxLength: 11, nullable: false),
+                    country_id = table.Column<short>(type: "smallint", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_score", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "video",
                 columns: table => new
                 {
@@ -44,6 +59,9 @@ namespace CodeHero.LowerOrHigherYouTube.Migrations.PostgreSql.Migrations
         {
             migrationBuilder.DropTable(
                 name: "country");
+
+            migrationBuilder.DropTable(
+                name: "score");
 
             migrationBuilder.DropTable(
                 name: "video");
