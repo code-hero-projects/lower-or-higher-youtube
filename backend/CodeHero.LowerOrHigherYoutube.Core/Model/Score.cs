@@ -5,6 +5,6 @@
         public int Id { get; set; }
         public int Points { get; set; }
         public string PlayerName { get; set; }
-        public short CountryId { get; set; }
+        public virtual Country Country { get; set; }
     }
 }

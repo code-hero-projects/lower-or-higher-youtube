@@ -15,33 +15,27 @@ namespace CodeHero.LowerOrHigherYouTube.Database.Mappings.PostgreSql
             builder
                 .Property(x => x.Id)
                 .IsRequired()
-                .HasColumnName("id")
                 .UseIdentityAlwaysColumn();
 
             builder
                 .Property(x => x.Name)
-                .IsRequired()
-                .HasColumnName("name");
+                .IsRequired();
 
             builder
                 .Property(x => x.Channel)
-                .IsRequired()
-                .HasColumnName("channel");
+                .IsRequired();
 
             builder
                 .Property(x => x.Views)
-                .IsRequired()
-                .HasColumnName("views");
+                .IsRequired();
 
             builder
                 .Property(x => x.Thumbnail)
-                .IsRequired()
-                .HasColumnName("thumbnail");
+                .IsRequired();
 
             builder
                 .Property(x => x.CountryId)
-                .IsRequired()
-                .HasColumnName("country_id");
+                .IsRequired();
         }
     }
 }

@@ -10,7 +10,8 @@ namespace CodeHero.LowerOrHigherYouTube.API.Mappers
         public ScoreMapperProfile()
         {
             CreateMap<Score, ScoreResponse>();
-            CreateMap<CreateScoreRequest, Score>();
+            CreateMap<CreateScoreRequest, Score>()
+                .ForMember(createScoreRequest => createScoreRequest.Country, score => score.MapFrom(score => new Country() { Id = score.CountryId }));
         }
     }
 }

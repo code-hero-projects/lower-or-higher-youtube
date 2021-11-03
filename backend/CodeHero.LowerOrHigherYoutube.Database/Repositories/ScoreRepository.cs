@@ -15,12 +15,18 @@ namespace CodeHero.LowerOrHigherYouTube.Database.Repositories
 
         public ScoreRepository(DatabaseContext databaseContext) : base(databaseContext.Scores, databaseContext) => _databaseContext = databaseContext;
 
+        public new async Task AddAsync(Score entity)
+        {
+            await base.AddAsync(entity);
+            _databaseContext.Entry(entity.Country).State = EntityState.Unchanged;
+        }
+
         public async Task<IEnumerable<Score>> GetFirstScoresAsync(int limit) => 
             await _databaseContext.Scores
                 .AsNoTracking()
                 .OrderBy(score => score.Points)
+                .Include(score => score.Country)
                 .Take(limit)
                 .ToListAsync();
-        
     }
 }

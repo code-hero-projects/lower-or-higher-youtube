@@ -15,24 +15,20 @@ namespace CodeHero.LowerOrHigherYouTube.Database.Mappings.PostgreSql
             builder
                 .Property(x => x.Id)
                 .IsRequired()
-                .UseIdentityAlwaysColumn()
-                .HasColumnName("id");
+                .UseIdentityAlwaysColumn();
 
             builder
                 .Property(x => x.Name)
-                .IsRequired()
-                .HasColumnName("name");
+                .IsRequired();
 
             builder
                 .Property(x => x.RegionCode)
                 .IsRequired()
-                .HasColumnName("region_code")
                 .HasMaxLength(3);
 
             builder
                 .Property(x => x.Updating)
                 .IsRequired()
-                .HasColumnName("updating")
                 .HasColumnType("boolean");
         }
     }
