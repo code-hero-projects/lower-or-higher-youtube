@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CodeHero.LowerOrHigherYouTube.Migrations.PostgreSql.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20211103191051_InitialMigration")]
+    [Migration("20211104201059_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
