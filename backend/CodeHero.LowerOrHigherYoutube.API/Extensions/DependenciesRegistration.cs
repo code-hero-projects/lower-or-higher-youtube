@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FluentValidation;
+using FluentValidation.AspNetCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 using System.Text.Json.Serialization;
@@ -29,6 +31,14 @@ namespace CodeHero.LowerOrHigherYouTube.API.Extensions
             {
                 c.SwaggerDoc(ApiConstants.SwaggerVersion, new OpenApiInfo { Title = ApiConstants.SwaggerTitle, Version = ApiConstants.SwaggerVersion });
             });
+
+            AssemblyScanner
+                .FindValidatorsInAssembly(Assembly.GetExecutingAssembly())
+                .ForEach(result => services.AddScoped(result.InterfaceType, result.ValidatorType));
+
+            services
+                .AddMvc()
+                .AddFluentValidation();
 
             return services;
         }
