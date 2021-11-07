@@ -1,6 +1,6 @@
 import { ExpandLess, ExpandMore } from '@material-ui/icons';
 import { Video } from "../../models";
-import { BackgroundImageWrapper, BaseWrapper, TypographyWrapper, VideoDetailsWrapper } from "../Styled";
+import { VideoBackgroundImageWrapper, BaseWrapper, TypographyWrapper, VideoDetailsWrapper } from "../Styled";
 import { HigherLowerOption } from "./HigherLowerOption";
 import { Timer } from "./Timer";
 import { HigherLowerOptionsWrapper, HigherOptionWrapper, ShowViewsWrapper } from "./VideoGuessStyles";
@@ -19,7 +19,7 @@ export interface VideoGuessProps {
 export function VideoGuess({ videoToGuess, videoGuessed, time, stopTime, showViews, onHigherOption, onLowerOption, onUpdateTimer }: VideoGuessProps) {
   return (
     <BaseWrapper>
-      <BackgroundImageWrapper thumbnail={videoToGuess.thumbnail} />
+      <VideoBackgroundImageWrapper thumbnail={videoToGuess.thumbnail} />
       <Timer time={time} stopTime={stopTime} onUpdateTime={onUpdateTimer} />
       <VideoDetailsWrapper>
         <TypographyWrapper variant="h3">{videoToGuess.name}</TypographyWrapper>

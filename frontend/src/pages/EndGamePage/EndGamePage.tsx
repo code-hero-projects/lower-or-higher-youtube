@@ -1,10 +1,10 @@
-import { EndGameCountrySelectorContainer, EndGameScoreContainer, RestartGameContainer } from "../../components";
-import { BaseWrapper, EndGamePageBackgroundImageWrapper, OptionsWrapper } from "./EndGamePageStyled";
+import { EndGameCountrySelectorContainer, EndGameScoreContainer, PageBaseWrapper, PageBackgroundImageWrapper, RestartGameContainer } from "../../components";
+import { OptionsWrapper } from "./EndGamePageStyled";
 
 export function EndGamePage() {
   return (
-    <BaseWrapper>
-      <EndGamePageBackgroundImageWrapper thumbnail="/images/landscape-background.jpg" />
+    <PageBaseWrapper>
+      <PageBackgroundImageWrapper thumbnail="/images/landscape-background.jpg" />
       <EndGameScoreContainer />
       <OptionsWrapper>
         <RestartGameContainer />
@@ -12,6 +12,6 @@ export function EndGamePage() {
       <OptionsWrapper>
         <EndGameCountrySelectorContainer />
       </OptionsWrapper>
-    </BaseWrapper>
+    </PageBaseWrapper>
   );
 }
