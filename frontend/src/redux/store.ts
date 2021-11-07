@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { countryReducer } from './country';
 import { gameReducer } from './game';
 import { questionReducer } from './question';
+import { scoreReducer } from './score';
 import { videoReducer } from './video';
 
 export const store = configureStore({
@@ -9,7 +10,8 @@ export const store = configureStore({
     country: countryReducer,
     game: gameReducer,
     video: videoReducer,
-    question: questionReducer
+    question: questionReducer,
+    score: scoreReducer
   }
 });
 

@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Video } from '../../models';
-import { selectGameState } from "../../redux";
+import { selectScoreState } from "../../redux";
 import { VideoInfo } from "./VideoInfo";
 
 export interface VideoContainerProps {
@@ -8,7 +8,7 @@ export interface VideoContainerProps {
 }
 
 export function VideoInfoContainer({ video }: VideoContainerProps) {
-  const { score } = useSelector(selectGameState);
+  const { score } = useSelector(selectScoreState);
 
   return <VideoInfo video={video} currentScore={score} />;
 }
