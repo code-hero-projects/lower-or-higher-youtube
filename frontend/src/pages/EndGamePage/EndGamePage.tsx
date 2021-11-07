@@ -1,4 +1,4 @@
-import { EndGameCountrySelectorContainer, EndGameScoreContainer, PageBaseWrapper, PageBackgroundImageWrapper, RestartGameContainer } from "../../components";
+import { EndGameCountrySelectorContainer, EndGameScoreContainer, PageBaseWrapper, PageBackgroundImageWrapper, RestartGameContainer, ShowLeaderboardContainer } from "../../components";
 import { OptionsWrapper } from "./EndGamePageStyled";
 
 export function EndGamePage() {
@@ -11,6 +11,9 @@ export function EndGamePage() {
       </OptionsWrapper>
       <OptionsWrapper>
         <EndGameCountrySelectorContainer />
+      </OptionsWrapper>
+      <OptionsWrapper>
+        <ShowLeaderboardContainer />
       </OptionsWrapper>
     </PageBaseWrapper>
   );

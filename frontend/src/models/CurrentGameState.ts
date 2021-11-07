@@ -1,5 +1,7 @@
 export enum CurrentGameState {
+  Leaderboard,
   NotStarted,
   Playing,
-  Ended
+  Ended,
+  EndGameLeaderboard
 }
