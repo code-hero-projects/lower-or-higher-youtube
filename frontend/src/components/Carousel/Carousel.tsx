@@ -19,7 +19,7 @@ export const Carousel : React.FunctionComponent<CarouselProps> = props => {
   }, [carouselIndex]);
 
   return (
-    <SwiperWrapper allowTouchMove={true} initialSlide={carouselIndex} direction={vertical ? 'vertical' : 'horizontal'} onSwiper={(swipper) => setSwipper(swipper)} slidesPerView={1}>
+    <SwiperWrapper allowTouchMove={false} initialSlide={carouselIndex} direction={vertical ? 'vertical' : 'horizontal'} onSwiper={(swipper) => setSwipper(swipper)} slidesPerView={1}>
       {React.Children.map(children, child => <SwiperSlide>{child}</SwiperSlide>)}
     </SwiperWrapper>
   );

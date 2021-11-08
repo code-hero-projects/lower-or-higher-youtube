@@ -1,15 +1,21 @@
-import { Box } from '@material-ui/core';
 import { Score } from '../../models';
+import { BackFromLeaderboard } from './BackFromLeaderbord';
+import { BackFromLeaderboardWrapper, LeaderboardWrapper } from './LeaderboardStyled';
 import { ScoreTable } from './ScoreTable';
 
 interface LeaderboardProps {
   scores: Score[];
+  onBackFromLeaderboard: () => void;
+  gamePageText: string;
 }
 
-export function Leaderboard({ scores }: LeaderboardProps) {
+export function Leaderboard({ scores, onBackFromLeaderboard, gamePageText }: LeaderboardProps) {
   return (
-    <Box>
+    <LeaderboardWrapper>
       <ScoreTable scores={scores} />
-    </Box>
+      <BackFromLeaderboardWrapper>
+        <BackFromLeaderboard onBackFromLeaderboard={onBackFromLeaderboard} gamePage={gamePageText} />
+      </BackFromLeaderboardWrapper>
+    </LeaderboardWrapper>
   );
 }

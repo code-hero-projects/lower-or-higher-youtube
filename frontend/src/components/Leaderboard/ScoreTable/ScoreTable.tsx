@@ -1,6 +1,6 @@
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
+import { Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core';
 import { Score } from '../../../models';
-import { TableHeader } from './ScoreTableStyled';
+import { TableHeaderWrapper, TableWrapper } from './ScoreTableStyled';
 
 interface ScoreTableProps {
   scores: Score[];
@@ -14,17 +14,17 @@ export function ScoreTable({ scores }: ScoreTableProps) {
   ];
 
   return (
-    <TableContainer>
+    <TableWrapper>
       <Table stickyHeader aria-label="sticky table">
         <TableHead>
           <TableRow>
             {columns.map((column) => (
-              <TableHeader
+              <TableHeaderWrapper
                 key={column.id}
                 align="center"
               >
                 {column.label}
-              </TableHeader>
+              </TableHeaderWrapper>
             ))}
           </TableRow>
         </TableHead>
@@ -33,11 +33,11 @@ export function ScoreTable({ scores }: ScoreTableProps) {
             <TableRow hover role="checkbox" tabIndex={-1} key={score.points}>
               <TableCell align="center">{score.playerName}</TableCell>
               <TableCell align="center">{score.points}</TableCell>
-              <TableCell align="center">{score.country}</TableCell>
+              <TableCell align="center">{score.countryName}</TableCell>
             </TableRow>
           )}
         </TableBody>
       </Table>
-    </TableContainer>
+    </TableWrapper>
   );
 }

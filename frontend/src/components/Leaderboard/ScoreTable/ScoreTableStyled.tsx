@@ -1,6 +1,11 @@
-import { TableCell } from '@material-ui/core';
+import { TableCell, TableContainer } from '@material-ui/core';
 import { styled } from '@material-ui/system';
 
-export const TableHeader = styled(TableCell)`
+export const TableWrapper = styled(TableContainer)`
+  background-color: white;
+  border-radius: 4px;
+`;
+
+export const TableHeaderWrapper = styled(TableCell)`
   font-weight: bold
 `;

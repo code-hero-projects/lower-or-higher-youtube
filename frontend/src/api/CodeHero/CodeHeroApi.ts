@@ -20,7 +20,7 @@ export class CodeHeroApi {
   }
 
   public getScores(): Promise<Score[]> {
-    const url = this.baseUrl + scoresUrl;
+    const url = this.baseUrl + scoresUrl + '?limit=15';
     return this.fetch<Score[]>(url);
   }
 
