@@ -1,4 +1,4 @@
-import { Score } from '../../models';
+import { CurrentGameState, Score } from '../../models';
 import { Leaderboard } from "./Leaderboard";
 
 const scores: Score[] = [
@@ -15,7 +15,7 @@ const scores: Score[] = [
   { playerName: 'player eleven', points: 0, countryName: 'Mexico' },
 ];
 
-export const DisplayLeaderboard = () => <Leaderboard scores={scores} onBackFromLeaderboard={() => {}} gamePageText="Start Game" />;
+export const DisplayLeaderboard = () => <Leaderboard scores={scores} onBackFromLeaderboard={() => {}} gameState={CurrentGameState.NotStarted} />;
 
 export default {
   title: 'Components/Leaderboard',

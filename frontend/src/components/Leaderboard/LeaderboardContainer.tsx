@@ -13,13 +13,10 @@ export function LeaderboardContainer() {
     dispatch(getScores())
   }, []);
 
-  const leaderboard = gameState === CurrentGameState.Leaderboard;
-  const gamePageText = leaderboard ? "Start Game" : "End Game";
-
   const onBackFromLeaderboard = () => {
-    const actionToDispatch = leaderboard ? resetGame : endGame;
+    const actionToDispatch = gameState === CurrentGameState.Leaderboard ? resetGame : endGame;
     dispatch(actionToDispatch());
   };
   
-  return <Leaderboard scores={leaderboardScores} onBackFromLeaderboard={onBackFromLeaderboard} gamePageText={gamePageText} />;
+  return <Leaderboard scores={leaderboardScores} onBackFromLeaderboard={onBackFromLeaderboard} gameState={gameState} />;
 }
