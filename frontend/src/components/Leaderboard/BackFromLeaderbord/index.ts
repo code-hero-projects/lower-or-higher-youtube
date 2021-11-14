@@ -1,1 +1,0 @@
-export { BackFromLeaderboard } from './BackFromLeaderboard';

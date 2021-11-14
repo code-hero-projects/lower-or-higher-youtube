@@ -3,15 +3,12 @@ import { CurrentGameState } from "./models";
 import { EndGamePage, HomePage, InGamePage } from "./pages";
 import { selectGameState } from "./redux";
 import { Carousel } from './components';
-import { LeaderboardPage } from './pages/LeaderboardPage';
 
 function App() {
   const gamePagesIndexes = {
-    [CurrentGameState.Leaderboard]: 0,
-    [CurrentGameState.NotStarted]: 1,
-    [CurrentGameState.Playing]: 2,
-    [CurrentGameState.Ended]: 3,
-    [CurrentGameState.EndGameLeaderboard]: 4,
+    [CurrentGameState.NotStarted]: 0,
+    [CurrentGameState.Playing]: 1,
+    [CurrentGameState.Ended]: 2,
   };
 
   const { gameState } = useSelector(selectGameState);
@@ -19,11 +16,9 @@ function App() {
 
   return (
     <Carousel carouselIndex={carouselIndex} vertical={false}>
-      <LeaderboardPage />
       <HomePage />
       <InGamePage />
       <EndGamePage />
-      <LeaderboardPage />
     </Carousel>
   );
 }

@@ -21,16 +21,10 @@ const gameSlice = createSlice({
     },
     endGame: (state) => {
       state.gameState = CurrentGameState.Ended;
-    },
-    showLeaderboard: (state) => {
-      state.gameState = CurrentGameState.Leaderboard
-    },
-    showEndGameLeaderboard: (state) => {
-      state.gameState = CurrentGameState.EndGameLeaderboard
     }
   }
 });
 
-export const { resetGame, startGame, endGame, showLeaderboard, showEndGameLeaderboard } = gameSlice.actions;
+export const { resetGame, startGame, endGame } = gameSlice.actions;
 
 export const gameReducer = gameSlice.reducer;

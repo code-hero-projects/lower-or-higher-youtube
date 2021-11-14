@@ -1,4 +1,4 @@
-import { CountrySelectorContainer, GameStartContainer, TypographyWrapper, PageBaseWrapper, PageBackgroundImageWrapper, ShowLeaderboardContainer } from "../../components";
+import { CountrySelectorContainer, GameStartContainer, TypographyWrapper, PageBaseWrapper, PageBackgroundImageWrapper } from "../../components";
 import { ContainerWrapper, SpacedTypographyWrapper } from "./HomePageStyles";
 
 export function HomePage() {
@@ -16,9 +16,6 @@ export function HomePage() {
       </ContainerWrapper>
       <ContainerWrapper>
         <GameStartContainer />
-      </ContainerWrapper>
-      <ContainerWrapper>
-        <ShowLeaderboardContainer />
       </ContainerWrapper>
     </PageBaseWrapper>
   );

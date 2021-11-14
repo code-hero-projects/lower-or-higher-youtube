@@ -1,6 +1,6 @@
 import axios from "axios";
-import { Country, Score, Video } from "../../models";
-import { countryUrl, scoresUrl, videoUrl } from "./urls";
+import { Country, Video } from "../../models";
+import { countryUrl, videoUrl } from "./urls";
 
 export class CodeHeroApi {
   private baseUrl: string;
@@ -19,21 +19,7 @@ export class CodeHeroApi {
     return this.fetch<Video[]>(url);
   }
 
-  public getScores(): Promise<Score[]> {
-    const url = this.baseUrl + scoresUrl + '?limit=15';
-    return this.fetch<Score[]>(url);
-  }
-
-  public postScore(score: Score): Promise<void> {
-    const url = this.baseUrl + scoresUrl;
-    return this.post(url, score);
-  }
-
   private fetch<T>(url: string): Promise<T> {
     return axios.get<T>(url).then(response => response.data);
-  }
-
-  private post<T>(url: string, data: T): Promise<void> {
-    return axios.post(url, data);
   }
 }

@@ -1,1 +1,0 @@
-export { HighScoreInputContainer } from './HighScoreInputContainer';

@@ -1,1 +1,0 @@
-export { EndIcon } from './EndIcon';

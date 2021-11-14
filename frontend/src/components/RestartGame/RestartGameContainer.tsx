@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useDispatch } from "react-redux";
 import { resetScore, shuffleVideos, startGame } from "../../redux";
 import { RestartGame } from "./RestartGame";

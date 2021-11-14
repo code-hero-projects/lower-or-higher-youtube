@@ -1,1 +1,0 @@
-export { ScoreTable } from './ScoreTable';

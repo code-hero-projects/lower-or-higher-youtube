@@ -7,6 +7,3 @@ export { PageBackgroundImageWrapper, PageBaseWrapper, TypographyWrapper, FlexCen
 export { VideoGuessContainer } from './VideoGuess';
 export { VideoInfoContainer } from './VideoInfo';
 export { Carousel } from './Carousel';
-export { ShowLeaderboardContainer } from './ShowLeaderboard';
-export { LeaderboardContainer } from './Leaderboard';
-export { HighScoreInputContainer } from './HighScoreInput';
