@@ -5,13 +5,13 @@ import { getCountries } from './epics';
 export interface CountryState {
   countries: Country[];
   selectedCountry: number;
-  operationState: AsyncOperationState;
+  fetchCountriesOperationState: AsyncOperationState;
 }
 
 const initialState: CountryState = {
   countries: [],
   selectedCountry: 0,
-  operationState: AsyncOperationState.None
+  fetchCountriesOperationState: AsyncOperationState.None
 }
 
 const countrySlice = createSlice({
@@ -25,16 +25,16 @@ const countrySlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getCountries.pending, (state) => {
-        state.operationState = AsyncOperationState.Loading;
+        state.fetchCountriesOperationState = AsyncOperationState.Loading;
       })
       .addCase(getCountries.fulfilled, (state, action) => {
         const countries = action.payload;
         state.countries = countries;
         state.selectedCountry = countries[0].id;
-        state.operationState = AsyncOperationState.Success;
+        state.fetchCountriesOperationState = AsyncOperationState.Success;
       })
       .addCase(getCountries.rejected, (state) => {
-        state.operationState = AsyncOperationState.Error;
+        state.fetchCountriesOperationState = AsyncOperationState.Error;
       });
   }
 });

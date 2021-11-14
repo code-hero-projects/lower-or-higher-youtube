@@ -4,12 +4,12 @@ import { getVideos, randomizeVideos } from "./epics";
 
 export interface VideoState {
   videos: Video[];
-  operationState: AsyncOperationState;
+  fetchVideosOperationState: AsyncOperationState;
 }
 
 const initialState: VideoState = {
   videos: [],
-  operationState: AsyncOperationState.None
+  fetchVideosOperationState: AsyncOperationState.None
 };
 
 const videoSlice = createSlice({
@@ -19,24 +19,27 @@ const videoSlice = createSlice({
     shuffleVideos: (state) => {
       const newVideos = randomizeVideos(state.videos);
       state.videos = newVideos;
+    },
+    resetFetchVideosOperationState: (state) => {
+      state.fetchVideosOperationState = AsyncOperationState.None;
     }
   },
   extraReducers: (builder) => {
     builder
       .addCase(getVideos.pending, (state) => {
-        state.operationState = AsyncOperationState.Loading;
+        state.fetchVideosOperationState = AsyncOperationState.Loading;
       })
       .addCase(getVideos.fulfilled, (state, action) => {
         const videos = action.payload;
         state.videos = videos;
-        state.operationState = AsyncOperationState.Success;
+        state.fetchVideosOperationState = AsyncOperationState.Success;
       })
       .addCase(getVideos.rejected, (state) => {
-        state.operationState = AsyncOperationState.Error;
+        state.fetchVideosOperationState = AsyncOperationState.Error;
       })
   }
 });
 
-export const { shuffleVideos } = videoSlice.actions;
+export const { shuffleVideos, resetFetchVideosOperationState } = videoSlice.actions;
 
 export const videoReducer = videoSlice.reducer;

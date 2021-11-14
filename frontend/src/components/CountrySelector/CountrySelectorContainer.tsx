@@ -4,7 +4,7 @@ import { getCountries, selectCountry, selectCountryState } from "../../redux";
 import { CountrySelector } from "./CountrySelector";
 
 export function CountrySelectorContainer() {
-  const { countries, selectedCountry, operationState } = useSelector(selectCountryState);
+  const { countries, selectedCountry, fetchCountriesOperationState } = useSelector(selectCountryState);
   const dispatch = useDispatch();
   
   useEffect(() => {
@@ -15,6 +15,6 @@ export function CountrySelectorContainer() {
     countries={countries} 
     selectedCountry={selectedCountry} 
     onCountrySelect={(id: number) => dispatch(selectCountry(id))}
-    operationState={operationState}
+    operationState={fetchCountriesOperationState}
   />;
 }

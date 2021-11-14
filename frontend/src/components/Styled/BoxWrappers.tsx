@@ -21,10 +21,15 @@ export const OptionsCenterWrapper = styled(Box)`
 
 export const PageBaseWrapper = styled(FlexCenterWrapper)`
   height: 100vh;
+  align-items: center;
 `;
 
 export const VideoDetailsWrapper = styled(FlexCenterWrapper)`
   align-items: center;
   height: 100%;
   width: 100%;
+`;
+
+export const MarginBottomWrapperWrapper = styled(OptionsCenterWrapper)`
+  margin-bottom: 2rem;
 `;

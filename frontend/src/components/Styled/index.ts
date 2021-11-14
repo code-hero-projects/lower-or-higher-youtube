@@ -2,4 +2,4 @@ export { PageBackgroundImageWrapper, VideoBackgroundImageWrapper } from './Backg
 export { BaseWrapper, PageBaseWrapper, VideoDetailsWrapper, FlexCenterWrapper, OptionsCenterWrapper } from './BoxWrappers';
 export { fadeInAnimation, fadeOutAnimation } from './FadeAnimation';
 export type { FadeAnimationProps } from './FadeAnimation';
-export { TypographyWrapper } from './TypographyWrapper';
+export { TypographyWrapper, SpacedTypographyWrapper } from './TypographyWrapper';

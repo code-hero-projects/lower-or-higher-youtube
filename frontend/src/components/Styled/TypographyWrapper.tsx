@@ -6,3 +6,7 @@ export const TypographyWrapper = styled(Typography)`
   font-weight: bold;
   color: white;
 `;
+
+export const SpacedTypographyWrapper = styled(TypographyWrapper)`
+  margin-bottom: 2rem;
+`;

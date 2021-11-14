@@ -1,9 +1,30 @@
+import { AsyncOperationState } from '../../models';
+import { Loading } from '../Loading';
 import { GameStartButtonWrapper } from "./GameStartStyled";
 
 interface GameStartProps {
+  fetchCountriesOperationState: AsyncOperationState;
+  fetchVideosOperationState: AsyncOperationState;
+  onLoadVideos: () => void;
   onStartGame: () => void;
 }
 
-export function GameStart({onStartGame}: GameStartProps) {
-  return <GameStartButtonWrapper variant="contained" size="large" color="success" onClick={onStartGame}>Start Game</GameStartButtonWrapper>;
+export function GameStart({ fetchCountriesOperationState, fetchVideosOperationState, onLoadVideos, onStartGame }: GameStartProps) {
+  const fetchingCountries = fetchCountriesOperationState !== AsyncOperationState.Success;
+
+  if (fetchingCountries) {
+    return <GameStartButtonWrapper variant="contained" size="large" color="success" disabled={fetchingCountries}>Start game</GameStartButtonWrapper>;
+  }
+
+  if (fetchVideosOperationState === AsyncOperationState.None) {
+    return <GameStartButtonWrapper variant="contained" size="large" color="success" onClick={onLoadVideos}>Start game</GameStartButtonWrapper>;
+  }
+
+  if (fetchVideosOperationState === AsyncOperationState.Loading) {
+    return <Loading message="Loading videos" />;
+  }
+
+  onStartGame();
+  return <></>;
+  //return <GameStartButtonWrapper variant="contained" size="large" color="success" onClick={onStartGame}>Start Game</GameStartButtonWrapper>;
 }

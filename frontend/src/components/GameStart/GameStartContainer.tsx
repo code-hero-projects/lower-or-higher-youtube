@@ -1,15 +1,27 @@
 import { useDispatch, useSelector } from "react-redux";
-import { getVideos, selectCountryState, startGame } from "../../redux";
+import { getVideos, resetFetchVideosOperationState, selectCountryState, selectVideoState, shuffleVideos, startGame } from "../../redux";
 import { GameStart } from "./GameStart";
 
 export function GameStartContainer() {
-  const { selectedCountry } = useSelector(selectCountryState);
+  const { selectedCountry, fetchCountriesOperationState } = useSelector(selectCountryState);
+  const { fetchVideosOperationState } = useSelector(selectVideoState);
+
   const dispatch = useDispatch();
 
+  const onLoadVideos = () => dispatch(getVideos(selectedCountry));
+
   const onStartGame = () => {
-    dispatch(getVideos(selectedCountry));
+    dispatch(shuffleVideos());
     dispatch(startGame());
+    dispatch(resetFetchVideosOperationState());
   };
 
-  return <GameStart onStartGame={onStartGame} />;
+  return (
+    <GameStart
+      fetchCountriesOperationState={fetchCountriesOperationState}
+      fetchVideosOperationState={fetchVideosOperationState}
+      onLoadVideos={onLoadVideos}
+      onStartGame={onStartGame} 
+    />
+  );
 }
