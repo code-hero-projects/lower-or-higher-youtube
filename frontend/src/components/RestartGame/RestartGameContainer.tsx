@@ -1,11 +1,13 @@
+import { useEffect } from 'react';
 import { useDispatch } from "react-redux";
-import { shuffleVideos, startGame } from "../../redux";
+import { resetScore, shuffleVideos, startGame } from "../../redux";
 import { RestartGame } from "./RestartGame";
 
 export function RestartGameContainer() {
   const dispatch = useDispatch();
 
   const onRestartGame = () => {
+    dispatch(resetScore());
     dispatch(shuffleVideos());
     dispatch(startGame());
   };

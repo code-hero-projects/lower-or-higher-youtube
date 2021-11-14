@@ -7,7 +7,7 @@ namespace CodeHero.LowerOrHigherYouTube.API.Validators
     {
         private const int PointsMinimumValue = 0;
         private const int PlayerNameMinimumSize = 1;
-        private const int PlayerNameMaximumSize = 1;
+        private const int PlayerNameMaximumSize = 15;
 
         public CreateScoreRequestValidator()
         {
@@ -17,8 +17,8 @@ namespace CodeHero.LowerOrHigherYouTube.API.Validators
 
             RuleFor(x => x.PlayerName)
                 .NotEmpty()
-                .MaximumLength(PlayerNameMinimumSize)
-                .MinimumLength(PlayerNameMaximumSize);
+                .MinimumLength(PlayerNameMinimumSize)
+                .MaximumLength(PlayerNameMaximumSize);
 
             RuleFor(x => x.CountryId)
                 .NotEmpty();

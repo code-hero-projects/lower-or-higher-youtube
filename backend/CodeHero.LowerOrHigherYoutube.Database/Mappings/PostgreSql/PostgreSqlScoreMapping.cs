@@ -24,7 +24,7 @@ namespace CodeHero.LowerOrHigherYouTube.Database.Mappings.PostgreSql
             builder
                 .Property(x => x.PlayerName)
                 .IsRequired()
-                .HasMaxLength(11);
+                .HasMaxLength(16);
         }
     }
 }

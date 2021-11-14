@@ -44,20 +44,22 @@ namespace CodeHero.LowerOrHigherYouTube.VideoRenewal.Services
         {
             var result = await response.Content.ReadAsStringAsync();
             var youTubeApiResponse = JsonConvert.DeserializeObject<YouTubeResponse>(result);
-            return youTubeApiResponse.Items.Select(item =>
-            {
-                var views = int.Parse(item.Statistics.ViewCount);
-                var thumbnail = GetThumbnail(item.Snippet.Thumbnails);
-
-                return new Video()
+            return youTubeApiResponse.Items
+                .Where(item => item.Statistics.ViewCount != null)
+                .Select(item =>
                 {
-                    Name = item.Snippet.Title,
-                    Channel = item.Snippet.ChannelTitle,
-                    Thumbnail = thumbnail,
-                    Views = views,
-                    CountryId = countryId
-                };
-            });
+                    var views = int.Parse(item.Statistics.ViewCount);
+                    var thumbnail = GetThumbnail(item.Snippet.Thumbnails);
+
+                    return new Video()
+                    {
+                        Name = item.Snippet.Title,
+                        Channel = item.Snippet.ChannelTitle,
+                        Thumbnail = thumbnail,
+                        Views = views,
+                        CountryId = countryId
+                    };
+                });
         }
 
         private static string GetThumbnail(Thumbnails thumbnails)

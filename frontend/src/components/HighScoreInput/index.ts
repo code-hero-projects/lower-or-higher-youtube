@@ -1,0 +1,1 @@
+export { HighScoreInputContainer } from './HighScoreInputContainer';

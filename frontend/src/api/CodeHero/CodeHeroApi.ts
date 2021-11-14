@@ -24,7 +24,16 @@ export class CodeHeroApi {
     return this.fetch<Score[]>(url);
   }
 
+  public postScore(score: Score): Promise<void> {
+    const url = this.baseUrl + scoresUrl;
+    return this.post(url, score);
+  }
+
   private fetch<T>(url: string): Promise<T> {
     return axios.get<T>(url).then(response => response.data);
+  }
+
+  private post<T>(url: string, data: T): Promise<void> {
+    return axios.post(url, data);
   }
 }

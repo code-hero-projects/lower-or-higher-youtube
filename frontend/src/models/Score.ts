@@ -1,5 +1,6 @@
 export interface Score {
   playerName: string;
   points: number;
-  countryName: string;
+  countryName?: string;
+  countryId?: number;
 }

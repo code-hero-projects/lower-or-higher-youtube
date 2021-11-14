@@ -1,7 +1,5 @@
 import { Button } from '@material-ui/core';
-import { ArrowBack } from '@material-ui/icons';
 import { ReactNode } from 'react';
-
 
 interface BackFromLeaderboardProps {
   onBackFromLeaderboard: () => void;

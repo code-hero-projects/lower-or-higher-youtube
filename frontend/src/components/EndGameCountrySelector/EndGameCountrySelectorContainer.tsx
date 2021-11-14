@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { resetGame } from "../../redux";
+import { resetGame, resetScore } from "../../redux";
 import { EndGameCountrySelector } from "./EndGameCountrySelector";
 
 export function EndGameCountrySelectorContainer() {
@@ -7,6 +7,7 @@ export function EndGameCountrySelectorContainer() {
 
   const onChooseAnotherCountry = () => {
     dispatch(resetGame());
+    dispatch(resetScore());
   };
 
   return <EndGameCountrySelector onChooseAnotherCountry={onChooseAnotherCountry} />;

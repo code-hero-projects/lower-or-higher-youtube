@@ -1,24 +1,26 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { AsyncOperationState, Score } from '../../models';
-import { getScores } from './epics';
+import { addScore, getScores } from './epics';
 
 export interface ScoreState {
   score: number;
   leaderboardScores: Score[];
-  operationState: AsyncOperationState;
+  fetchOperationState: AsyncOperationState;
+  postOperationState: AsyncOperationState;
 }
 
 const initialState: ScoreState = {
   score: 0,
   leaderboardScores: [],
-  operationState: AsyncOperationState.None
+  fetchOperationState: AsyncOperationState.None,
+  postOperationState: AsyncOperationState.None
 };
-
+ 
 const scoreSlice = createSlice({
   name: 'slice',
   initialState,
   reducers: {
-    addScore: (state, action) => {
+    updateScore: (state, action) => {
       const scoreToAdd = +process.env.REACT_APP_QUESTION_SCORE! + (action.payload * +process.env.REACT_APP_TIME_SECOND_BONUS_SCORE!);
       state.score += scoreToAdd;
     },
@@ -29,18 +31,28 @@ const scoreSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getScores.pending, state => {
-        state.operationState = AsyncOperationState.Loading;
+        state.fetchOperationState = AsyncOperationState.Loading;
       })
       .addCase(getScores.fulfilled, (state, action) => {
         state.leaderboardScores = action.payload;
-        state.operationState = AsyncOperationState.Success;
+        state.fetchOperationState = AsyncOperationState.Success;
       })
       .addCase(getScores.rejected, state => {
-        state.operationState = AsyncOperationState.Error;
-      });
+        state.fetchOperationState = AsyncOperationState.Error;
+      })
+
+      .addCase(addScore.pending, state => {
+        state.postOperationState = AsyncOperationState.Loading;
+      })
+      .addCase(addScore.fulfilled, (state, action) => {
+        state.postOperationState = AsyncOperationState.Success;
+      })
+      .addCase(addScore.rejected, state => {
+        state.postOperationState = AsyncOperationState.Error;
+      })
   }
 });
 
-export const { addScore, resetScore } = scoreSlice.actions;
+export const { updateScore, resetScore } = scoreSlice.actions;
 
 export const scoreReducer = scoreSlice.reducer;
