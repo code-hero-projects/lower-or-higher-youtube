@@ -1,11 +1,10 @@
-﻿using CodeHero.LowerOrHigherYouTube.Core.Services;
-using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-using System.Linq;
-using AutoMapper;
+﻿using AutoMapper;
 using CodeHero.LowerOrHigherYouTube.API.Responses;
+using CodeHero.LowerOrHigherYouTube.Core.Services;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Threading;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace CodeHero.LowerOrHigherYouTube.API.Controllers
 {
@@ -26,7 +25,6 @@ namespace CodeHero.LowerOrHigherYouTube.API.Controllers
         [Route("{countryId}/video")]
         public async Task<IEnumerable<VideoResponse>> ListAsync(int countryId)
         {
-            Thread.Sleep(2000);
             var videos = await _videoService.ListAsync(countryId);
             var videosResponse = videos.Select(video => _mapper.Map<VideoResponse>(video));
             return videosResponse;

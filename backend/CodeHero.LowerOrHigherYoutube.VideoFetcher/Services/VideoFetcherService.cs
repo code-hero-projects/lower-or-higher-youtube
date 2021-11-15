@@ -1,7 +1,6 @@
 ﻿using CodeHero.LowerOrHigherYouTube.Core.Model;
 using CodeHero.LowerOrHigherYouTube.Core.Repositories;
 using CodeHero.LowerOrHigherYouTube.Core.Services;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -23,7 +22,7 @@ namespace CodeHero.LowerOrHigherYouTube.VideoRenewal.Services
         public async Task RenewVideos()
         {
             var countries = await _countryRepository.ListAsync();
-            
+
             foreach (var country in countries)
             {
                 var videos = await _videoRepository.FilterAsync(video => video.CountryId == country.Id);

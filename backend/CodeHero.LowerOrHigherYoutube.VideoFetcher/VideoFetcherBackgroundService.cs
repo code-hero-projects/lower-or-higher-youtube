@@ -17,7 +17,7 @@ namespace CodeHero.LowerOrHigherYouTube.VideoRenewal
         private readonly ILogger<VideoFetcherBackgroundService> _logger;
 
         public VideoFetcherBackgroundService(ILogger<VideoFetcherBackgroundService> logger, IServiceProvider serviceProvider)
-        {   
+        {
             _logger = logger;
             _serviceProvider = serviceProvider;
         }
@@ -25,7 +25,7 @@ namespace CodeHero.LowerOrHigherYouTube.VideoRenewal
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
             _logger.LogInformation("VideoFetcherService running.");
-            
+
             using (var scope = _serviceProvider.CreateScope())
             {
                 var timerOptions = scope.ServiceProvider.GetService<TimerOptions>();

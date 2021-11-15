@@ -40,7 +40,7 @@ namespace CodeHero.LowerOrHigherYouTube.VideoRenewal.Services
             }
         }
 
-        private async Task<IEnumerable<Video>> MapVideos(HttpResponseMessage response, short countryId) 
+        private async Task<IEnumerable<Video>> MapVideos(HttpResponseMessage response, short countryId)
         {
             var result = await response.Content.ReadAsStringAsync();
             var youTubeApiResponse = JsonConvert.DeserializeObject<YouTubeResponse>(result);

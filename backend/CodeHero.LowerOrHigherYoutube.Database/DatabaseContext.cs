@@ -12,7 +12,7 @@ namespace CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Infrastructure
         public DbSet<Video> Videos { get; set; }
         private readonly EntitiesConfiguration _entitiesConfiguration;
 
-        public DatabaseContext(EntitiesConfiguration entitiesConfiguration, DbContextOptions options) : base(options) =>  _entitiesConfiguration = entitiesConfiguration;
+        public DatabaseContext(EntitiesConfiguration entitiesConfiguration, DbContextOptions options) : base(options) => _entitiesConfiguration = entitiesConfiguration;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -10,7 +10,7 @@ namespace CodeHero.LowerOrHigherYouTube.Database.Mappings
     {
         public static void ApplyMapping(this ModelBuilder modelBuilder, DatabaseConnectionOptions databaseOptions)
         {
-            switch(databaseOptions.Type)
+            switch (databaseOptions.Type)
             {
                 case DatabaseType.CosmosDb:
                     MappingConfiguration(modelBuilder, new CosmosDbCountryMapping(), new CosmosDbVideoMapping());

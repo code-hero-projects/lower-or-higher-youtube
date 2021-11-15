@@ -1,10 +1,10 @@
-﻿using CodeHero.LowerOrHigherYouTube.Core.Services;
+﻿using CodeHero.LowerOrHigherYouTube.Core.Configuration;
 using CodeHero.LowerOrHigherYouTube.Core.Model;
-using System.Collections.Generic;
 using CodeHero.LowerOrHigherYouTube.Core.Repositories;
-using System.Threading.Tasks;
+using CodeHero.LowerOrHigherYouTube.Core.Services;
+using System.Collections.Generic;
 using System.Threading;
-using CodeHero.LowerOrHigherYouTube.Core.Configuration;
+using System.Threading.Tasks;
 
 namespace CodeHero.LowerOrHigherYouTube.Application.Services
 {

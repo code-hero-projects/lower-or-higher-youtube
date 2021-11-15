@@ -15,7 +15,7 @@ namespace CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Infrastructure
                 dbContext.Database.Migrate();
                 dbContext.SeedData();
             }
-            
+
             return host;
         }
     }
