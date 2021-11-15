@@ -48,6 +48,7 @@ namespace CodeHero.LowerOrHigherYouTube.API
             }
 
             app.UseMiddleware<LogRequestMiddleware>();
+            app.UseMiddleware<ExceptionHandlerMiddleware>();
 
             app.UseSwagger()
                .UseSwaggerUI(c => c.SwaggerEndpoint(ApiConstants.SwaggerEndpointUrl, ApiConstants.SwaggerName))
