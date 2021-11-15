@@ -1,6 +1,7 @@
 import { AsyncOperationState } from '../../models';
 import { Loading } from '../Loading';
 import { GameStartButtonWrapper } from "./GameStartStyled";
+import { Error } from '../Error';
 
 interface GameStartProps {
   fetchCountriesOperationState: AsyncOperationState;
@@ -24,7 +25,10 @@ export function GameStart({ fetchCountriesOperationState, fetchVideosOperationSt
     return <Loading message="Loading videos" />;
   }
 
+  if (fetchVideosOperationState === AsyncOperationState.Error) {
+    return <Error message="Error fetching videos." />;
+  }
+
   onStartGame();
   return <></>;
-  //return <GameStartButtonWrapper variant="contained" size="large" color="success" onClick={onStartGame}>Start Game</GameStartButtonWrapper>;
 }

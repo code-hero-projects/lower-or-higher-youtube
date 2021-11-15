@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCountries, selectCountry, selectCountryState } from "../../redux";
+import { getCountries, resetFetchVideosOperationState, selectCountry, selectCountryState } from "../../redux";
 import { CountrySelector } from "./CountrySelector";
 
 export function CountrySelectorContainer() {
@@ -11,10 +11,15 @@ export function CountrySelectorContainer() {
     dispatch(getCountries());
   }, []);
 
+  const onSelectCountry = (countryId: number) => {
+    dispatch(resetFetchVideosOperationState());
+    dispatch(selectCountry(countryId));
+  };
+
   return <CountrySelector 
     countries={countries} 
     selectedCountry={selectedCountry} 
-    onCountrySelect={(id: number) => dispatch(selectCountry(id))}
+    onCountrySelect={onSelectCountry}
     operationState={fetchCountriesOperationState}
   />;
 }

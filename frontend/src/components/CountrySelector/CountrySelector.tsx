@@ -3,6 +3,7 @@ import { AsyncOperationState, Country } from "../../models";
 import { Loading } from '../Loading';
 import { SpacedTypographyWrapper } from '../Styled';
 import { CountrySelectorWrapper, FormControlWrapper } from "./CountrySelectorStyles";
+import { Error } from '../Error';
 
 interface CountrySelectorProps {
   countries: Country[];
@@ -18,8 +19,9 @@ export function CountrySelector({ countries, selectedCountry, onCountrySelect, o
   
   return (
     <CountrySelectorWrapper>
+      {operationState === AsyncOperationState.Error && <Error message="Error loading countries" />}
       {operationState === AsyncOperationState.Loading && <Loading message="Loading countries..." />}
-      {operationState !== AsyncOperationState.Loading &&
+      {operationState === AsyncOperationState.Success &&
         <>
           <SpacedTypographyWrapper variant="h3" align="center">Select a country to start the game</SpacedTypographyWrapper>
           <FormControlWrapper variant="outlined">
