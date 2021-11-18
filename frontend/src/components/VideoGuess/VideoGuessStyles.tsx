@@ -10,7 +10,7 @@ export const HigherLowerOptionsWrapper = styled(Box)`
   margin-top: 1%;
   display: flex;
   justify-content: center;
-  margin-bottom: 1%;
+  margin-bottom: 1rem;
 `;
 
 export const HigherOptionWrapper = styled(Box)<FadeProps>`

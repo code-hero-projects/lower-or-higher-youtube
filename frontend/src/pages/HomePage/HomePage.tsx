@@ -1,14 +1,14 @@
-import { CountrySelectorContainer, GameStartContainer, TypographyWrapper, PageBaseWrapper, PageBackgroundImageWrapper, SpacedTypographyWrapper } from "../../components";
-import { ContainerWrapper } from "./HomePageStyles";
+import { CountrySelectorContainer, GameStartContainer, PageBaseWrapper, PageBackgroundImageWrapper, Title } from "../../components";
+import { AdjustableTypography, ContainerWrapper } from "./HomePageStyles";
 
 export function HomePage() {
   return (
     <PageBaseWrapper>
       <PageBackgroundImageWrapper thumbnail="/images/landscape-background.jpg" />
-      <SpacedTypographyWrapper variant="h3" align="center">What are the most viewed videos in each country?</SpacedTypographyWrapper>
+      <Title variant="h3" align="center">What are the most viewed videos in each country?</Title>
       <ContainerWrapper>
-        <TypographyWrapper variant="h5" align="center">A game of higher and lower using YouTube videos.</TypographyWrapper>
-        <TypographyWrapper variant="h5" align="center">The data gets refreshed everyday!</TypographyWrapper>
+        <AdjustableTypography variant="h5" align="center">A game of higher and lower using YouTube videos.</AdjustableTypography>
+        <AdjustableTypography variant="h5" align="center">The data gets refreshed everyday!</AdjustableTypography>
       </ContainerWrapper>
       <ContainerWrapper>
         <CountrySelectorContainer />

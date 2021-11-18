@@ -1,4 +1,4 @@
-import { TypographyWrapper } from "../../Styled";
+import { CornerSubtitle } from "../../Styled";
 
 interface ScoreProps {
   currentScore: number;
@@ -6,6 +6,6 @@ interface ScoreProps {
 
 export function Score({ currentScore }: ScoreProps) {
   return (
-    <TypographyWrapper variant="h4">Current score: {currentScore}</TypographyWrapper>
+    <CornerSubtitle variant="h4">Current score: {currentScore}</CornerSubtitle>
   );
 }

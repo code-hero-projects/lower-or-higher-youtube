@@ -1,8 +1,8 @@
 import { ExpandLess, ExpandMore } from '@material-ui/icons';
 import { Video } from "../../models";
-import { VideoBackgroundImageWrapper, BaseWrapper, TypographyWrapper, VideoDetailsWrapper } from "../Styled";
+import { VideoBackgroundImageWrapper, BaseWrapper, VideoDetailsWrapper, Subtitle, Info, truncateString } from "../Styled";
 import { HigherLowerOption } from "./HigherLowerOption";
-import { Timer } from "./Timer";
+import { Timer } from './Timer';
 import { HigherLowerOptionsWrapper, HigherOptionWrapper, ShowViewsWrapper } from "./VideoGuessStyles";
 
 export interface VideoGuessProps {
@@ -22,9 +22,9 @@ export function VideoGuess({ videoToGuess, videoGuessed, time, stopTime, showVie
       <VideoBackgroundImageWrapper thumbnail={videoToGuess.thumbnail} />
       <Timer time={time} stopTime={stopTime} onUpdateTime={onUpdateTimer} />
       <VideoDetailsWrapper>
-        <TypographyWrapper variant="h3">{videoToGuess.name}</TypographyWrapper>
-        <TypographyWrapper variant="h4">By {videoToGuess.channel}</TypographyWrapper>
-        <TypographyWrapper>Has</TypographyWrapper>
+        <Subtitle variant="h3" align="center">{truncateString(videoToGuess.name)}</Subtitle>
+        <Info variant="h4">By {videoToGuess.channel}</Info>
+        <Info>Has</Info>
         <HigherLowerOptionsWrapper>
           {!showViews &&
             <>
@@ -36,11 +36,11 @@ export function VideoGuess({ videoToGuess, videoGuessed, time, stopTime, showVie
           }
           {showViews && 
             <ShowViewsWrapper showViews={showViews}>
-              <TypographyWrapper variant="h3">Has {videoToGuess.views.toLocaleString()} views</TypographyWrapper>
+              <Subtitle variant="h3">Has {videoToGuess.views.toLocaleString()} views</Subtitle>
             </ShowViewsWrapper>
           }
         </HigherLowerOptionsWrapper>
-        <TypographyWrapper>Views than {videoGuessed.name}</TypographyWrapper>
+        <Info align="center">Views than {truncateString(videoGuessed.name)}</Info>
       </VideoDetailsWrapper>
     </BaseWrapper>
   );

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { TypographyWrapper } from "../../Styled";
+import { CornerSubtitle } from "../../Styled";
 
 interface TimerProps {
   time: number;
@@ -19,5 +19,5 @@ export function Timer({ time, stopTime, onUpdateTime }: TimerProps) {
     }
   }, [time]);
 
-  return <TypographyWrapper variant="h4">Time left: {time}</TypographyWrapper>
+  return <CornerSubtitle variant="h4">Time left: {time}</CornerSubtitle>
 }

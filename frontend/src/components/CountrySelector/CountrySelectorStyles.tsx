@@ -11,4 +11,8 @@ export const FormControlWrapper = styled(FormControl)`
   width: 50%;
   border-radius: 4px;
   background-color: white;
+  margin-top: 1rem;
+  @media (max-width: 768px) {
+    width: 70%;
+  }  
 `;

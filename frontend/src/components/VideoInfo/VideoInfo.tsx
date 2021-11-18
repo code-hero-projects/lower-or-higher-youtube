@@ -1,5 +1,5 @@
 import { Video } from "../../models";
-import { VideoBackgroundImageWrapper, BaseWrapper, TypographyWrapper, VideoDetailsWrapper } from "../Styled";
+import { VideoBackgroundImageWrapper, BaseWrapper, VideoDetailsWrapper, Subtitle, Info } from "../Styled";
 import { Score } from "./Score";
 
 interface VideoInfoProps {
@@ -13,9 +13,9 @@ export function VideoInfo({ video, currentScore }: VideoInfoProps) {
       <VideoBackgroundImageWrapper thumbnail={video.thumbnail} />
       <Score currentScore={currentScore} />
       <VideoDetailsWrapper>
-        <TypographyWrapper variant="h3">{video.name}</TypographyWrapper>
-        <TypographyWrapper variant="h4">By {video.channel}</TypographyWrapper>
-        <TypographyWrapper variant="h3">Has {video.views.toLocaleString()} views</TypographyWrapper>
+        <Subtitle variant="h3" align="center">{video.name}</Subtitle>
+        <Info variant="h4">By {video.channel}</Info>
+        <Subtitle variant="h3">Has {video.views.toLocaleString()} views</Subtitle>
       </VideoDetailsWrapper>
     </BaseWrapper>
   );

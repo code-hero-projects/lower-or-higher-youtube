@@ -1,5 +1,5 @@
 import { Box } from "@material-ui/core";
-import { TypographyWrapper } from "../Styled";
+import { Title } from "../Styled";
 
 interface EndGameScoreProps {
   score: number;
@@ -8,8 +8,8 @@ interface EndGameScoreProps {
 export function EndGameScore({ score }: EndGameScoreProps) {
   return (
     <Box>
-      <TypographyWrapper variant="h4" align="center">Game Over!</TypographyWrapper>
-      <TypographyWrapper variant="h4" align="center">Final score: {score}</TypographyWrapper>
+      <Title variant="h4" align="center">Game Over!</Title>
+      <Title variant="h4" align="center">Final score: {score}</Title>
     </Box>
   );
 }

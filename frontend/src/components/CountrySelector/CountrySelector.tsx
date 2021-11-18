@@ -1,7 +1,7 @@
 import { MenuItem, Select, SelectChangeEvent } from "@material-ui/core";
 import { AsyncOperationState, Country } from "../../models";
 import { Loading } from '../Loading';
-import { SpacedTypographyWrapper } from '../Styled';
+import { Title } from '../Styled';
 import { CountrySelectorWrapper, FormControlWrapper } from "./CountrySelectorStyles";
 import { Error } from '../Error';
 
@@ -23,7 +23,7 @@ export function CountrySelector({ countries, selectedCountry, onCountrySelect, o
       {operationState === AsyncOperationState.Loading && <Loading message="Loading countries..." />}
       {operationState === AsyncOperationState.Success &&
         <>
-          <SpacedTypographyWrapper variant="h3" align="center">Select a country to start the game</SpacedTypographyWrapper>
+          <Title variant="h3" align="center">Select a country to start the game</Title>
           <FormControlWrapper variant="outlined">
             <Select
               value={selectedCountry!.toString()}
