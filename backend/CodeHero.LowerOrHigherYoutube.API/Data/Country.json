@@ -1,0 +1,567 @@
+﻿[
+  {
+    "Name": "Albania",
+    "RegionCode": "AL",
+    "Updating": false
+  },
+  {
+    "Name": "Algeria",
+    "RegionCode": "DZ",
+    "Updating": false
+  },
+  {
+    "Name": "Argentina",
+    "RegionCode": "AR",
+    "Updating": false
+  },
+  {
+    "Name": "Armenia",
+    "RegionCode": "AM",
+    "Updating": false
+  },
+  {
+    "Name": "Australia",
+    "RegionCode": "AU",
+    "Updating": false
+  },
+  {
+    "Name": "Austria",
+    "RegionCode": "AT",
+    "Updating": false
+  },
+  {
+    "Name": "Azerbaijan",
+    "RegionCode": "AZ",
+    "Updating": false
+  },
+  {
+    "Name": "Bahrain",
+    "RegionCode": "BH",
+    "Updating": false
+  },
+  {
+    "Name": "Bangladesh",
+    "RegionCode": "BD",
+    "Updating": false
+  },
+  {
+    "Name": "Belarus",
+    "RegionCode": "BY",
+    "Updating": false
+  },
+  {
+    "Name": "Belgium",
+    "RegionCode": "BE",
+    "Updating": false
+  },
+  {
+    "Name": "Bolivia",
+    "RegionCode": "BO",
+    "Updating": false
+  },
+  {
+    "Name": "Bosnia and Herzegovina",
+    "RegionCode": "BA",
+    "Updating": false
+  },
+  {
+    "Name": "Brazil",
+    "RegionCode": "BR",
+    "Updating": false
+  },
+  {
+    "Name": "Bulgaria",
+    "RegionCode": "BG",
+    "Updating": false
+  },
+  {
+    "Name": "Cambodia",
+    "RegionCode": "KH",
+    "Updating": false
+  },
+  {
+    "Name": "Canada",
+    "RegionCode": "CA",
+    "Updating": false
+  },
+  {
+    "Name": "Chile",
+    "RegionCode": "CL",
+    "Updating": false
+  },
+  {
+    "Name": "Colombia",
+    "RegionCode": "CO",
+    "Updating": false
+  },
+  {
+    "Name": "Costa Rica",
+    "RegionCode": "CR",
+    "Updating": false
+  },
+  {
+    "Name": "Croatia",
+    "RegionCode": "HR",
+    "Updating": false
+  },
+  {
+    "Name": "Cyprus",
+    "RegionCode": "CY",
+    "Updating": false
+  },
+  {
+    "Name": "Czechia",
+    "RegionCode": "CZ",
+    "Updating": false
+  },
+  {
+    "Name": "Denmark",
+    "RegionCode": "DK",
+    "Updating": false
+  },
+  {
+    "Name": "Dominican Republic",
+    "RegionCode": "DO",
+    "Updating": false
+  },
+  {
+    "Name": "Ecuador",
+    "RegionCode": "EC",
+    "Updating": false
+  },
+  {
+    "Name": "Egypt",
+    "RegionCode": "EG",
+    "Updating": false
+  },
+  {
+    "Name": "El Salvador",
+    "RegionCode": "SV",
+    "Updating": false
+  },
+  {
+    "Name": "Estonia",
+    "RegionCode": "EE",
+    "Updating": false
+  },
+  {
+    "Name": "Finland",
+    "RegionCode": "FI",
+    "Updating": false
+  },
+  {
+    "Name": "France",
+    "RegionCode": "FR",
+    "Updating": false
+  },
+  {
+    "Name": "Georgia",
+    "RegionCode": "GE",
+    "Updating": false
+  },
+  {
+    "Name": "Germany",
+    "RegionCode": "DE",
+    "Updating": false
+  },
+  {
+    "Name": "Ghana",
+    "RegionCode": "GH",
+    "Updating": false
+  },
+  {
+    "Name": "Greece",
+    "RegionCode": "GR",
+    "Updating": false
+  },
+  {
+    "Name": "Guatemala",
+    "RegionCode": "GT",
+    "Updating": false
+  },
+  {
+    "Name": "Honduras",
+    "RegionCode": "HN",
+    "Updating": false
+  },
+  {
+    "Name": "Hong Kong",
+    "RegionCode": "HK",
+    "Updating": false
+  },
+  {
+    "Name": "Hungary",
+    "RegionCode": "HU",
+    "Updating": false
+  },
+  {
+    "Name": "Iceland",
+    "RegionCode": "IS",
+    "Updating": false
+  },
+  {
+    "Name": "India",
+    "RegionCode": "IN",
+    "Updating": false
+  },
+  {
+    "Name": "Indonesia",
+    "RegionCode": "ID",
+    "Updating": false
+  },
+  {
+    "Name": "Iraq",
+    "RegionCode": "IQ",
+    "Updating": false
+  },
+  {
+    "Name": "Ireland",
+    "RegionCode": "IE",
+    "Updating": false
+  },
+  {
+    "Name": "Israel",
+    "RegionCode": "IL",
+    "Updating": false
+  },
+  {
+    "Name": "Italy",
+    "RegionCode": "IT",
+    "Updating": false
+  },
+  {
+    "Name": "Jamaica",
+    "RegionCode": "JM",
+    "Updating": false
+  },
+  {
+    "Name": "Japan",
+    "RegionCode": "JP",
+    "Updating": false
+  },
+  {
+    "Name": "Jordan",
+    "RegionCode": "JO",
+    "Updating": false
+  },
+  {
+    "Name": "Kazakhstan",
+    "RegionCode": "KZ",
+    "Updating": false
+  },
+  {
+    "Name": "Kenya",
+    "RegionCode": "KE",
+    "Updating": false
+  },
+  {
+    "Name": "Kuwait",
+    "RegionCode": "KW",
+    "Updating": false
+  },
+  {
+    "Name": "Laos",
+    "RegionCode": "LA",
+    "Updating": false
+  },
+  {
+    "Name": "Latvia",
+    "RegionCode": "LV",
+    "Updating": false
+  },
+  {
+    "Name": "Lebanon",
+    "RegionCode": "LB",
+    "Updating": false
+  },
+  {
+    "Name": "Libya",
+    "RegionCode": "LY",
+    "Updating": false
+  },
+  {
+    "Name": "Liechtenstein",
+    "RegionCode": "LI",
+    "Updating": false
+  },
+  {
+    "Name": "Lithuania",
+    "RegionCode": "LT",
+    "Updating": false
+  },
+  {
+    "Name": "Luxembourg",
+    "RegionCode": "LU",
+    "Updating": false
+  },
+  {
+    "Name": "Malaysia",
+    "RegionCode": "MY",
+    "Updating": false
+  },
+  {
+    "Name": "Malta",
+    "RegionCode": "MT",
+    "Updating": false
+  },
+  {
+    "Name": "Mexico",
+    "RegionCode": "MX",
+    "Updating": false
+  },
+  {
+    "Name": "Moldova",
+    "RegionCode": "MD",
+    "Updating": false
+  },
+  {
+    "Name": "Mongolia",
+    "RegionCode": "MN",
+    "Updating": false
+  },
+  {
+    "Name": "Montenegro",
+    "RegionCode": "ME",
+    "Updating": false
+  },
+  {
+    "Name": "Morocco",
+    "RegionCode": "MA",
+    "Updating": false
+  },
+  {
+    "Name": "Nepal",
+    "RegionCode": "NP",
+    "Updating": false
+  },
+  {
+    "Name": "Netherlands",
+    "RegionCode": "NL",
+    "Updating": false
+  },
+  {
+    "Name": "New Zealand",
+    "RegionCode": "NZ",
+    "Updating": false
+  },
+  {
+    "Name": "Nicaragua",
+    "RegionCode": "NI",
+    "Updating": false
+  },
+  {
+    "Name": "Nigeria",
+    "RegionCode": "NG",
+    "Updating": false
+  },
+  {
+    "Name": "North Macedonia",
+    "RegionCode": "MK",
+    "Updating": false
+  },
+  {
+    "Name": "Norway",
+    "RegionCode": "NO",
+    "Updating": false
+  },
+  {
+    "Name": "Oman",
+    "RegionCode": "OM",
+    "Updating": false
+  },
+  {
+    "Name": "Pakistan",
+    "RegionCode": "PK",
+    "Updating": false
+  },
+  {
+    "Name": "Panama",
+    "RegionCode": "PA",
+    "Updating": false
+  },
+  {
+    "Name": "Papua New Guinea",
+    "RegionCode": "PG",
+    "Updating": false
+  },
+  {
+    "Name": "Paraguay",
+    "RegionCode": "PY",
+    "Updating": false
+  },
+  {
+    "Name": "Peru",
+    "RegionCode": "PE",
+    "Updating": false
+  },
+  {
+    "Name": "Philippines",
+    "RegionCode": "PH",
+    "Updating": false
+  },
+  {
+    "Name": "Poland",
+    "RegionCode": "PL",
+    "Updating": false
+  },
+  {
+    "Name": "Portugal",
+    "RegionCode": "PT",
+    "Updating": false
+  },
+  {
+    "Name": "Puerto Rico",
+    "RegionCode": "PR",
+    "Updating": false
+  },
+  {
+    "Name": "Qatar",
+    "RegionCode": "QA",
+    "Updating": false
+  },
+  {
+    "Name": "Romania",
+    "RegionCode": "RO",
+    "Updating": false
+  },
+  {
+    "Name": "Russia",
+    "RegionCode": "RU",
+    "Updating": false
+  },
+  {
+    "Name": "Saudi Arabia",
+    "RegionCode": "SA",
+    "Updating": false
+  },
+  {
+    "Name": "Senegal",
+    "RegionCode": "SN",
+    "Updating": false
+  },
+  {
+    "Name": "Serbia",
+    "RegionCode": "RS",
+    "Updating": false
+  },
+  {
+    "Name": "Singapore",
+    "RegionCode": "SG",
+    "Updating": false
+  },
+  {
+    "Name": "Slovakia",
+    "RegionCode": "SK",
+    "Updating": false
+  },
+  {
+    "Name": "Slovenia",
+    "RegionCode": "SI",
+    "Updating": false
+  },
+  {
+    "Name": "South Africa",
+    "RegionCode": "ZA",
+    "Updating": false
+  },
+  {
+    "Name": "South Korea",
+    "RegionCode": "KR",
+    "Updating": false
+  },
+  {
+    "Name": "Spain",
+    "RegionCode": "ES",
+    "Updating": false
+  },
+  {
+    "Name": "Sri Lanka",
+    "RegionCode": "LK",
+    "Updating": false
+  },
+  {
+    "Name": "Sweden",
+    "RegionCode": "SE",
+    "Updating": false
+  },
+  {
+    "Name": "Switzerland",
+    "RegionCode": "CH",
+    "Updating": false
+  },
+  {
+    "Name": "Taiwan",
+    "RegionCode": "TW",
+    "Updating": false
+  },
+  {
+    "Name": "Tanzania",
+    "RegionCode": "TZ",
+    "Updating": false
+  },
+  {
+    "Name": "Thailand",
+    "RegionCode": "TH",
+    "Updating": false
+  },
+  {
+    "Name": "Tunisia",
+    "RegionCode": "TN",
+    "Updating": false
+  },
+  {
+    "Name": "Turkey",
+    "RegionCode": "TR",
+    "Updating": false
+  },
+  {
+    "Name": "Uganda",
+    "RegionCode": "UG",
+    "Updating": false
+  },
+  {
+    "Name": "Ukraine",
+    "RegionCode": "UA",
+    "Updating": false
+  },
+  {
+    "Name": "United Arab Emirates",
+    "RegionCode": "AE",
+    "Updating": false
+  },
+  {
+    "Name": "United Kingdom",
+    "RegionCode": "GB",
+    "Updating": false
+  },
+  {
+    "Name": "United States of America",
+    "RegionCode": "US",
+    "Updating": false
+  },
+  {
+    "Name": "Uruguay",
+    "RegionCode": "UY",
+    "Updating": false
+  },
+  {
+    "Name": "Venezuela",
+    "RegionCode": "VE",
+    "Updating": false
+  },
+  {
+    "Name": "Vietnam",
+    "RegionCode": "VN",
+    "Updating": false
+  },
+  {
+    "Name": "Yemen",
+    "RegionCode": "YE",
+    "Updating": false
+  },
+  {
+    "Name": "Zimbabwe",
+    "RegionCode": "ZW",
+    "Updating": false
+  }
+]

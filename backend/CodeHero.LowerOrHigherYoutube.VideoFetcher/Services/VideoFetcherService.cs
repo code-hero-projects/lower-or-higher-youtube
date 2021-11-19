@@ -1,6 +1,7 @@
 ﻿using CodeHero.LowerOrHigherYouTube.Core.Model;
 using CodeHero.LowerOrHigherYouTube.Core.Repositories;
 using CodeHero.LowerOrHigherYouTube.Core.Services;
+using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -11,12 +12,14 @@ namespace CodeHero.LowerOrHigherYouTube.VideoRenewal.Services
         private readonly ICountryRepository _countryRepository;
         private readonly IVideoRepository _videoRepository;
         private readonly IVideoSupplier _videoSupplier;
+        private readonly ILogger<VideoFetcherService> _logger;
 
-        public VideoFetcherService(ICountryRepository countryRepository, IVideoRepository videoRepository, IVideoSupplier videoSupplier)
+        public VideoFetcherService(ICountryRepository countryRepository, IVideoRepository videoRepository, IVideoSupplier videoSupplier, ILogger<VideoFetcherService> logger)
         {
             _countryRepository = countryRepository;
             _videoRepository = videoRepository;
             _videoSupplier = videoSupplier;
+            _logger = logger;
         }
 
         public async Task RenewVideos()
@@ -25,6 +28,7 @@ namespace CodeHero.LowerOrHigherYouTube.VideoRenewal.Services
 
             foreach (var country in countries)
             {
+                _logger.LogInformation("Fetching videos for country {0} with id {1}", country.Name, country.Id);
                 var videos = await _videoRepository.FilterAsync(video => video.CountryId == country.Id);
                 await UpdateCountry(country, true);
                 DeleteOldVideos(videos);
@@ -32,6 +36,8 @@ namespace CodeHero.LowerOrHigherYouTube.VideoRenewal.Services
                 await AddVideos(newVideos);
                 await UpdateCountry(country, false);
             }
+
+            _logger.LogInformation("Finished fecthing videos");
         }
 
         private async Task UpdateCountry(Country country, bool updating)

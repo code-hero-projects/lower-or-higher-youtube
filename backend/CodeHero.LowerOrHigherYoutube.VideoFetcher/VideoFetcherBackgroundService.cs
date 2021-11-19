@@ -24,8 +24,6 @@ namespace CodeHero.LowerOrHigherYouTube.VideoRenewal
 
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            _logger.LogInformation("VideoFetcherService running.");
-
             using (var scope = _serviceProvider.CreateScope())
             {
                 var timerOptions = scope.ServiceProvider.GetService<TimerOptions>();
@@ -39,11 +37,14 @@ namespace CodeHero.LowerOrHigherYouTube.VideoRenewal
         {
             using (var scope = _serviceProvider.CreateScope())
             {
-                var countryRepository = scope.ServiceProvider.GetService<ICountryRepository>();
-                var videoRepository = scope.ServiceProvider.GetService<IVideoRepository>();
-                var videoSupplier = scope.ServiceProvider.GetService<IVideoSupplier>();
+                var serviceProvider = scope.ServiceProvider;
 
-                var videoRenewal = new VideoFetcherService(countryRepository, videoRepository, videoSupplier);
+                var countryRepository = serviceProvider.GetService<ICountryRepository>();
+                var videoRepository = serviceProvider.GetService<IVideoRepository>();
+                var videoSupplier = serviceProvider.GetService<IVideoSupplier>();
+                var logger = serviceProvider.GetService<ILogger<VideoFetcherService>>();
+
+                var videoRenewal = new VideoFetcherService(countryRepository, videoRepository, videoSupplier, logger);
                 await videoRenewal.RenewVideos();
             }
         }

@@ -3,6 +3,6 @@
     public class TimerOptions
     {
         public int RenewVideosDelayInHours { get; set; }
-        public int FetchCountryWhenUpdatingTimeoutInMilliSeconds { get; set; }
+        public int FetchCountryWhenUpdatingTimeoutInSeconds { get; set; }
     }
 }

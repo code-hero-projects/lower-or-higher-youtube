@@ -20,7 +20,7 @@ namespace CodeHero.LowerOrHigherYouTube.Application.Services
             _videoRepository = videoRepository;
             _countryRepository = countryRepository;
             _videoSupplier = videoSupplier;
-            _retryTime = timerOptions.FetchCountryWhenUpdatingTimeoutInMilliSeconds;
+            _retryTime = timerOptions.FetchCountryWhenUpdatingTimeoutInSeconds * 1000;
         }
 
         public async Task<IEnumerable<Video>> ListAsync(int countryId)
