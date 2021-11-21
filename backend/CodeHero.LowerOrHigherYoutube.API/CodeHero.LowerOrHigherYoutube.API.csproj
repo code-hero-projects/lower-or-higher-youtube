@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Data\Country.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="Data\Country.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
