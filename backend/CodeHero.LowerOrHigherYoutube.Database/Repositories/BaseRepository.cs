@@ -33,6 +33,6 @@ namespace CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Repositories
 
         public async Task SaveChangesAsync() => await _dbContext.SaveChangesAsync();
 
-        public void Update(T entity) => _dbContext.Update(entity);
+        public void Update(T entity) => _dbSet.Update(entity);
     }
 }
