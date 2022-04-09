@@ -4,7 +4,7 @@ import { Video } from "../../models";
 
 function shuffleVideos(videosPromise: Promise<Video[]>): Promise<Video[]> { return videosPromise.then(randomizeVideos) };
 
-export function randomizeVideos(videos: Video[]) {
+export function randomizeVideos(videos: Video[]): Video[] {
   let currentIndex = videos.length,  randomIndex;
 
     while (currentIndex !== 0) {

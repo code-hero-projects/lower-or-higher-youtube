@@ -22,6 +22,13 @@ const videoSlice = createSlice({
     },
     resetFetchVideosOperationState: (state) => {
       state.fetchVideosOperationState = AsyncOperationState.None;
+    },
+    extendVideos: (state) => {
+      const videos = state.videos;
+      const oldVideos = videos.slice(0, videos.length - 1);
+      const randomizedVideos = randomizeVideos(oldVideos);
+      randomizedVideos.push(videos[videos.length - 1]);
+      state.videos = videos.concat(randomizedVideos);
     }
   },
   extraReducers: (builder) => {
@@ -40,6 +47,6 @@ const videoSlice = createSlice({
   }
 });
 
-export const { shuffleVideos, resetFetchVideosOperationState } = videoSlice.actions;
+export const { shuffleVideos, resetFetchVideosOperationState, extendVideos } = videoSlice.actions;
 
 export const videoReducer = videoSlice.reducer;
