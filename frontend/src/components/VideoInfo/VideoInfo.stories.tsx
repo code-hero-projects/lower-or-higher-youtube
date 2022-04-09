@@ -10,7 +10,7 @@ const video: Video = {
   thumbnail: 'https://i.ytimg.com/vi/U3ASj1L6_sY/maxresdefault.jpg'
 };
 
-export const WithViews = () => <Box sx={{height: '100vh'}}><VideoInfo video={video} currentScore={573} /></Box>;
+export const WithViews = () => <Box sx={{height: '100vh'}}><VideoInfo video={video} currentScore={573} highScore={500} /></Box>;
 
 export default {
   title: 'Components/VideoInfo',

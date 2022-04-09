@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { CornerSubtitle } from "../../Styled";
+import { LeftCornerSubtitle } from "../../Styled";
 
 interface TimerProps {
   time: number;
@@ -19,5 +19,5 @@ export function Timer({ time, stopTime, onUpdateTime }: TimerProps) {
     }
   }, [time]);
 
-  return <CornerSubtitle variant="h4">Time left: {time}</CornerSubtitle>
+  return <LeftCornerSubtitle variant="h4">Time left: {time}</LeftCornerSubtitle>
 }

@@ -1,4 +1,4 @@
-import { Typography } from "@material-ui/core";
+  import { Typography } from "@material-ui/core";
 import { styled } from "@material-ui/system";
 import { SmallDeviceMediaQuery } from './MediaQuery';
 
@@ -16,6 +16,7 @@ export const Title = styled(TypographyWrapper)`
 `;
 
 export const Subtitle = styled(TypographyWrapper)`
+  z-index: 1000;
   @media ${SmallDeviceMediaQuery} {
     font-size: 1.2rem;
   }
@@ -27,12 +28,21 @@ export const Info = styled(TypographyWrapper)`
   }
 `;
 
-export const CornerSubtitle = styled(Subtitle)`
+export const LeftCornerSubtitle = styled(Subtitle)`
   margin-top: 2rem;
   margin-left: 2rem;
   margin-botom: 0rem;
   @media ${SmallDeviceMediaQuery} {
     margin-top: 0.5rem;
+    margin-left: 0.5rem;
+  }
+`;
+
+export const RightCornerSubtitle = styled(Subtitle)`
+  margin-top: 2rem;
+  margin-right: 2rem;
+  @media ${SmallDeviceMediaQuery} {
+    margin-top: 1rem;
     margin-left: 0.5rem;
   }
 `;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Answer, Video } from "../../models";
-import { updateScore, endGame, nextQuestion, selectQuestionState, setAnswer, stopTime, updateTime } from "../../redux";
+import { updateScore, endGame, nextQuestion, selectQuestionState, setAnswer, stopTime, updateTime, updateHighScore } from "../../redux";
 import { VideoGuess } from "./VideoGuess";
 
 interface VideoGuessContainerProps {
@@ -33,6 +33,7 @@ export function VideoGuessContainer({ onAnswer, videoGuessed, videoToGuess }: Vi
 
       if (correctAnswer){
         dispatch(updateScore(time));
+        dispatch(updateHighScore())
       } else {
         dispatch(endGame());
       }

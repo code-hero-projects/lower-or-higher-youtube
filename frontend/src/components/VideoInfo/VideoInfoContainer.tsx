@@ -8,7 +8,7 @@ export interface VideoContainerProps {
 }
 
 export function VideoInfoContainer({ video }: VideoContainerProps) {
-  const { score } = useSelector(selectScoreState);
+  const { score, highScore } = useSelector(selectScoreState);
 
-  return <VideoInfo video={video} currentScore={score} />;
+  return <VideoInfo video={video} currentScore={score} highScore={highScore} />;
 }

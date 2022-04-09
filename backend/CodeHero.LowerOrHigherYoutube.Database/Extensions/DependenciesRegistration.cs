@@ -37,9 +37,9 @@ namespace CodeHero.LowerOrHigherYouTube.Infrastructure.Database.Extensions
 
             services
                 .AddSingleton(databaseOptions)
+                .AddSingleton<EntitiesConfiguration>()
                 .AddScoped<ICountryRepository, CountryRepository>()
-                .AddScoped<IVideoRepository, VideoRepository>()
-                .AddSingleton<EntitiesConfiguration>();
+                .AddScoped<IVideoRepository, VideoRepository>();
 
             return services;
         }
