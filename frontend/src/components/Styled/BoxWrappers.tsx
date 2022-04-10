@@ -26,7 +26,7 @@ export const PageBaseWrapper = styled(FlexCenterWrapper)`
 
 export const VideoDetailsWrapper = styled(FlexCenterWrapper)`
   align-items: center;
-  height: 100%;
+  height: 80%;
   width: 100%;
 `;
 

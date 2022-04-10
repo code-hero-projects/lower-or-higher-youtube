@@ -8,6 +8,7 @@ import { HigherLowerOptionsWrapper, HigherOptionWrapper, ShowViewsWrapper } from
 export interface VideoGuessProps {
   videoToGuess: Video;
   videoGuessed: Video;
+  useTimer: boolean;
   time: number;
   stopTime: boolean;
   showViews: boolean;
@@ -16,11 +17,11 @@ export interface VideoGuessProps {
   onUpdateTimer: (currentTime: number) => void;
 }
 
-export function VideoGuess({ videoToGuess, videoGuessed, time, stopTime, showViews, onHigherOption, onLowerOption, onUpdateTimer }: VideoGuessProps) {
+export function VideoGuess({ videoToGuess, videoGuessed, useTimer, time, stopTime, showViews, onHigherOption, onLowerOption, onUpdateTimer }: VideoGuessProps) {
   return (
     <BaseWrapper>
       <VideoBackgroundImageWrapper thumbnail={videoToGuess.thumbnail} />
-      <Timer time={time} stopTime={stopTime} onUpdateTime={onUpdateTimer} />
+      {useTimer && <Timer time={time} stopTime={stopTime} onUpdateTime={onUpdateTimer} />}
       <VideoDetailsWrapper>
         <Subtitle variant="h3" align="center">{truncateString(videoToGuess.name)}</Subtitle>
         <Info variant="h4">By {videoToGuess.channel}</Info>

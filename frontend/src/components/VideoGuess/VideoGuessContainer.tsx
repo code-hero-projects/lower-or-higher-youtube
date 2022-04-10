@@ -11,7 +11,7 @@ interface VideoGuessContainerProps {
 }
 
 export function VideoGuessContainer({ onAnswer, videoGuessed, videoToGuess }: VideoGuessContainerProps) {
-  const { time, timeStopped } = useSelector(selectQuestionState);
+  const { time, timeStopped, useTimer } = useSelector(selectQuestionState);
   const [ showViews, setShowViews ] = useState<boolean>(false);
   const dispatch = useDispatch();
 
@@ -24,20 +24,20 @@ export function VideoGuessContainer({ onAnswer, videoGuessed, videoToGuess }: Vi
   const lowerOrHigherOption = (predicate: () => boolean) => {
     const answer = predicate() ? Answer.Correct : Answer.Incorrect;
 
+    dispatch(stopTime());
     setShowViews(true);
     dispatch(setAnswer(answer));
-    dispatch(stopTime());
     
     setTimeout(() => {
       const correctAnswer = predicate();
 
       if (correctAnswer){
-        dispatch(updateScore(time));
-        dispatch(updateHighScore())
+        dispatch(updateScore({useTimer, time}));
+        dispatch(updateHighScore());
+        dispatch(nextQuestion());
       } else {
         dispatch(endGame());
       }
-      dispatch(nextQuestion());
       setShowViews(false);
       onAnswer(correctAnswer);
     }, 2500);
@@ -47,6 +47,7 @@ export function VideoGuessContainer({ onAnswer, videoGuessed, videoToGuess }: Vi
     <VideoGuess
       videoGuessed={videoGuessed}
       videoToGuess={videoToGuess}
+      useTimer={useTimer}
       time={time}
       stopTime={timeStopped}
       onHigherOption={onHigherOption}

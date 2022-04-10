@@ -1,17 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const HIGH_SCORE_KEY = 'high-score';
-
 export interface ScoreState {
   score: number;
   highScore: number;
   hasNewHighScore: boolean;
 }
 
+const HIGH_SCORE_KEY = 'high-score';
+
 const getHighScoreScore = () => {
   const highScore = localStorage.getItem(HIGH_SCORE_KEY);
   return highScore ? +highScore : 0;
-}
+};
 
 const initialState: ScoreState = {
   score: 0,
@@ -24,8 +24,19 @@ const scoreSlice = createSlice({
   initialState,
   reducers: {
     updateScore: (state, action) => {
-      const scoreToAdd = +process.env.REACT_APP_QUESTION_SCORE! + (action.payload * +process.env.REACT_APP_TIME_SECOND_BONUS_SCORE!);
-      state.score += scoreToAdd;
+      const { useTimer, time } = action.payload;
+      let bonusScore = 0;
+      
+      if (useTimer) {
+        const { REACT_APP_HIGH_TIME_BONUS, REACT_APP_HIGH_TIME_BONUS_POINTS, REACT_APP_LOW_TIME_BONUS_POINTS } = process.env;
+        bonusScore = +REACT_APP_HIGH_TIME_BONUS_POINTS!;
+
+        if (time < +REACT_APP_HIGH_TIME_BONUS!) {
+          bonusScore = time > 0 ? +REACT_APP_LOW_TIME_BONUS_POINTS! : 0;
+        }
+      }
+      
+      state.score += +process.env.REACT_APP_QUESTION_SCORE! + bonusScore;
     },
     resetScore: state => {
       state.score = initialState.score;

@@ -1,5 +1,5 @@
-import { CountrySelectorContainer, GameStartContainer, PageBaseWrapper, PageBackgroundImageWrapper, Title } from "../../components";
-import { AdjustableTypography, ContainerWrapper } from "./HomePageStyles";
+import { CountrySelectorContainer, GameStartContainer, PageBaseWrapper, PageBackgroundImageWrapper, Title, AdjustableTypography, TimerOptionContainer } from "../../components";
+import { ContainerWrapper } from "./HomePageStyles";
 
 export function HomePage() {
   return (
@@ -12,6 +12,11 @@ export function HomePage() {
       </ContainerWrapper>
       <ContainerWrapper>
         <CountrySelectorContainer />
+      </ContainerWrapper>
+      <ContainerWrapper>
+        <TimerOptionContainer />
+        <AdjustableTypography variant="h5" align="center" marginTop={2}>When you play with timer you can get bonus points!</AdjustableTypography>
+        <AdjustableTypography variant="h5" align="center">50 points if you guess within 5 seconds, 25 points if you guess within 10 seconds!</AdjustableTypography>
       </ContainerWrapper>
       <GameStartContainer />
     </PageBaseWrapper>
