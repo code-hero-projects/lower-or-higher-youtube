@@ -11,10 +11,10 @@ export function TimerOption({ useTimer, onToogleUseTimer }: TimerOptionProps) {
     <FormGroup>
       <Typography align="center">
         <FormControlLabel
-          control={<Checkbox checked={useTimer} color="default"/>}
+          control={<Checkbox checked={useTimer} color="default" />}
           onChange={onToogleUseTimer}
-          label={<Title variant="h4" marginLeft={2}>Play with timer</Title>}
-          sx={{'& .MuiSvgIcon-root': { fontSize: 40 }}}
+          label={<Title variant="h4" marginTop={1} marginLeft={2}>Play with timer</Title>}
+          sx={{'& .MuiSvgIcon-root': { fontSize: 45 } }}
         />
       </Typography>
     </FormGroup>
