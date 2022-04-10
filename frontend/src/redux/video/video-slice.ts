@@ -4,11 +4,13 @@ import { getVideos, randomizeVideos } from "./epics";
 
 export interface VideoState {
   videos: Video[];
+  initialVideos: Video[];
   fetchVideosOperationState: AsyncOperationState;
 }
 
 const initialState: VideoState = {
   videos: [],
+  initialVideos: [],
   fetchVideosOperationState: AsyncOperationState.None
 };
 
@@ -17,7 +19,7 @@ const videoSlice = createSlice({
   initialState,
   reducers: {
     shuffleVideos: (state) => {
-      const newVideos = randomizeVideos(state.videos);
+      const newVideos = randomizeVideos(state.initialVideos);
       state.videos = newVideos;
     },
     resetFetchVideosOperationState: (state) => {
@@ -39,6 +41,7 @@ const videoSlice = createSlice({
       .addCase(getVideos.fulfilled, (state, action) => {
         const videos = action.payload;
         state.videos = videos;
+        state.initialVideos = videos;
         state.fetchVideosOperationState = AsyncOperationState.Success;
       })
       .addCase(getVideos.rejected, (state) => {
