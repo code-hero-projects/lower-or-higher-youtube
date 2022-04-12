@@ -22,7 +22,7 @@ export function VideoGuess({ videoToGuess, videoGuessed, useTimer, time, stopTim
     <BaseWrapper>
       <VideoBackgroundImageWrapper thumbnail={videoToGuess.thumbnail} />
       {useTimer && <Timer time={time} stopTime={stopTime} onUpdateTime={onUpdateTimer} />}
-      <VideoDetailsWrapper>
+      <VideoDetailsWrapper hasTimer={useTimer}>
         <Subtitle variant="h3" align="center">{truncateString(videoToGuess.name)}</Subtitle>
         <Info variant="h4">By {videoToGuess.channel}</Info>
         <Info>Has</Info>
