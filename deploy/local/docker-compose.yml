@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+  codehero.lowerorhigheryoutube.api:
+    depends_on:
+    - postgres
+    image: ${DOCKER_REGISTRY-}lower-or-higher-youtube-api:v1
+    restart: always
+    ports:
+    - "5011:80"
+  
+  codehero.lowerorhigheryoutube.frontend:
+    depends_on:
+    - codehero.lowerorhigheryoutube.api
+    image: ${DOCKER_REGISTRY-}lower-or-higher-youtube-frontend:v1
+    restart: always
+    ports:
+    - "5010:80"
+  
+  postgres:
+    image: postgres:13.2
+    restart: always
+    environment:
+      - POSTGRES_DB=HigherOrLowerYouTube
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin
+    expose:
+    - "5432"
