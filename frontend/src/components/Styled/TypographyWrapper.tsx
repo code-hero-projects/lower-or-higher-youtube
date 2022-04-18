@@ -32,7 +32,7 @@ export const LeftCornerSubtitle = styled(Subtitle)`
   margin-top: 2rem;
   margin-left: 2rem;
   @media ${SmallDeviceMediaQuery} {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     margin-left: 0.5rem;
   }
 `;
@@ -42,7 +42,7 @@ export const RightCornerSubtitle = styled(Subtitle)`
   margin-right: 2rem;
   @media ${SmallDeviceMediaQuery} {
     margin-top: 1rem;
-    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
 `;
 

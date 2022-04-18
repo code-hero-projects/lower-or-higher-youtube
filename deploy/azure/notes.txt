@@ -1,0 +1,2 @@
+api is being deplyed as a web app using the docker compose
+frontend is being deplyed as a web app using the frontend docker image

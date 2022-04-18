@@ -4,19 +4,17 @@ services:
   codehero.lowerorhigheryoutube.api:
     depends_on:
     - postgres
-    image: ${DOCKER_REGISTRY-}lowerorhigheryoutubeapi
-    build:
-      context: .
-      dockerfile: CodeHero.LowerOrHigherYouTube.API/Dockerfile
+    image: codehero.azurecr.io/lower-or-higher-youtube-api:v1
+    restart: always
     ports:
     - "5011:80"
-  
+
   postgres:
     image: postgres:13.2
     restart: always
     environment:
       - POSTGRES_DB=HigherOrLowerYouTube
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=cCV6sMaT&M@RggBj_QKA&MnmVvSs8P!b
+      - POSTGRES_PASSWORD=cCV6sMaT&M@RggBj_QKA&MnmVvSs8P!b   
     expose:
     - "5432"

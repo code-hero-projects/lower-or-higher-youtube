@@ -20,7 +20,7 @@ export function VideoInfo({ video, currentScore, highScore }: VideoInfoProps) {
         </Box>
         <HighScore highScore={highScore} />
       </Box>
-      <VideoDetailsWrapper hasTimer={false}>
+      <VideoDetailsWrapper hasTimer={true}>
         <Subtitle variant="h3" align="center">{video.name}</Subtitle>
         <Info variant="h4">By {video.channel}</Info>
         <Subtitle variant="h3">Has {video.views.toLocaleString()} views</Subtitle>
