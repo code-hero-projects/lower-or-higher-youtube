@@ -16,7 +16,7 @@ export function HomePage() {
       <ContainerWrapper>
         <TimerOptionContainer />
         <AdjustableTypography variant="h5" align="center" marginTop={2}>When you play with timer you can get bonus points!</AdjustableTypography>
-        <AdjustableTypography variant="h5" align="center">50 points if you guess within 5 seconds, 25 points if you guess within 10 seconds!</AdjustableTypography>
+        <AdjustableTypography variant="h5" align="center">50 points if you guess within 5 seconds, 20 points if you guess within 10 seconds!</AdjustableTypography>
       </ContainerWrapper>
       <GameStartContainer />
     </PageBaseWrapper>
