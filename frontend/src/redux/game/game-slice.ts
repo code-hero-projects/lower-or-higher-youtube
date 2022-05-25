@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { CurrentGameState } from "../../models";
+import { RepositoryFacade } from '../../repositories';
 
 export interface GameState {
   gameState: CurrentGameState;
@@ -21,10 +22,13 @@ const gameSlice = createSlice({
     },
     endGame: (state) => {
       state.gameState = CurrentGameState.Ended;
+    },
+    setupGame: () => {
+      RepositoryFacade.setup();
     }
   }
 });
 
-export const { resetGame, startGame, endGame } = gameSlice.actions;
+export const { resetGame, startGame, endGame, setupGame } = gameSlice.actions;
 
 export const gameReducer = gameSlice.reducer;

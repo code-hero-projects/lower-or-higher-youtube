@@ -1,8 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { CodeHeroApi } from "../../api";
-import { Video } from "../../models";
+import { FetchedTimestamp, Video } from "../../models";
+import { RepositoryFacade } from '../../repositories';
 
-function shuffleVideos(videosPromise: Promise<Video[]>): Promise<Video[]> { return videosPromise.then(randomizeVideos) };
+const videoRepository = RepositoryFacade.getVideoRepository();
+const countryVideosFetchedTimestampRepository = RepositoryFacade.getCountryVideosFetchedTimestampRepository();
 
 export function randomizeVideos(videos: Video[]): Video[] {
   let currentIndex = videos.length,  randomIndex;
@@ -16,4 +18,32 @@ export function randomizeVideos(videos: Video[]): Video[] {
     return videos;
 }
 
-export const getVideos = createAsyncThunk<Video[], number>('videos/fetchVideos', async(countryId: number) => shuffleVideos(CodeHeroApi.getVideos(countryId)));
+export const getVideos = createAsyncThunk<Video[], number>('videos/fetchVideos', async(countryId: number) => {
+  const countryVideosFetchedTimestamp = await countryVideosFetchedTimestampRepository.read(countryId);
+
+  if (!countryVideosFetchedTimestamp) {
+    const videos = await shuffleVideos(CodeHeroApi.getVideos(countryId));
+
+    await insertFetchedTimestamp(countryId);
+    await insertVideos(videos);
+    
+    return videos;
+  }
+
+  return videoRepository.readAll();
+});
+
+async function shuffleVideos(videosPromise: Promise<Video[]>): Promise<Video[]> { 
+  const videos = await videosPromise;
+  return randomizeVideos(videos); 
+};
+
+async function insertFetchedTimestamp(countryId: number) {
+  const currentDate = new Date();
+  const fetchedTimestamp: FetchedTimestamp = { id: countryId, date: currentDate };
+  await countryVideosFetchedTimestampRepository.insert(fetchedTimestamp);
+}
+
+async function insertVideos(videos: Video[]) {
+  videos.forEach(async video => await videoRepository.insert(video));
+}
