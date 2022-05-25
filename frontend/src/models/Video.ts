@@ -4,4 +4,5 @@ export interface Video {
   channel: string;
   views: number;
   thumbnail: string;
+  countryId: number;
 }

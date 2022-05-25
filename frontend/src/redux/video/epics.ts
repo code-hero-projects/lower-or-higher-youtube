@@ -30,7 +30,7 @@ export const getVideos = createAsyncThunk<Video[], number>('videos/fetchVideos',
     return videos;
   }
 
-  return videoRepository.readAll();
+  return (await videoRepository.readAll()).filter(video => video.countryId === countryId);
 });
 
 async function shuffleVideos(videosPromise: Promise<Video[]>): Promise<Video[]> { 

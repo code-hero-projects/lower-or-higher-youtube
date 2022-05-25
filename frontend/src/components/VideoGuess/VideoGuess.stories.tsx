@@ -7,7 +7,8 @@ const videoToGuess: Video = {
   name: 'Adele - Easy On Me (Official Video)',
   channel: 'AdeleVEVO',
   views: 100689539,
-  thumbnail: 'https://i.ytimg.com/vi/U3ASj1L6_sY/maxresdefault.jpg'
+  thumbnail: 'https://i.ytimg.com/vi/U3ASj1L6_sY/maxresdefault.jpg',
+  countryId: 5
 };
 
 const videoGuessed: Video = {
@@ -15,7 +16,8 @@ const videoGuessed: Video = {
   name: 'Some video name',
   channel: 'AdeleVEVO',
   views: 100689539,
-  thumbnail: 'https://i.ytimg.com/vi/U3ASj1L6_sY/maxresdefault.jpg'
+  thumbnail: 'https://i.ytimg.com/vi/U3ASj1L6_sY/maxresdefault.jpg',
+  countryId: 5
 };
 
 export const DisplayWithoutViews = () => <Box sx={{height: '100vh'}}><VideoGuess videoToGuess={videoToGuess} videoGuessed={videoGuessed} showViews={false} onHigherOption={() => {}} onLowerOption={() => {}} useTimer={true} time={5} stopTime={true} onUpdateTimer={() => {}} /></Box>;

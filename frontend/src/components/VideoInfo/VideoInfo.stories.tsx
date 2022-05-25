@@ -7,7 +7,8 @@ const video: Video = {
   name: 'Adele - Easy On Me (Official Video)',
   channel: 'AdeleVEVO',
   views: 100689539,
-  thumbnail: 'https://i.ytimg.com/vi/U3ASj1L6_sY/maxresdefault.jpg'
+  thumbnail: 'https://i.ytimg.com/vi/U3ASj1L6_sY/maxresdefault.jpg',
+  countryId: 5
 };
 
 export const WithViews = () => <Box sx={{height: '100vh'}}><VideoInfo video={video} currentScore={573} highScore={500} /></Box>;

@@ -14,12 +14,17 @@ export class CodeHeroApi {
     return this.fetch<Country[]>(url);
   }
 
-  public getVideos(countryId: number): Promise<Video[]> {
+  public async getVideos(countryId: number): Promise<Video[]> {
     const url = this.baseUrl + videoUrl.replace('{countryId}', countryId.toString());
-    return this.fetch<Video[]>(url);
+    const videos = await this.fetch<Video[]>(url);
+    videos.forEach(video => {
+      video.countryId = countryId;
+    });
+    return videos;
   }
 
-  private fetch<T>(url: string): Promise<T> {
-    return axios.get<T>(url).then(response => response.data);
+  private async fetch<T>(url: string): Promise<T> {
+    const response = await axios.get<T>(url);
+    return response.data;
   }
 }
