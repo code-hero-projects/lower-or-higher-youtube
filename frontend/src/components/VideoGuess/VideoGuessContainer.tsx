@@ -17,7 +17,7 @@ export function VideoGuessContainer({ onAnswer, videoGuessed, videoToGuess }: Vi
 
   const onHigherOption = () => lowerOrHigherOption(() => videoToGuess.views >= videoGuessed.views);
 
-  const onLowerOption = () => lowerOrHigherOption(() => videoToGuess.views < videoGuessed.views);
+  const onLowerOption = () => lowerOrHigherOption(() => videoToGuess.views <= videoGuessed.views);
 
   const onUpdateTimer = (currentTime: number) => dispatch(updateTime(currentTime));
 
