@@ -3,4 +3,4 @@ export { BaseWrapper, PageBaseWrapper, VideoDetailsWrapper, FlexCenterWrapper, O
 export { fadeInAnimation, fadeOutAnimation } from './FadeAnimation';
 export type { FadeAnimationProps } from './FadeAnimation';
 export { TypographyWrapper, Title, Info, Subtitle, LeftCornerSubtitle, RightCornerSubtitle, AdjustableTypography } from './TypographyWrapper';
-export { truncateString } from './MediaQuery';
+export { truncateString, SmallDeviceMediaQuery } from './MediaQuery';

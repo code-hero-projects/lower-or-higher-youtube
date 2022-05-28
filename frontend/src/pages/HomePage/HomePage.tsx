@@ -1,5 +1,5 @@
 import { CountrySelectorContainer, GameStartContainer, PageBaseWrapper, PageBackgroundImageWrapper, Title, AdjustableTypography, TimerOptionContainer } from "../../components";
-import { ContainerWrapper } from "./HomePageStyles";
+import { ContainerWrapper, VideoLink } from "./HomePageStyles";
 
 export function HomePage() {
   return (
@@ -19,6 +19,7 @@ export function HomePage() {
         <AdjustableTypography variant="h5" align="center">50 points if you guess within 5 seconds, 20 points if you guess within 10 seconds!</AdjustableTypography>
       </ContainerWrapper>
       <GameStartContainer />
+      <VideoLink marginTop={5} variant="h4" underline="hover" align="center" href="https://www.youtube.com/watch?v=FJVYuKRqeIc" target="_blank">Click here to see how the game was made!</VideoLink>
     </PageBaseWrapper>
   );
 }

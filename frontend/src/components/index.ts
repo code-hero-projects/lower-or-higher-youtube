@@ -3,7 +3,7 @@ export { EndGameCountrySelectorContainer } from './EndGameCountrySelector';
 export { EndGameScoreContainer } from './EndGameScore';
 export { GameStartContainer } from './GameStart';
 export { RestartGameContainer } from './RestartGame';
-export { PageBackgroundImageWrapper, PageBaseWrapper, TypographyWrapper, FlexCenterWrapper, OptionsCenterWrapper, Title, AdjustableTypography } from './Styled';
+export { PageBackgroundImageWrapper, PageBaseWrapper, TypographyWrapper, FlexCenterWrapper, OptionsCenterWrapper, Title, AdjustableTypography, SmallDeviceMediaQuery } from './Styled';
 export { VideoGuessContainer } from './VideoGuess';
 export { VideoInfoContainer } from './VideoInfo';
 export { TimerOptionContainer } from './TimerOption';
